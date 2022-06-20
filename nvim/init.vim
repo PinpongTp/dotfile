@@ -20,6 +20,7 @@ Plug 'nvim-treesitter/nvim-treesitter'
 " fzf
 "Plug 'junegunn/fzf'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
 " for ctl+P to search files
 Plug 'kien/ctrlp.vim'
