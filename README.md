@@ -10,5 +10,6 @@
 - use command `:Ag` for search in files all files
 - use command `:Lines` for search line in file
 - use command `:History` for search history
+- add fzf.vim plug for use add this command
 
 
