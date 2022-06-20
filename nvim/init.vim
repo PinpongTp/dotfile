@@ -17,6 +17,10 @@ Plug 'preservim/nerdtree'
 Plug 'xuyuanp/nerdtree-git-plugin'
 Plug 'nvim-treesitter/nvim-treesitter'
 
+" fzf
+"Plug 'junegunn/fzf'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+
 " for ctl+P to search files
 Plug 'kien/ctrlp.vim'
 
