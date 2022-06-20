@@ -1,0 +1,10 @@
+/iterm2
+/yarn
+/vim
+/tmux/plugins
+/zsh
+/coc
+/configstore
+/nvim/autoload
+/nvim/plugin
+.DS_Store
