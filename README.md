@@ -1,16 +1,5 @@
-# test
-## test2
-### test3
+# My dotfiles
 
-```
-test code
-```
+## nvim
+- Plug: FZF `ref >> https://www.youtube.com/watch?v=on1AzaZzQ7k`
 
-`test code`
-
-- test 
-- testss
-
-
-* star
-* star2
