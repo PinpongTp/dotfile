@@ -1,0 +1,34 @@
+### alias file ###
+# this file call by ~/.zshrc
+
+#normal alias/comand
+alias so="source"
+alias vim="nvim"
+
+#file
+alias config="cd ~/.config"
+alias cf="cd ~/.config"
+alias remote="cd ~/developer/remote" 
+alias wo="cd ~/developer/remote" 
+alias test="cd ~/developer/test"
+alias my="cd ~/developer/my"
+
+# git
+alias g="git"
+alias gch="git checkout"
+alias gco="git checkout"
+alias gb="git branch"
+alias gs="git status"
+
+# tmux
+alias tm="tmux"
+alias tma="tmux attach-session -t"
+alias tmd="tmux kill-session -t"
+alias tmc="tmux new -s"
+
+# for develop
+alias run="sudo yarn run start:dev"
+alias y="yarn"
+
+# cat
+alias hvim="cat ~/.config/cat/vim.help"
