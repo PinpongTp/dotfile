@@ -7,4 +7,5 @@
 /configstore
 /nvim/autoload
 /nvim/plugin
+/htop
 .DS_Store
