@@ -12,4 +12,13 @@
 - use command `:History` for search history
 - add fzf.vim plug for use add this command
 
+### Plug: tmux
+- `Prefix { }` move
+- `Prefix o` swap-pane
 
+- `Prefix p` go to previous window
+- `Prefix n` go to next window
+- `Prefix l` go to last window / alt-tab
+- `Prefix [i]` go to [i] window
+
+- `Prefix z` zoom 

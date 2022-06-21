@@ -16,9 +16,10 @@ alias my="cd ~/developer/my"
 # git
 alias g="git"
 alias gch="git checkout"
-alias gco="git checkout"
+# alias gco="git checkout"
 alias gb="git branch"
 alias gs="git status"
+abbr add gco="git checkout"
 
 # tmux
 alias tm="tmux"
@@ -28,7 +29,7 @@ alias tmc="tmux new -s"
 
 # for develop
 alias run="sudo yarn run start:dev"
-alias y="yarn"
+# alias y="yarn"
 
 # cat
 alias hvim="cat ~/.config/cat/vim.help"
