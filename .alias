@@ -19,7 +19,7 @@ alias gch="git checkout"
 # alias gco="git checkout"
 alias gb="git branch"
 alias gs="git status"
-abbr add gco="git checkout"
+# abbr add gco="git checkout"
 
 # tmux
 alias tm="tmux"
