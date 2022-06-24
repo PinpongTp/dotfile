@@ -13,7 +13,6 @@
 - - use >> `?` for open quick help and press again for toggle
 
 ### Plug: FZF 
-- ref >> [Link](https://www.youtube.com/watch?v=on1AzaZzQ7k)
 - use command `:FZF` for search files
 - use command `:Files` for search files and see file
 - use command `:Rg` for search in files
@@ -21,6 +20,7 @@
 - use command `:Lines` for search line in file
 - use command `:History` for search history
 - add fzf.vim plug for use add this command
+- ref >> [Link](https://www.youtube.com/watch?v=on1AzaZzQ7k)
 
 ### Plug: tmux
 - `Prefix { }` move
