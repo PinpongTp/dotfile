@@ -32,3 +32,7 @@
 - `Prefix [i]` go to [i] window
 
 - `Prefix z` zoom 
+
+### Plug: indentline
+- set enable indentline by `:IndentLinesEnable`
+
