@@ -28,13 +28,20 @@ Plug 'kien/ctrlp.vim'
 
 " comment line
 Plug 'preservim/nerdcommenter'
-"Plug 'jiangmiao/auto-pairs'
+Plug 'jiangmiao/auto-pairs'
 " prettier 
 "Plug 'prettier/vim-prettier'
-" use git command in vim
+" fugitive for use git command in vim
+Plug 'nvim-lua/plenary.nvim'
 Plug 'tpope/vim-fugitive'
+" example
+" - :Git status
+
 " show git edit line
-Plug 'airblade/vim-gitgutter'
+" Plug 'airblade/vim-gitgutter'
+" not use gitgutter because it can't custom to look like vscode 
+Plug 'lewis6991/gitsigns.nvim'
+
 
 "Plug 'nvim-lua/popup.nvim'
 "Plug 'nvim-lua/plenary.nvim'
@@ -195,3 +202,7 @@ function! ShowDocumentation()
     call feedkeys('K', 'in')
   endif
 endfunction
+
+set statusline+=%{get(b:,'gitsigns_head','')}
+
+lua require('gitsigns').setup()
