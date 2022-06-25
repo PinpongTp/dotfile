@@ -12,6 +12,11 @@
 - - use >> `s` for open file by vertical split pane
 - - use >> `?` for open quick help and press again for toggle
 
+### Plug: coc
+- use >> `gd` for go to definition
+- use >> `Ctrl + o` for go back
+- use >> `Ctrl + i` for go forward
+
 ### Plug: FZF 
 - use command `:FZF` for search files
 - use command `:Files` for search files and see file
