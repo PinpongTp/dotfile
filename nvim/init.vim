@@ -89,8 +89,9 @@ set mouse=a
 set colorcolumn=80
 " signcolumn is space in left bar (left of line number)
 set signcolumn=yes
-" for update a git status
+" for update a git status and coc...
 set updatetime=50
+set cmdheight=2
 
 " shotderu key setup
 let mapleader=" "
@@ -140,12 +141,12 @@ nmap <leader>f  <Plug>(coc-format-selected)
 " - 
 " Always show the signcolumn, otherwise it would shift the text each time
 " diagnostics appear/become resolved.
-if has("nvim-0.5.0") || has("patch-8.1.1564")
+"if has("nvim-0.5.0") || has("patch-8.1.1564")
   " Recently vim can merge signcolumn and number column into one
-  set signcolumn=number
-else
-  set signcolumn=yes
-endif
+  "set signcolumn=number
+"else
+  "set signcolumn=yes
+"endif
 
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
