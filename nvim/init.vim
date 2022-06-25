@@ -11,6 +11,7 @@ Plug 'gruvbox-community/gruvbox'
 "Plug 'kyazdani42/nvim-web-devicons'
 Plug 'ryanoasis/vim-devicons'
 "Plug 'lifepillar/vim-solarized8'
+Plug 'yggdroot/indentline'
 
 " nerd tree
 Plug 'preservim/nerdtree'
@@ -55,6 +56,9 @@ let g:gruvbox_contrast_dark = 'hard'
 "colorscheme solarized8
 let g:airline_powerline_fonts = 1
 let g:airline_theme='powerlineish'
+
+" for indentline
+let g:indentLine_enabled = 0
 
 " for tmux
 let g:tmuxline_powerline_separators = 0
