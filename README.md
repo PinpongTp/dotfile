@@ -41,3 +41,5 @@
 ### Plug: indentline
 - set enable indentline by `:IndentLinesEnable`
 
+### Plug: gitsigns
+- use `:Gitsigns toggle_current_line_blame` for show line blame

@@ -36,12 +36,7 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'tpope/vim-fugitive'
 " example
 " - :Git status
-
-" show git edit line
-" Plug 'airblade/vim-gitgutter'
-" not use gitgutter because it can't custom to look like vscode 
 Plug 'lewis6991/gitsigns.nvim'
-
 
 "Plug 'nvim-lua/popup.nvim'
 "Plug 'nvim-lua/plenary.nvim'
@@ -99,6 +94,8 @@ set signcolumn=yes
 " for update a git status and coc...
 set updatetime=50
 set cmdheight=2
+" for sync clipboard vim and os 
+set clipboard+=unnamedplus
 
 " shotderu key setup
 let mapleader=" "
@@ -205,4 +202,6 @@ endfunction
 
 set statusline+=%{get(b:,'gitsigns_head','')}
 
-lua require('gitsigns').setup()
+lua << EOF
+require('gitsigns').setup()
+EOF
