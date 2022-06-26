@@ -89,6 +89,7 @@ set shiftwidth=2
 set expandtab
 set mouse=a
 set colorcolumn=80
+set cursorline
 " signcolumn is space in left bar (left of line number)
 set signcolumn=yes
 " for update a git status and coc...
@@ -96,6 +97,12 @@ set updatetime=50
 set cmdheight=2
 " for sync clipboard vim and os 
 set clipboard+=unnamedplus
+
+"hi CursorLineNr   term=bold ctermfg=Yellow gui=bold guifg=Yellow
+"hi CursorLineNr   term=bold ctermbg=148 ctermfg=235
+"hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
+hi CursorLine   cterm=NONE ctermbg=235
+" TODO set cursor in visual mode
 
 " shotderu key setup
 let mapleader=" "
@@ -112,7 +119,8 @@ nnoremap K :m '<-2<CR>gv=gv
 " for plugin
 nnoremap <Leader>n :NERDTreeFocus<CR>
 nnoremap <Leader>t :NERDTreeToggle<CR>
-nnoremap <Leader>w :<C-w>
+nnoremap T <C-w>
+nnoremap <leader>T <C-a>
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
@@ -138,6 +146,7 @@ vmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
 
 " hide 
+" :hi CursorLineNr ctermfg=45 cterm=bold
 " nerdcommenter
 " - comment line by <Leader>cc
 " - remove comment line by <Leader>cu
