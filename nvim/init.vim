@@ -1,216 +1,149 @@
-"call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
-call plug#begin()
+" Fundamentals
+" ---------------------------------------------------------------------
 
-"Plug 'nvim-lua/completion-nvim'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-" tmuxline for copy vim-airline style to tmux-airline
-Plug 'edkolev/tmuxline.vim'
-Plug 'gruvbox-community/gruvbox'
-"Plug 'nvim-lualine/lualine.nvim'
-"Plug 'kyazdani42/nvim-web-devicons'
-Plug 'ryanoasis/vim-devicons'
-"Plug 'lifepillar/vim-solarized8'
-Plug 'yggdroot/indentline'
+" init autocmd
+autocmd!
+" set script encoding
+scriptencoding utf-8
+" stop loading config if it's on tiny or small
+if !1 | finish | endif
 
-" nerd tree
-Plug 'preservim/nerdtree'
-Plug 'xuyuanp/nerdtree-git-plugin'
-Plug 'nvim-treesitter/nvim-treesitter'
-
-" fzf
-"Plug 'junegunn/fzf'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-
-" for ctl+P to search files
-Plug 'kien/ctrlp.vim'
-
-" comment line
-Plug 'preservim/nerdcommenter'
-Plug 'jiangmiao/auto-pairs'
-" prettier 
-"Plug 'prettier/vim-prettier'
-" fugitive for use git command in vim
-Plug 'nvim-lua/plenary.nvim'
-Plug 'tpope/vim-fugitive'
-" example
-" - :Git status
-Plug 'lewis6991/gitsigns.nvim'
-
-"Plug 'nvim-lua/popup.nvim'
-"Plug 'nvim-lua/plenary.nvim'
-"Plug 'nvim-telescope/telescope.nvim'
-
-
-" coc
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-"Plug 'sheerun/vim-polyglot'
-
-call plug#end()
-
-" abount theme ( gruvbox and ui )
-"set termguicolors
-colorscheme gruvbox
-let g:gruvbox_contrast_dark = 'hard'
-"set background=dark
-"highlight Normal guibg=none
-"colorscheme solarized8
-let g:airline_powerline_fonts = 1
-let g:airline_theme='powerlineish'
-
-" for indentline
-let g:indentLine_enabled = 0
-
-" for tmux
-let g:tmuxline_powerline_separators = 0
-let airline#extensions#tmuxline#snapshot_file = "~/.config/tmux/tmux-status.conf"
-let g:tmuxline_preset = {
-        \ 'a': '[#S]',
-        \ 'win': '#I:#W#F',
-        \ 'cwin': '#I:#W#F',
-        \ 'x': '#{prefix_highlight}' ,
-        \ 'y': '%H:%M',
-        \ 'z': '%d-%b-%y',
-        \ 'options': {
-        \ 'status-justify': 'left'}
-        \ }
-
-
-syntax on
-syntax enable
-
+set nocompatible
 set number
 set relativenumber
-set tabstop=2
-" set tabstop=2 softtabstop=2
-" it config i'am not sure how it work
-set shiftwidth=2
-set expandtab
-set mouse=a
-set colorcolumn=80
-set cursorline
-" signcolumn is space in left bar (left of line number)
+syntax enable
+set fileencodings=utf-8,sjis,euc-jp,latin
+set encoding=utf-8
+set title
+set autoindent
+set background=dark
+set nobackup
+set hlsearch
+set showcmd
 set signcolumn=yes
-" for update a git status and coc...
-set updatetime=50
 set cmdheight=2
-" for sync clipboard vim and os 
-set clipboard+=unnamedplus
+set laststatus=2
+set scrolloff=10
+set expandtab
+"let loaded_matchparen = 1
+set shell=fish
+set backupskip=/tmp/*,/private/tmp/*
 
-"hi CursorLineNr   term=bold ctermfg=Yellow gui=bold guifg=Yellow
-"hi CursorLineNr   term=bold ctermbg=148 ctermfg=235
-"hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
-hi CursorLine   cterm=NONE ctermbg=235
-" TODO set cursor in visual mode
-
-" shotderu key setup
-let mapleader=" "
-noremap <Leader>q :q<CR>
-noremap <Leader>Q :q!<CR>
-noremap <Leader>w :w<CR>
-noremap <Leader>W :wq<CR>
-nnoremap <Leader>S :so %<CR>
-nnoremap U :redo<CR>
-nnoremap vv :noh<CR>
-nnoremap J :m '>+1<CR>gv=gv
-nnoremap K :m '<-2<CR>gv=gv
-
-" for plugin
-nnoremap <Leader>n :NERDTreeFocus<CR>
-nnoremap <Leader>t :NERDTreeToggle<CR>
-nnoremap T <C-w>
-nnoremap <leader>T <C-a>
-nnoremap <C-n> :NERDTree<CR>
-nnoremap <C-t> :NERDTreeToggle<CR>
-nnoremap <C-f> :NERDTreeFind<CR>
-nnoremap <Leader>p :Prettier<CR>
-
-" for split navigation
-nnoremap <Leader>h <C-w>h
-nnoremap <Leader>j <C-w>j
-nnoremap <Leader>k <C-w>k
-nnoremap <Leader>l <C-w>l
-
-" for lua
-"nnoremap <Leader>ps :lua require('telescope.builtin').grep_string({ search = vim.fn.input("Grep For > ")})<CR>
-
-augroup highlight_yank
-    autocmd!
-    autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank({timeout = 40})
-augroup END
-
-command! -nargs=0 Prettier :CocCommand prettier.forceFormatDocument
-"command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
-vmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
-
-" hide 
-" :hi CursorLineNr ctermfg=45 cterm=bold
-" nerdcommenter
-" - comment line by <Leader>cc
-" - remove comment line by <Leader>cu
-" nerdtree
-" - 
-" Always show the signcolumn, otherwise it would shift the text each time
-" diagnostics appear/become resolved.
-"if has("nvim-0.5.0") || has("patch-8.1.1564")
-  " Recently vim can merge signcolumn and number column into one
-  "set signcolumn=number
-"else
-  "set signcolumn=yes
-"endif
-
-" Use tab for trigger completion with characters ahead and navigate.
-" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
-" other plugin before putting this into your config.
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ CheckBackspace() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-function! CheckBackspace() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
-" Use <c-space> to trigger completion.
+" incremental substitution (neovim)
 if has('nvim')
-  inoremap <silent><expr> <c-space> coc#refresh()
-else
-  inoremap <silent><expr> <c-@> coc#refresh()
+  set inccommand=split
 endif
 
-" Make <CR> auto-select the first completion item and notify coc.nvim to
-" format on enter, <cr> could be remapped by other vim plugin
-inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
-      \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+" Suppress appending <PasteStart> and <PasteEnd> when pasting
+set t_BE=
 
-" Use `[g` and `]g` to navigate diagnostics
-" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
+set nosc noru nosm
+" Don't redraw while executing macros (good performance config)
+set lazyredraw
+"set showmatch
+" How many tenths of a second to blink when matching brackets
+"set mat=2
+" Ignore case when searching
+set ignorecase
+" Be smart when using tabs ;)
+set smarttab
+" indents
+filetype plugin indent on
+set shiftwidth=2
+set tabstop=2
+set mouse=a
+set colorcolumn=80
+set ai "Auto indent
+set si "Smart indent
+set nowrap "No Wrap lines
+set backspace=start,eol,indent
+" Finding files - Search down into subfolders
+set path+=**
+set wildignore+=*/node_modules/*
 
-" GoTo code navigation.
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
+" Turn off paste mode when leaving insert
+autocmd InsertLeave * set nopaste
 
-" Use K to show documentation in preview window.
-nnoremap <silent> K :call ShowDocumentation()<CR>
+" Add asterisks in block comments
+set formatoptions+=r
 
-function! ShowDocumentation()
-  if CocAction('hasProvider', 'hover')
-    call CocActionAsync('doHover')
-  else
-    call feedkeys('K', 'in')
-  endif
-endfunction
 
-set statusline+=%{get(b:,'gitsigns_head','')}
+" Highlights
+" ---------------------------------------------------------------------
+set cursorline
+"set cursorcolumn
 
-lua << EOF
-require('gitsigns').setup()
-EOF
+" Set cursor line color on visual mode
+"highlight Visual cterm=NONE ctermbg=236 ctermfg=NONE guibg=Grey40
+
+"highlight LineNr cterm=none ctermfg=240 guifg=#2b506e guibg=#000000
+
+augroup BgHighlight
+  autocmd!
+  autocmd WinEnter * set cul
+  autocmd WinLeave * set nocul
+augroup END
+
+if &term =~ "screen"
+  autocmd BufEnter * if bufname("") !~ "^?[A-Za-z0-9?]*://" | silent! exe '!echo -n "\ek[`hostname`:`basename $PWD`/`basename %`]\e\\"' | endif
+  autocmd VimLeave * silent!  exe '!echo -n "\ek[`hostname`:`basename $PWD`]\e\\"'
+endif
+
+
+" File types
+" ---------------------------------------------------------------------
+" JavaScript
+au BufNewFile,BufRead *.es6 setf javascript
+" TypeScript
+au BufNewFile,BufRead *.tsx setf typescriptreact
+" Markdown
+au BufNewFile,BufRead *.md set filetype=markdown
+au BufNewFile,BufRead *.mdx set filetype=markdown
+" Flow
+au BufNewFile,BufRead *.flow set filetype=javascript
+" Fish
+au BufNewFile,BufRead *.fish set filetype=fish
+
+set suffixesadd=.js,.es,.jsx,.json,.css,.less,.sass,.styl,.php,.py,.md
+
+autocmd FileType coffee setlocal shiftwidth=2 tabstop=2
+autocmd FileType ruby setlocal shiftwidth=2 tabstop=2
+autocmd FileType yaml setlocal shiftwidth=2 tabstop=2
+
+
+" Imports
+" ---------------------------------------------------------------------
+runtime ./plug.vim
+  let s:uname = system("uname -s")
+  set clipboard+=unnamedplus
+
+runtime ./maps.vim
+
+" Syntax them
+" ---------------------------------------------------------------------
+
+" true color
+if exists("&termguicolors") && exists("&winblend")
+  syntax enable
+  set termguicolors
+  set winblend=0
+  set wildoptions=pum
+  set pumblend=5
+  set background=dark
+   "Use NeoSolarized
+  "let g:neosolarized_termtrans=1
+  "runtime ./colors/NeoSolarized.vim
+  "colorscheme NeoSolarized
+
+  "Use -- 
+  runtime ./colors/gruvbox.vim
+  let g:gruvbox_termcolors=16
+  colorscheme gruvbox
+endif
+
+
+" Extras
+" ---------------------------------------------------------------------
+set exrc
+
+" vim: set foldmethod=marker foldlevel=0:
