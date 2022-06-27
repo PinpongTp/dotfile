@@ -25,3 +25,5 @@ let test = () => {
 this.test.testData = {
   test: "test",
 };
+
+test()
