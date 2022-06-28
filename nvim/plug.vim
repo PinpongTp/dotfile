@@ -50,7 +50,13 @@ if has("nvim")
   " Git status
   Plug 'lewis6991/gitsigns.nvim'
   Plug 'dracula/vim', { 'as': 'dracula' }
-  
+
+  " for use format and eslint
+  Plug 'jose-elias-alvarez/null-ls.nvim'
+  Plug 'MunifTanjim/prettier.nvim'
+
+  "Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
+
 endif
 
 "Plug 'groenewege/vim-less', { 'for': 'less' }
