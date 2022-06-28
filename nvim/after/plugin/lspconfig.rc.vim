@@ -90,7 +90,12 @@ nvim_lsp.diagnosticls.setup {
     linters = {
       eslint = {
         command = 'eslint_d',
-        rootPatterns = { '.git' },
+        rootPatterns = { 
+          '.git',
+          '.eslitrc.js',
+          '.eslintrc.js',
+          'package.json'
+        },
         debounce = 100,
         args = { '--stdin', '--stdin-filename', '%filepath', '--format', 'json' },
         sourceName = 'eslint_d',

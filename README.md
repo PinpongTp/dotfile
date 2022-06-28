@@ -37,9 +37,27 @@
 - `Prefix [i]` go to [i] window
 
 - `Prefix z` zoom 
+- ref >> [Link](https://www.youtube.com/watch?v=sP4w23j6XqI)
 
 ### Plug: indentline
 - set enable indentline by `:IndentLinesEnable`
 
 ### Plug: gitsigns
 - use `:Gitsigns toggle_current_line_blame` for show line blame
+
+
+## by new
+
+### Plug: saga
+- `K` for see error
+- `gh` for see references the value and `q` for exit
+- `Ctrl + j` for go to error line
+
+### Plug telescope
+- `;f` for search filename
+- `;r` for search text in file
+- `\\` for search file open (beffers) 
+- `;;` for help tags
+
+
+
