@@ -29,6 +29,7 @@ local on_attach = function(client, bufnr)
   -- buf_set_keymap('n', 'gt', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
 
   -- formatting
+ --  if false then
   if client.server_capabilities.documentFormattingProvider then
     vim.api.nvim_command [[augroup Format]]
     vim.api.nvim_command [[autocmd! * <buffer>]]
@@ -130,8 +131,9 @@ nvim_lsp.diagnosticls.setup {
       prettier = {
         command = 'prettier_d_slim',
         rootPatterns = { '.git' },
+        requiredFiles = { '.prettierrc' },
         -- requiredFiles: { 'prettier.config.js' },
-        args = { '--stdin', '--stdin-filepath', '%filename' }
+        args = { '--stdin', '--stdin-filepath', '--config-precedence','%filename', 'prefer-file'}
       }
     },
     formatFiletypes = {
@@ -154,7 +156,7 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
     underline = true,
     -- This sets the spacing and the prefix, obviously.
     virtual_text = {
-      spacing = 4,
+      spacing = 2,
       prefix = ''
     }
   }
