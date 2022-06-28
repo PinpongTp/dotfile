@@ -14,6 +14,8 @@ if has("nvim")
   " nerd tree
   Plug 'preservim/nerdtree'
   Plug 'xuyuanp/nerdtree-git-plugin'
+  " tmux line
+  "Plug 'edkolev/tmuxline.vim'
   " commenter
   Plug 'preservim/nerdcommenter'
   " status bar
@@ -47,6 +49,8 @@ if has("nvim")
   Plug 'windwp/nvim-ts-autotag'
   " Git status
   Plug 'lewis6991/gitsigns.nvim'
+  Plug 'dracula/vim', { 'as': 'dracula' }
+  
 endif
 
 "Plug 'groenewege/vim-less', { 'for': 'less' }

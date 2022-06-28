@@ -1,5 +1,12 @@
 export default function foo(a: number): number {
   console.log('test log')
+  let error = {}
+  var test = {
+
+  }
+  let testtext = "test"
+  console.log(test)
+  console.log(testtext)
   return a + 1
 }
 

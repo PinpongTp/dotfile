@@ -21,12 +21,12 @@ set nobackup
 set hlsearch
 set showcmd
 set signcolumn=yes
-set cmdheight=2
+"set cmdheight=2
 set laststatus=2
 set scrolloff=10
 set expandtab
 "let loaded_matchparen = 1
-set shell=fish
+"set shell=fish
 set backupskip=/tmp/*,/private/tmp/*
 
 " incremental substitution (neovim)
@@ -135,15 +135,29 @@ if exists("&termguicolors") && exists("&winblend")
   "runtime ./colors/NeoSolarized.vim
   "colorscheme NeoSolarized
 
+  "runtime ./colors/monokai.vim
+
+  "colorscheme "monokai"
+  "runtime ./colors/gruvbox
+  "runtime ./colors/gruvbox/_gruvbox.vim
   "Use -- 
-  runtime ./colors/gruvbox.vim
-  let g:gruvbox_termcolors=16
-  colorscheme gruvbox
+  "runtime ./colors/gruvbox.vim
+  "let g:gruvbox_termcolors=16
+  "let g:gruvbox_contrast_dark = 'hard'
+  "colorscheme gruvbox
+
+  colorscheme dracula
+  
 endif
 
 
 " Extras
 " ---------------------------------------------------------------------
 set exrc
+
+" nerdcommenter
+" - comment line by <Leader>cc
+" - remove comment line by <Leader>cu
+
 
 " vim: set foldmethod=marker foldlevel=0:
