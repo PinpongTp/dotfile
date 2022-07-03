@@ -52,7 +52,7 @@ filetype plugin indent on
 set shiftwidth=2
 set tabstop=2
 set mouse=a
-set colorcolumn=80
+set colorcolumn=140
 set ai "Auto indent
 set si "Smart indent
 set nowrap "No Wrap lines
