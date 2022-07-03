@@ -55,9 +55,12 @@
 
 ### Plug telescope
 - `;f` for search filename
+- `;F` for search filename and hidden file
 - `;r` for search text in file
 - `\\` for search file open (beffers) 
 - `;;` for help tags
 
+### Plug which key
+- `<c-r>` view copy history
 
 
