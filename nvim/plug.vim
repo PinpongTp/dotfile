@@ -14,6 +14,8 @@ if has("nvim")
   " nerd tree
   Plug 'preservim/nerdtree'
   Plug 'xuyuanp/nerdtree-git-plugin'
+  Plug 'akinsho/toggleterm.nvim'
+  "Plug 'folke/which-key.nvim'
   " tmux line
   "Plug 'edkolev/tmuxline.vim'
   " commenter
@@ -53,7 +55,8 @@ if has("nvim")
 
   " for use format and eslint
   Plug 'jose-elias-alvarez/null-ls.nvim'
-  Plug 'MunifTanjim/prettier.nvim'
+  "Plug 'MunifTanjim/prettier.nvim'
+  Plug 'eslint/eslint'
 
   "Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
 

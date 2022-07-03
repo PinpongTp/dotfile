@@ -2,6 +2,8 @@ export default function foo(a: number): number {
   console.log("test log");
   let error = {};
   var test = {};
+  let zz = ''
+        console.log(zz)
   let testtext = "test";
   console.log(test);
   console.log(testtext);
