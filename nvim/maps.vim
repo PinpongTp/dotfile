@@ -36,6 +36,9 @@ nmap <Space>n :NERDTreeFocus<CR>
 nmap <Space>t :NERDTreeToggle<CR>
 nmap <Space>f :NERDTreeFind<CR>
 
+" for toggleterm
+nmap <Space>\ :ToggleTerm<cr>
+
 " Save with root permission
 " command! w w !sudo tee > /dev/null %
 
