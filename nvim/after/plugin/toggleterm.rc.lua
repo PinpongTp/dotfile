@@ -13,4 +13,3 @@ tg.setup {
     highlights = {border = "Normal", backgroud = "Normal"}
   }
 }
-
