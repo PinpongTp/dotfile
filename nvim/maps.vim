@@ -25,19 +25,18 @@ nmap vv :noh<CR>
 nmap <C-g> :Gitsigns blame_line<CR>
 
 " for main activity
-nmap <Space>q :q<CR>
-nmap <Space>Q :q!<CR>
-nmap <Space>w :w<CR>
-nmap <Space>W :wq<CR>
-nmap <Space>S :so %<CR>
+nmap <Leader>q :q<CR>
+nmap <Leader>Q :q!<CR>
+nmap <Leader>w :w<CR>
+nmap <Leader>W :wq<CR>
+nmap <Leader>S :so %<CR>
 
 " for nerdTree
-nmap <Space>n :NERDTreeFocus<CR>
-nmap <Space>t :NERDTreeToggle<CR>
-nmap <Space>f :NERDTreeFind<CR>
+nmap <Leader>n :NERDTreeToggle<CR>
+nmap <Leader>f :NERDTreeFind<CR>
 
 " for toggleterm
-nmap <Space>\ :ToggleTerm<cr>
+nmap <Leader>\ :ToggleTerm<cr>
 nmap ;c :ToggleTerm<cr>
 
 " Save with root permission
@@ -60,9 +59,43 @@ vnoremap <silent> # :<C-U>
 
 " Open current directory
 nmap te :tabedit 
-nmap <S-Tab> :tabprev<Return>
-nmap <Tab> :tabnext<Return>
+"nmap <Tab> :tabnext<CR>
+"nmap <S-Tab> :tabprev<CR>
+nmap <S-Tab> :bprevious<Return>
+nmap <Tab> :bnext<Return>
 
+nmap <Leader>tt :tabnext<CR>
+nmap <Leader>t. :tabnext<CR>
+nmap <Leader>t, :tabprev<CR>
+nmap dt :q<CR>
+
+nnoremap <silent><Leader>b :BufferLinePick<CR>
+"nnoremap <silent><Leader>bb :BufferLinePick<CR>
+nnoremap <silent><Leader>b. :BufferLineCycleNext<CR>
+nnoremap <silent><Leader>b, :BufferLineCyclePrev<CR>
+nnoremap <silent><Leader>bd :BufferLinePickClose<CR>
+nnoremap <silent><Leader>bp :BufferLineTogglePin<CR>
+
+" These commands will navigate through buffers in order regardless of which mode you are using
+" e.g. if you change the order of buffers :bnext and :bprevious will not respect the custom ordering
+nnoremap <silent>[b :BufferLineCycleNext<CR>
+nnoremap <silent>b] :BufferLineCyclePrev<CR>
+
+" These commands will move the current buffer backwards or forwards in the bufferline
+nnoremap <silent><Leader>b> :BufferLineMoveNext<CR>
+nnoremap <silent><Leader>b< :BufferLineMovePrev<CR>
+
+nnoremap <silent><Leader>bq :bw<CR>
+nnoremap <silent><Leader>bc :bw<CR>
+nnoremap <silent>db :bw<CR>
+
+" These commands will sort buffers by directory, language, or a custom criteria
+nnoremap <silent>be :BufferLineSortByExtension<CR>
+nnoremap <silent>bd :BufferLineSortByDirectory<CR>
+"nnoremap <silent><mymap> :lua require'bufferline'.sort_buffers_by(function (buf_a, buf_b) return buf_a.id < buf_b.id end)<CR>
+
+
+nnoremap <silent><Leader>ts :SymbolsOutline<CR>
 "------------------------------
 " Windows
 
@@ -70,8 +103,8 @@ nmap <Tab> :tabnext<Return>
 nmap ss :split<Return><C-w>w
 nmap sv :vsplit<Return><C-w>w
 " Move window
-"nmap <Space> <C-w>w
-nmap <Space>w <C-w>w
+"nmap <Leader> <C-w>w
+nmap <Leader>w <C-w>w
 map s<left> <C-w>h
 map s<up> <C-w>k
 map s<down> <C-w>j
