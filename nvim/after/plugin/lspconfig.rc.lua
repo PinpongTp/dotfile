@@ -2,12 +2,17 @@
 local status, nvim_lsp = pcall(require, "lspconfig")
 if (not status) then return end
 
+local navic = require("nvim-navic")
+
 -- local nvim_lsp = require('lspconfig')
 local protocol = require 'vim.lsp.protocol'
+vim.o.statusline = "%{%v:lua.require'nvim-navic'.get_location()%}"
 
 -- Use an on_attach function to only map the following keys 
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
+  if client.name == 'tsserver' then navic.attach(client, bufnr) end
+
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
   local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
   -- Enable completion triggered by <c-x><c-o>
@@ -230,8 +235,9 @@ null_ls.setup({
   on_attach = on_attach,
   debug = true,
   sources = {
-    -- null_ls.builtins.formatting.prettier.with({ extra_args = {"--no-semi", "--single-quote"} })
-    null_ls.builtins.formatting.stylua, null_ls.builtins.formatting.prettier,
+    null_ls.builtins.formatting.prettier.with({extra_args = {"--single-quote"}}),
+    null_ls.builtins.formatting.stylua,
+    -- null_ls.builtins.formatting.prettier,
     null_ls.builtins.diagnostics.eslint, null_ls.builtins.code_actions.eslint
   }
 })
@@ -274,4 +280,3 @@ if false then -- if handlers
       virtual_text = {spacing = 2, prefix = ''}
     })
 end -- endif handlers
-
