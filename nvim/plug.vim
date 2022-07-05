@@ -15,13 +15,18 @@ if has("nvim")
   Plug 'preservim/nerdtree'
   Plug 'xuyuanp/nerdtree-git-plugin'
   Plug 'akinsho/toggleterm.nvim'
-  "Plug 'folke/which-key.nvim'
+  Plug 'folke/which-key.nvim'
+  "Plug 'majutsushi/tagbar'
+  "Plug 'preservim/tagbar'
   " tmux line
   "Plug 'edkolev/tmuxline.vim'
   " commenter
   Plug 'preservim/nerdcommenter'
   " status bar
   Plug 'hoob3rt/lualine.nvim'
+  " buffer
+  Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' } 
+  " Plug 'romgrk/barbar.nvim'
   " defx look like nerdtree
   "Plug 'kristijanhusak/defx-git'
   "Plug 'kristijanhusak/defx-icons'
@@ -39,6 +44,10 @@ if has("nvim")
   Plug 'hrsh7th/nvim-cmp'
   " treesitter
   Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
+  Plug 'nvim-treesitter/nvim-treesitter-context'
+  Plug 'simrat39/symbols-outline.nvim'
+  Plug 'SmiteshP/nvim-navic'
+  "Plug 'SmiteshP/nvim-gps'
   Plug 'nvim-lua/completion-nvim'
   " icons
   Plug 'kyazdani42/nvim-web-devicons'
