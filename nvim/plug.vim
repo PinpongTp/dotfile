@@ -26,6 +26,7 @@ if has("nvim")
   Plug 'hoob3rt/lualine.nvim'
   " buffer
   Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' } 
+  Plug 'kdheepak/tabline.nvim'
   " Plug 'romgrk/barbar.nvim'
   " defx look like nerdtree
   "Plug 'kristijanhusak/defx-git'
