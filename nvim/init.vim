@@ -73,10 +73,10 @@ set formatoptions+=r
 set cursorline
 "set cursorcolumn
 
-" Set cursor line color on visual mode
-"highlight Visual cterm=NONE ctermbg=236 ctermfg=NONE guibg=Grey40
+" Set cursor line color on visual de
+" highlight Visual cterm=NONE ctermbg=236 ctermfg=NONE guibg=Grey40
 
-"highlight LineNr cterm=none ctermfg=240 guifg=#2b506e guibg=#000000
+" highlight LineNr cterm=none ctermfg=240 guifg=#2b506e guibg=#000000
 
 augroup BgHighlight
   autocmd!
@@ -124,32 +124,16 @@ runtime ./maps.vim
 
 " true color
 if exists("&termguicolors") && exists("&winblend")
+
   syntax enable
   set termguicolors
   set winblend=0
   set wildoptions=pum
   set pumblend=5
   set background=dark
-   "Use NeoSolarized
-  "let g:neosolarized_termtrans=1
-  "runtime ./colors/NeoSolarized.vim
-  "colorscheme NeoSolarized
-
-  "runtime ./colors/monokai.vim
-
-  "colorscheme "monokai"
-  "runtime ./colors/gruvbox
-  "runtime ./colors/gruvbox/_gruvbox.vim
-  "Use -- 
-  "runtime ./colors/gruvbox.vim
-  "let g:gruvbox_termcolors=16
-  "let g:gruvbox_contrast_dark = 'hard'
-  "colorscheme gruvbox
-
   colorscheme dracula
   
 endif
-
 
 " Extras
 " ---------------------------------------------------------------------
@@ -158,6 +142,11 @@ set exrc
 " nerdcommenter
 " - comment line by <Leader>cc
 " - remove comment line by <Leader>cu
-
+"
+"set titlestring=%t%(\ %M%)%(\ (%{expand(\"%:~:.:h\")})%)%(\ %a%)
+set titlestring=%{expand(\"%:~:p\")}
+"set titlestring=%{expand(\"%:p:h\")}
+"set titlestring=VIM:\ %-25.55F\ %a%r%m titlelen=70
+"autocmd BufReadPost,FileReadPost,BufNewFile * call system("tmux rename-window " . expand("%"))
 
 " vim: set foldmethod=marker foldlevel=0:

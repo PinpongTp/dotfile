@@ -3,15 +3,26 @@ local status, nvim_lsp = pcall(require, "lspconfig")
 if (not status) then return end
 
 local navic = require("nvim-navic")
+navic.setup {depth_limit = 3, highlight = true}
+
+local nvim_lsp_install = require('nvim-lsp-installer')
+nvim_lsp_install.setup {}
+-- vim.api.nvim_set_hl(0, "NavicIconsClass",
+-- {default = true, bg = nil, fg = "pink"})
+
+-- vim.api.nvim_set_hl(0, "NavicIconsFunction",
+-- {default = false, bg = nil, fg = "yellow"})
 
 -- local nvim_lsp = require('lspconfig')
 local protocol = require 'vim.lsp.protocol'
-vim.o.statusline = "%{%v:lua.require'nvim-navic'.get_location()%}"
+-- vim.o.statusline = "%{%v:lua.require'nvim-navic'.get_location()%}"
 
 -- Use an on_attach function to only map the following keys 
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
   if client.name == 'tsserver' then navic.attach(client, bufnr) end
+
+  -- vim.api.nvim_command('echo "%{%v:lua.require\'nvim-navic\'.get_location()%}"')
 
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
   local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
@@ -73,10 +84,19 @@ nvim_lsp.flow.setup {on_attach = on_attach, capabilities = capabilities}
 if true then -- if tsserver
   nvim_lsp.tsserver.setup {
     on_attach = on_attach,
-    filetypes = {"typescript", "typescriptreact", "typescript.tsx", "json"},
+    filetypes = {
+      "javascript", "javascriptreact", "typescript", "typescriptreact",
+      "typescript.tsx", "json"
+    },
     capabilities = capabilities
   }
 end -- endif tsserver
+
+nvim_lsp.vimls.setup {
+  on_attach = on_attach,
+  filetypes = {"vim"},
+  capabilities = capabilities
+}
 
 nvim_lsp.efm.setup {
   init_options = {documentFormatting = true},
