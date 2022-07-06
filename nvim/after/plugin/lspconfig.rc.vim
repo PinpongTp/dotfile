@@ -79,7 +79,7 @@ nvim_lsp.flow.setup {
 if true then -- if tsserver
 nvim_lsp.tsserver.setup {
   on_attach = on_attach,
-  filetypes = { "typescript", "typescriptreact", "typescript.tsx", "json" },
+  filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "typescript.tsx", "json" },
   capabilities = capabilities
 }
 

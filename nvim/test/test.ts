@@ -1,36 +1,39 @@
+export class test {
+  testFunction = () => {
+    return null
+  }
+}
+
 export default function foo(a: number): number {
-  console.log("test log");
-  let error = {};
-  var test = {};
-  let zz = ''
+  console.log("test log"); let error = {};
+  const test = {};
+  const zz = ''
   console.log(zz)
-  let testtext = "test";
+  const testtext = "test";
   console.log(test);
   console.log(testtext);
-  return a + 1;
   if (true) {
 
+    function fuaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaan() {
+
+      function testss() {
+      }
+
+      const funcccccccccccccccccccccccc2 = () => {
+
+        const funsssssssssssssssssssssssssssssssssssssss3 = () => {
+        };
+
+      };
+
+
+    }
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    console.log()
   }
 }
 

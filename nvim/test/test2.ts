@@ -1,6 +1,5 @@
 import foo from './test'
 
-foo()
+foo(0)
 
 
-ssss
