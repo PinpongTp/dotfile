@@ -1,6 +1,9 @@
 " Fundamentals
 " ---------------------------------------------------------------------
 
+
+"lua require('plugins')
+
 " init autocmd
 autocmd!
 " set script encoding

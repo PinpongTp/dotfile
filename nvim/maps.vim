@@ -4,6 +4,11 @@ let mapleader=" "
 nnoremap <S-C-p> "0p
 " Delete without yank
 nnoremap <leader>d "_d
+xnoremap <leader>d "_d
+nnoremap <leader>c "_c
+xnoremap <leader>c "_c
+xnoremap <leader>p "_dP
+
 nnoremap x "_x
 
 " Increment/decrement
@@ -23,6 +28,10 @@ nmap vv :noh<CR>
 
 " git
 nmap <C-g> :Gitsigns blame_line<CR>
+nmap <Leader>gd :Gitsigns diffthis<CR>
+nmap <Leader>gl :Gitsigns blame_line<CR>
+nmap <Leader>gb :Git blame<CR>
+
 
 " for main activity
 nmap <Leader>q :q<CR>
@@ -65,35 +74,34 @@ nmap <S-Tab> :bprevious<Return>
 nmap <Tab> :bnext<Return>
 
 nmap <Leader>tt :tabnext<CR>
+nmap <Leader>tn :tabnew %<CR>
+nmap <Leader>tr :TablineTabRename 
+nmap <Leader>tc :tabclose<CR>
+nmap <Leader>tq :tabclose<CR>
+nmap <Leader>td :tabclose<CR>
 nmap <Leader>t. :tabnext<CR>
 nmap <Leader>t, :tabprev<CR>
+nmap <Leader>t< :tabm -1<CR>
+nmap <Leader>t> :tabm +1<CR>
 nmap dt :q<CR>
 
-nnoremap <silent><Leader>b :BufferLinePick<CR>
-"nnoremap <silent><Leader>bb :BufferLinePick<CR>
-nnoremap <silent><Leader>b. :BufferLineCycleNext<CR>
-nnoremap <silent><Leader>b, :BufferLineCyclePrev<CR>
-nnoremap <silent><Leader>bd :BufferLinePickClose<CR>
-nnoremap <silent><Leader>bp :BufferLineTogglePin<CR>
+"nnoremap <silent><Leader>b :BufferLinePick<CR>
+nnoremap <silent><Leader>bb :TablineBufferNext<CR>
+nmap <Leader>b. :TablineBufferNext<CR>
+nmap <Leader>b, :TablineBufferPrevious<CR>
+nmap <Leader>bd :bw<CR>
+nmap <Leader>bD :bw!<CR>
+nmap bd :bw<CR>
+nmap bD :bw!<CR>
 
-" These commands will navigate through buffers in order regardless of which mode you are using
-" e.g. if you change the order of buffers :bnext and :bprevious will not respect the custom ordering
-nnoremap <silent>[b :BufferLineCycleNext<CR>
-nnoremap <silent>b] :BufferLineCyclePrev<CR>
-
-" These commands will move the current buffer backwards or forwards in the bufferline
-nnoremap <silent><Leader>b> :BufferLineMoveNext<CR>
-nnoremap <silent><Leader>b< :BufferLineMovePrev<CR>
+nmap <silent>[b :TablineBufferNext<CR>
+nmap <silent>b] :TablineBufferPrevious<CR>
+nmap <Leader>b> :TablineBufferNext<CR>
+nmap <Leader>b< :TablineBufferPrevious<CR>
 
 nnoremap <silent><Leader>bq :bw<CR>
+nnoremap <silent><Leader>bQ :bw!<CR>
 nnoremap <silent><Leader>bc :bw<CR>
-nnoremap <silent>db :bw<CR>
-
-" These commands will sort buffers by directory, language, or a custom criteria
-nnoremap <silent>be :BufferLineSortByExtension<CR>
-nnoremap <silent>bd :BufferLineSortByDirectory<CR>
-"nnoremap <silent><mymap> :lua require'bufferline'.sort_buffers_by(function (buf_a, buf_b) return buf_a.id < buf_b.id end)<CR>
-
 
 nnoremap <silent><Leader>ts :SymbolsOutline<CR>
 "------------------------------
