@@ -6,32 +6,13 @@ export class test {
 
 export default function foo(a: number): number {
   console.log("test log"); let error = {};
-  const test = {};
-  const zz = ''
+  test test = {};
+  test zz = ''
   console.log(zz)
   const testtext = "test";
   console.log(test);
   console.log(testtext);
   if (true) {
-
-    function fuaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaan() {
-
-      function testss() {
-      }
-
-      const funcccccccccccccccccccccccc2 = () => {
-
-        const funsssssssssssssssssssssssssssssssssssssss3 = () => {
-        };
-
-      };
-
-
-    }
-
-
-
-
 
     console.log()
   }
