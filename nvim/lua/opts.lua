@@ -15,7 +15,9 @@ set.tabstop = 2
 set.mouse = 'a'
 set.wrap = true
 set.colorcolumn = '120'
-set.cursorline = true
+--set.cursorline = true
+cmd('au BufEnter * setlocal cursorline') 
+cmd('au BufLeave * setlocal nocursorline') 
 set.hlsearch = true
 set.incsearch = true
 set.scrolloff = 0
