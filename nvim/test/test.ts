@@ -7,7 +7,7 @@ jxport class test {
 test = {}
 
 export default function foo(a: number): number {
-              console.log("test log"); 
+  console.log("test log"); 
         let error = {};
   test test = {};
   test zz = ''
