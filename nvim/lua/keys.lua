@@ -4,8 +4,9 @@ local opts = {noremap = true, silent = false}
 vim.g.mapleader = ' '
 
 -- config
-map('n', 'x', '"_x', {noremap = true})
+map('n', 'x', '"_x', opts)
 map("v", "p", '"_dP', opts)
+map('n', 'dw', 'vb"_d', opts)
 
 -- control
 map('n', '<Leader>q', ':q<CR>', {noremap = true, silent = true})
@@ -28,6 +29,20 @@ map('n', '<Leader>w', '<C-w>w', {noremap = false})
 map('n', '<Tab>', ':bnext<CR>', {noremap = true, silent = true})
 map('n', '<S-Tab>', ':bprevious<CR>', {noremap = true, silent = true})
 map('n', 'bq', ':bw<CR>', {noremap = true, silent = true})
+map('n', '<Leader>b.', ':bnext<CR>', {noremap = true, silent = true})
+map('n', '<Leader>b,', ':bprevious<CR>', {noremap = true, silent = true})
+map('n', '<Leader>bq', ':bw<CR>', {noremap = true, silent = true})
+
+
+map('n', '<Leader>tt', ':tabnext<CR>', {noremap = true, silent = true})
+map('n', '<Leader>tr', ':TablineTabRename', {noremap = true, silent = true})
+map('n', '<Leader>tn', ':tabnew %<CR>', {noremap = true, silent = true})
+map('n', '<Leader>t.', ':tabnext<CR>', {noremap = true, silent = true})
+map('n', '<Leader>t,', ':tabprev<CR>', {noremap = true, silent = true})
+map('n', '<Leader>t<', ':tabm -1<CR>', {noremap = true, silent = true})
+map('n', '<Leader>t>', ':tabm +1<CR>', {noremap = true, silent = true})
+map('n', '<Leader>tq', ':q<CR>', {noremap = true, silent = true})
+
 
 -- nerdTree
 map('n', '<Leader>n', ':NERDTreeToggle<CR>', {noremap = false})
