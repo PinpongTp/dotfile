@@ -1,8 +1,10 @@
-export class test {
+jxport class test {
   testFunction = () => {
     return null
   }
 }
+
+test = {}
 
 export default function foo(a: number): number {
               console.log("test log"); 

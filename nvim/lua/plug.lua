@@ -1,5 +1,3 @@
-vim.cmd [[echo "load packer"]]
-
 -- check and load packer to --
 local fn = vim.fn
 local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
@@ -13,7 +11,6 @@ end
 -- load packer
 local ok, packer = pcall(require, "packer")
 if not ok then
-  print("can't get parker")
   return
 end
 
