@@ -1,4 +1,7 @@
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#diagnosticls
+
+print('lspconfig is loaded')
+
 local status, nvim_lsp = pcall(require, "lspconfig")
 if (not status) then return end
 

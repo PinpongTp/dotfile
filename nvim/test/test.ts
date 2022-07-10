@@ -5,7 +5,8 @@ export class test {
 }
 
 export default function foo(a: number): number {
-  console.log("test log"); let error = {};
+              console.log("test log"); 
+        let error = {};
   test test = {};
   test zz = ''
   console.log(zz)
