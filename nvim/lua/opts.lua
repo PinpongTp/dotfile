@@ -18,7 +18,7 @@ set.colorcolumn = '120'
 set.cursorline = true
 set.hlsearch = true
 set.incsearch = true
-set.scrolloff = 5
+set.scrolloff = 0
 set.fileencoding = 'utf-8'
 cmd('set clipboard+=unnamedplus') -- TODO set by lua
 
