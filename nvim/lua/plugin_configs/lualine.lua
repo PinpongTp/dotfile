@@ -31,32 +31,30 @@ lualine.setup {
   options = {
     icons_enabled = true,
     theme = 'dracula',
-    section_separators = {left = '', right = ''},
-    component_separators = {left = '', right = ''},
+    section_separators = { left = '', right = '' },
+    component_separators = { left = '', right = '' },
     disabled_filetypes = {}
   },
   sections = {
-    lualine_a = {'mode'},
-    lualine_b = {'diff'},
+    lualine_a = { 'mode' },
+    lualine_b = { 'diff' },
     -- lualine_b = {'branch'},
     lualine_c = {
       {
         'filename',
         file_status = true, -- displays file status (readonly status, modified status)
-        path = 0 -- 0 = just filename, 1 = relative path, 2 = absolute path
-      }, {navic.get_location, cond = navic.is_available}
+        path = 1 -- 0 = just filename, 1 = relative path, 2 = absolute path
+      }, { navic.get_location, cond = navic.is_available }
     },
     lualine_x = {
       {
         'diagnostics',
-        sources = {"nvim_diagnostic"},
-        symbols = {error = ' ', warn = ' ', info = ' ', hint = ' '}
-      } -- 'encoding', 
-      -- 'filetype'
+        sources = { "nvim_diagnostic" },
+        symbols = { error = ' ', warn = ' ', info = ' ', hint = ' ' }
+      } -- 'encoding',
     },
-    lualine_y = {'failetype'},
-    -- lualine_y = {'progress'},
-    lualine_z = {'location'}
+    lualine_y = { 'filetype' },
+    lualine_z = { 'location' }
   },
   inactive_sections = {
     lualine_a = {},
@@ -71,21 +69,20 @@ lualine.setup {
     lualine_x = {
       {
         'diagnostics',
-        sources = {"nvim_diagnostic", "vim_lsp"},
-        symbols = {error = ' ', warn = ' ', info = ' ', hint = ' '}
-      } -- 'encoding', 
+        sources = { "nvim_diagnostic", "vim_lsp" },
+        symbols = { error = ' ', warn = ' ', info = ' ', hint = ' ' }
+      } -- 'encoding',
     },
-    lualine_y = {'location'},
+    lualine_y = { 'location' },
     lualine_z = {}
   },
   tabline = {
     lualine_a = {},
     lualine_b = {},
-    lualine_c = {tabline.tabline_buffers},
-    lualine_x = {tabline.tabline_tabs},
+    lualine_c = { tabline.tabline_buffers },
+    lualine_x = { tabline.tabline_tabs },
     lualine_y = {},
     lualine_z = {}
   },
-  extensions = {'fugitive'}
+  extensions = { 'fugitive' }
 }
-

@@ -48,15 +48,15 @@ map('n', '<Leader>tq', ':q<CR>', { noremap = true, silent = true })
 map('n', '<Leader>n', ':NERDTreeToggle<CR>', { noremap = false })
 
 -- telescope
-map('n', ';f', ':Telescope find_files<CR>', { noremap = true, silent = true })
-map('n', ';F', ':Telescope find_files hiddend=true<CR>',
-  { noremap = true, silent = true })
-map('n', ';d', ':Telescope file_browser<CR>', { noremap = true, silent = true })
-map('n', ';r', ':Telescope live_grep<CR>', { noremap = true, silent = true })
-map('n', ';g', ':Telescope git_status<CR>', { noremap = true, silent = true })
-map('n', ';G', ':Telescope git_commits<CR>', { noremap = true, silent = true })
-map('n', ';b', ':Telescope git_branches<CR>', { noremap = true, silent = true })
-map('n', ';;', ':Telescope help_tags<CR>', { noremap = true, silent = true })
+map('n', ';ff', ':Telescope find_files<CR>', opts)
+map('n', ';fh', ':Telescope find_files hiddend=true<CR>', opts)
+map('n', ';fd', ':Telescope file_browser<CR>', opts)
+map('n', ';fb', ':Telescope buffers<CR>', opts)
+map('n', ';fg', ':Telescope live_grep<CR>', opts)
+map('n', ';gs', ':Telescope git_status<CR>', opts)
+map('n', ';gc', ':Telescope git_commits<CR>', opts)
+map('n', ';gb', ':Telescope git_branches<CR>', opts)
+map('n', ';;', ':Telescope help_tags<CR>', opts)
 -- map('n', '\\\\', ':Telescope buffers<CR>', {noremap = true, silent = true})
 
 -- lsp saga
