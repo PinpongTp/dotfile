@@ -62,7 +62,7 @@ return packer.startup(function(use)
   -- telescope
   use 'nvim-lua/popup.nvim'
   use 'nvim-telescope/telescope.nvim'
-
+  use 'nvim-telescope/telescope-file-browser.nvim'
   -- for use format and eslint
   use 'jose-elias-alvarez/null-ls.nvim'
   use 'eslint/eslint'
