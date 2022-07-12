@@ -53,11 +53,15 @@ map('n', ';fh', ':Telescope find_files hiddend=true<CR>', opts)
 map('n', ';fd', ':Telescope file_browser<CR>', opts)
 map('n', ';fb', ':Telescope buffers<CR>', opts)
 map('n', ';fg', ':Telescope live_grep<CR>', opts)
+map('n', ';;', ':Telescope help_tags<CR>', opts)
+
+-- git
 map('n', ';gs', ':Telescope git_status<CR>', opts)
 map('n', ';gc', ':Telescope git_commits<CR>', opts)
 map('n', ';gb', ':Telescope git_branches<CR>', opts)
-map('n', ';;', ':Telescope help_tags<CR>', opts)
--- map('n', '\\\\', ':Telescope buffers<CR>', {noremap = true, silent = true})
+map('n', ';gd', ':Gitsigns diffthis<CR>', opts)
+map('n', ';gm', ':Git blame<CR>', opts)
+map('n', ';gl', ':Gitsigns blame_line<CR>', opts)
 
 -- lsp saga
 map('n', '<C-j>', ':Lspsaga diagnostic_jump_next<CR>', { noremap = true, silent = false })
