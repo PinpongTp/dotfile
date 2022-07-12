@@ -15,7 +15,7 @@ if not ok then
 end
 
 -- init packer
-packer.init {display = {show_all_info = true, prompt_border = 'double'}}
+packer.init { display = { show_all_info = true, prompt_border = 'double' } }
 
 -- start up --
 return packer.startup(function(use)
@@ -23,7 +23,7 @@ return packer.startup(function(use)
   use 'wbthomason/packer.nvim'
 
   -- theme
-  use {'dracula/vim', as = 'dracula'}
+  use { 'dracula/vim', as = 'dracula' }
   use 'kyazdani42/nvim-web-devicons'
 
   -- nerdtree
@@ -53,7 +53,7 @@ return packer.startup(function(use)
   use 'preservim/nerdcommenter'
 
   -- treesitter
-  use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
+  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   use 'nvim-treesitter/nvim-treesitter-context'
   use 'simrat39/symbols-outline.nvim'
   use 'SmiteshP/nvim-navic'
@@ -69,14 +69,15 @@ return packer.startup(function(use)
 
   -- git
   use 'lewis6991/gitsigns.nvim'
-	use 'tpope/vim-fugitive'
-	use 'tpope/vim-rhubarb'
-	use 'cohama/lexima.vim'
+  use 'tpope/vim-fugitive'
+  use 'tpope/vim-rhubarb'
+  use 'cohama/lexima.vim'
 
   -- helper
   use 'windwp/nvim-autopairs'
   use 'windwp/nvim-ts-autotag'
   use 'akinsho/toggleterm.nvim'
   use 'folke/which-key.nvim'
-end)
+  use 'kshenoy/vim-signature'
 
+end)
