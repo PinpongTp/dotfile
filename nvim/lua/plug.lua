@@ -80,4 +80,7 @@ return packer.startup(function(use)
   use 'folke/which-key.nvim'
   use 'kshenoy/vim-signature'
 
+  -- language
+  use 'fatih/vim-go'
+
 end)
