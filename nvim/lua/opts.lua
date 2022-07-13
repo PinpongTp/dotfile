@@ -1,4 +1,4 @@
--- [[ opts.lua ]] -- 
+-- [[ opts.lua ]] --
 local set = vim.opt
 local cmd = vim.api.nvim_command
 
@@ -15,9 +15,10 @@ set.shiftwidth = 2
 set.mouse = 'a'
 set.wrap = true
 set.colorcolumn = '120'
+--set.cmdheight = 2
 --set.cursorline = true
-cmd('au BufEnter * setlocal cursorline') 
-cmd('au BufLeave * setlocal nocursorline') 
+cmd('au BufEnter * setlocal cursorline')
+cmd('au BufLeave * setlocal nocursorline')
 set.hlsearch = true
 set.incsearch = true
 set.scrolloff = 0
