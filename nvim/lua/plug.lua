@@ -79,6 +79,7 @@ return packer.startup(function(use)
   use 'akinsho/toggleterm.nvim'
   use 'folke/which-key.nvim'
   use 'kshenoy/vim-signature'
+  use 'tpope/vim-surround'
 
   -- language
   use 'fatih/vim-go'
