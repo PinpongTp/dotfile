@@ -8,10 +8,10 @@ alias vim="nvim"
 #file
 alias config="cd ~/.config"
 alias cf="cd ~/.config"
-alias remote="cd ~/developer/remote" 
-alias wo="cd ~/developer/remote" 
-alias test="cd ~/developer/test"
-alias my="cd ~/developer/my"
+alias remote="cd ~/Developer/remote" 
+alias wo="cd ~/Developer/remote" 
+alias test="cd ~/Developer/test"
+alias my="cd ~/Developer/my"
 
 # git
 alias g="git"
