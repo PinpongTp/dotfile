@@ -49,10 +49,12 @@ map('n', '<Leader>n', ':NERDTreeToggle<CR>', { noremap = false })
 
 -- telescope
 map('n', ';ff', ':Telescope find_files<CR>', opts)
-map('n', ';fh', ':Telescope find_files hiddend=true<CR>', opts)
+map('n', ';fh', ':Telescope find_files hidden=true<CR>', opts)
 map('n', ';fd', ':Telescope file_browser<CR>', opts)
 map('n', ';fb', ':Telescope buffers<CR>', opts)
-map('n', ';fg', ':Telescope live_grep<CR>', opts)
+map('n', ';fl', ':Telescope live_grep<CR>', opts)
+map('n', ';fg', ':Telescope git_files<CR>', opts)
+map('n', ';fm', ':Telescope marks<CR>', opts)
 map('n', ';;', ':Telescope help_tags<CR>', opts)
 
 -- git
