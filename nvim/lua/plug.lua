@@ -24,10 +24,15 @@ return packer.startup(function(use)
 
   -- theme
   use { 'dracula/vim', as = 'dracula' }
-  use 'kyazdani42/nvim-web-devicons'
 
   -- nerdtree
   use 'preservim/nerdtree'
+  use {
+    'kyazdani42/nvim-tree.lua',
+    requires = {
+      'kyazdani42/nvim-web-devicons'
+    },
+  }
   use 'xuyuanp/nerdtree-git-plugin'
   -- status bar
   use 'hoob3rt/lualine.nvim'
@@ -55,9 +60,11 @@ return packer.startup(function(use)
   -- treesitter
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   use 'nvim-treesitter/nvim-treesitter-context'
+  use 'nvim-treesitter/playground'
   use 'simrat39/symbols-outline.nvim'
   use 'SmiteshP/nvim-navic'
   use 'nvim-lua/completion-nvim'
+  use 'p00f/nvim-ts-rainbow'
 
   -- telescope
   use 'nvim-lua/popup.nvim'

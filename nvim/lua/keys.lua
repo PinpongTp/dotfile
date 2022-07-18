@@ -43,9 +43,13 @@ map('n', '<Leader>t<', ':tabm -1<CR>', { noremap = true, silent = true })
 map('n', '<Leader>t>', ':tabm +1<CR>', { noremap = true, silent = true })
 map('n', '<Leader>tq', ':q<CR>', { noremap = true, silent = true })
 
-
 -- nerdTree
-map('n', '<Leader>n', ':NERDTreeToggle<CR>', { noremap = false })
+map('n', '<Leader>m', ':NERDTreeToggle<CR>', { noremap = false })
+
+-- nvimTree
+map('n', '<Leader>n', ':NvimTreeFindFileToggle<CR>', { noremap = false })
+map('n', '<Leader>N', ':NvimTreeFindFile<CR>', { noremap = false })
+
 
 -- telescope
 map('n', ';ff', ':Telescope find_files<CR>', opts)
