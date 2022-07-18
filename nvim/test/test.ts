@@ -4,7 +4,10 @@ jxport class test {
   }
 }
 
-test = {}
+test = {
+
+
+}
 
 export default function foo(a: number): number {
   console.log("test log"); 

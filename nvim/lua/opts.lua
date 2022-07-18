@@ -21,6 +21,7 @@ set.ignorecase = true
 
 -- [[ Clipboard sync ]]
 cmd('set clipboard+=unnamedplus') -- TODO set by lua
+cmd('set noswapfile')
 
 -- [[ Setup ]]
 set.mouse = 'a'

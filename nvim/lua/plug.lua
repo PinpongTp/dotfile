@@ -39,7 +39,7 @@ return packer.startup(function(use)
   use 'williamboman/nvim-lsp-installer'
   use 'tami5/lspsaga.nvim'
   use 'folke/lsp-colors.nvim'
-
+  use 'WhoIsSethDaniel/toggle-lsp-diagnostics.nvim'
   -- lap > cmp
   use 'L3MON4D3/LuaSnip'
   use 'hrsh7th/cmp-nvim-lsp'
@@ -80,7 +80,7 @@ return packer.startup(function(use)
   use 'folke/which-key.nvim'
   use 'kshenoy/vim-signature'
   use 'tpope/vim-surround'
-
+  use "lukas-reineke/indent-blankline.nvim"
   -- language
   use 'fatih/vim-go'
 
