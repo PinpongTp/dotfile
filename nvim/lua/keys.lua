@@ -76,6 +76,10 @@ map('n', 'gk', ':Lspsaga signature_help<CR>', { noremap = true, silent = false }
 map('n', 'gh', ':Lspsaga lsp_finder<CR>', { noremap = true, silent = false })
 map('n', 'gp', ':Lspsaga preview_definition<CR>', { noremap = true, silent = false })
 map('n', 'gr', ':Lspsaga rename<CR>', { noremap = true, silent = false })
+map('n', ';td', ':ToggleDiag<CR>', opts)
+
+-- indent
+map('n', ';ti', ':IndentBlanklineToggle<CR>', opts)
 
 -- Insert --
 -- Press jk fast to exit insert mode
