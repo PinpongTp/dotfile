@@ -47,8 +47,8 @@ map('n', '<Leader>tq', ':q<CR>', { noremap = true, silent = true })
 map('n', '<Leader>m', ':NERDTreeToggle<CR>', { noremap = false })
 
 -- nvimTree
-map('n', '<Leader>n', ':NvimTreeFindFileToggle<CR>', { noremap = false })
-map('n', '<Leader>N', ':NvimTreeFindFile<CR>', { noremap = false })
+map('n', '<Leader>n', ':NvimTreeFindFileToggle<CR>', { noremap = false, silent = true })
+map('n', '<Leader>N', ':NvimTreeFindFile<CR>', { noremap = false, silent = true })
 
 
 -- telescope
@@ -68,6 +68,8 @@ map('n', ';gb', ':Telescope git_branches<CR>', opts)
 map('n', ';gd', ':Gitsigns diffthis<CR>', opts)
 map('n', ';gm', ':Git blame<CR>', opts)
 map('n', ';gl', ':Gitsigns blame_line<CR>', opts)
+map('n', ';grh', ':Gitsigns reset_hunk<CR>', opts)
+map('n', ';grb', ':Gitsigns reset_buffer<CR>', opts)
 
 -- lsp saga
 map('n', '<C-j>', ':Lspsaga diagnostic_jump_next<CR>', { noremap = true, silent = false })
