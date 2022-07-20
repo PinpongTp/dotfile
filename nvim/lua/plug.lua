@@ -26,6 +26,12 @@ return packer.startup(function(use)
 
   -- theme
   use { 'dracula/vim', as = 'dracula' }
+  use { 'preservim/vim-colors-pencil' }
+
+  -- zen mode
+  use 'preservim/vim-markdown'
+  use 'folke/zen-mode.nvim'
+  use 'junegunn/limelight.vim'
 
   -- nerdtree
   use 'preservim/nerdtree'
@@ -66,7 +72,7 @@ return packer.startup(function(use)
   use 'simrat39/symbols-outline.nvim'
   use 'SmiteshP/nvim-navic'
   use 'nvim-lua/completion-nvim'
-  use 'p00f/nvim-ts-rainbow'
+  use 'p00f/nvim-ts-rainbow' -- TODO: remove
 
   -- for move
   use { 'phaazon/hop.nvim', branch = 'v2' }
@@ -83,17 +89,19 @@ return packer.startup(function(use)
   use 'lewis6991/gitsigns.nvim'
   use 'tpope/vim-fugitive'
   use 'tpope/vim-rhubarb'
-  use 'cohama/lexima.vim'
 
   -- helper
-  use 'windwp/nvim-autopairs'
-  use 'windwp/nvim-ts-autotag'
   use 'akinsho/toggleterm.nvim'
   use 'folke/which-key.nvim'
   use 'kshenoy/vim-signature'
-  use 'tpope/vim-surround'
   use "lukas-reineke/indent-blankline.nvim"
   use "folke/todo-comments.nvim"
+
+  -- tab and fold
+  use 'windwp/nvim-autopairs'
+  use 'windwp/nvim-ts-autotag'
+  --use 'cohama/lexima.vim' -- TODO: remove it same autopairs
+  use 'tpope/vim-surround'
 
   -- language
   use 'fatih/vim-go'

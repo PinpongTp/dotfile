@@ -8,6 +8,9 @@ map('n', 'x', '"_x', opts)
 map("v", "p", '"_dP', opts)
 map('n', 'dw', 'vb"_d', opts)
 
+-- packer
+map('n', ';ps', ':PackerSync<CR>', opts)
+
 -- control
 map('n', '<Leader>q', ':q<CR>', { noremap = true, silent = true })
 map('n', '<Leader>Q', ':q!<CR>', { noremap = true, silent = true })
@@ -67,6 +70,8 @@ map('n', ';fb', ':Telescope buffers<CR>', opts)
 map('n', ';fl', ':Telescope live_grep<CR>', opts)
 map('n', ';fg', ':Telescope git_files<CR>', opts)
 map('n', ';fm', ':Telescope marks<CR>', opts)
+map('n', ';fc', ':Telescope colorscheme<CR>', opts)
+map('n', ';fs', ':Telescope git_status<CR>', opts)
 map('n', ';;', ':Telescope help_tags<CR>', opts)
 
 --
@@ -98,9 +103,15 @@ map('n', ';td', ':ToggleDiag<CR>', opts)
 -- indent
 map('n', ';ti', ':IndentBlanklineToggle<CR>', opts)
 
+-- zenmode
+map('n', ';mz', ':ZenMode<CR>', opts)
+map('n', ';z', ':ZenMode<CR>', opts)
+
 -- Insert --
 -- Press jk fast to exit insert mode
-map("i", "JK", "<ESC>", opts)
+map("i", "JK", "<ESC>", { nowait = true, noremap = true })
+map("i", "iii", "<ESC>", { nowait = true, noremap = true })
+map("i", "iI", "<ESC>", { nowait = true, noremap = true })
 
 -- Move text up and down by visual
 map("x", "J", ":move '>+1<CR>gv-gv", opts)

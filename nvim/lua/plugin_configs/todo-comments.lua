@@ -9,9 +9,9 @@ require("todo-comments").setup {
       alt = { "FIXME", "BUG", "FIXIT", "ISSUE" }, -- a set of other keywords that all map to this FIX keywords
       -- signs = false, -- configure signs for some keywords individually
     },
-    TODO = { icon = " ", color = "info" },
+    TODO = { icon = " ", color = "info", alt = { "TD", "todo" } },
     -- TODO:
-    TODONE = { icon = " ", color = "info" },
+    TODONE = { icon = " ", color = "info", alt = { "TDONE", "DONE" } },
     -- TODONE:
     HACK = { icon = " ", color = "white", alt = { "WHITE" } },
     WARN = { icon = " ", color = "warning", alt = { "WARNING", "XXX" } },

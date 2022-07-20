@@ -22,14 +22,17 @@ set.ignorecase = true
 -- [[ Clipboard sync ]]
 cmd('set clipboard+=unnamedplus') -- TODO set by lua
 cmd('set noswapfile')
+cmd('set nobackup')
+--cmd('set backupdir=~/.config/nvim/cache') -- TODO: check this
 
 -- [[ Setup ]]
 set.mouse = 'a'
 
 set.wrap = true
 --set.scrolloff = 999
+set.ttyfast = true
 set.number = true
-set.relativenumber = true
+set.relativenumber = false
 set.title = true
 set.colorcolumn = '120'
 --set.cmdheight = 2
@@ -38,9 +41,13 @@ cmd('au BufEnter * setlocal cursorline')
 cmd('au BufLeave * setlocal nocursorline')
 
 -- [[ Theme ]]
+--set.guifont = "Menlo:h12"
+set.guifont = "Meslo:h12"
+--set.guifont = "Mono:h12"
 set.syntax = "ON"
 set.termguicolors = true
 set.background = dark
 set.titlestring = vim.fn.expand('%:~:p:h') -- TODO what is :h
+cmd('filetype plugin on') -- for markdown plugin
 cmd('colorscheme dracula') -- cmd:  Set the colorscheme
 cmd('au TextYankPost * silent! lua vim.highlight.on_yank {higroup="IncSearch", timeout=150}')
