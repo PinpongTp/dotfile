@@ -34,14 +34,14 @@ return packer.startup(function(use)
   use 'junegunn/limelight.vim'
 
   -- nerdtree
-  use 'preservim/nerdtree'
+  --use 'preservim/nerdtree'
   use {
     'kyazdani42/nvim-tree.lua',
     requires = {
       'kyazdani42/nvim-web-devicons'
     },
   }
-  use 'xuyuanp/nerdtree-git-plugin'
+  --use 'xuyuanp/nerdtree-git-plugin'
   -- status bar
   use 'hoob3rt/lualine.nvim'
   -- buffer
@@ -62,17 +62,15 @@ return packer.startup(function(use)
   use 'onsails/lspkind-nvim'
   use 'nvim-lua/plenary.nvim'
 
-  -- commenter
-  use 'preservim/nerdcommenter'
 
   -- treesitter
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   use 'nvim-treesitter/nvim-treesitter-context'
-  use 'nvim-treesitter/playground'
+  use 'nvim-treesitter/playground' -- TD: maybe not use
   use 'simrat39/symbols-outline.nvim'
   use 'SmiteshP/nvim-navic'
   use 'nvim-lua/completion-nvim'
-  use 'p00f/nvim-ts-rainbow' -- TODO: remove
+  --use 'p00f/nvim-ts-rainbow' -- TODO: remove
 
   -- for move
   use { 'phaazon/hop.nvim', branch = 'v2' }
@@ -92,9 +90,13 @@ return packer.startup(function(use)
 
   -- helper
   use 'akinsho/toggleterm.nvim'
+  use 'voldikss/vim-floaterm'
   use 'folke/which-key.nvim'
   use 'kshenoy/vim-signature'
-  use "lukas-reineke/indent-blankline.nvim"
+  use "lukas-reineke/indent-blankline.nvim" -- indentline
+
+  -- commenter
+  use 'preservim/nerdcommenter'
   use "folke/todo-comments.nvim"
 
   -- tab and fold

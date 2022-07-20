@@ -42,29 +42,6 @@ require 'nvim-treesitter.configs'.setup {
       show_help = '?',
     },
   },
-  rainbow = { -- disable not work on html type
-    enable = false,
-    extended_mode = true,
-    max_file_lines = nil,
-    colors = {
-      "#8be9fd",
-      "#50fa7b",
-      "#ffb86c",
-      "#ff79c6",
-      "#bd93f9",
-      "#ff5555",
-      "#f1fa8c",
-    },
-    termcolors = {
-      "Red",
-      "Green",
-      "Red",
-      "Green",
-      "Red",
-      "Green",
-      "Red"
-    }
-  }
 }
 
 local parser_config = require "nvim-treesitter.parsers".get_parser_configs()

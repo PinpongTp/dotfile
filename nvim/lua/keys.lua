@@ -103,8 +103,10 @@ map('n', ';td', ':ToggleDiag<CR>', opts)
 -- indent
 map('n', ';ti', ':IndentBlanklineToggle<CR>', opts)
 
--- zenmode
+-- mode
 map('n', ';mz', ':ZenMode<CR>', opts)
+map('n', ';ml', ':Limelight!<CR>', opts)
+map('n', ';mL', ':Limelight 0.5<CR>', opts)
 map('n', ';z', ':ZenMode<CR>', opts)
 
 -- Insert --
@@ -122,3 +124,15 @@ map("n", "<C-g>", ":Gitsigns blame_line<CR>", opts)
 map("n", "<Leader>gd", ":Gitsigns diffthis<CR>", opts)
 map("n", "<Leader>gl", ":Gitsigns blame_line<CR>", opts)
 map("n", "<Leader>gb", ":Git blame<CR>", opts)
+
+-- FloatermNew
+map("n", ";tt", ":FloatermToggle<CR>", opts)
+map("n", "<C-t>", ":FloatermToggle<CR>", opts)
+
+-- toggle and mode
+map("n", ";tg", ":FloatermNew lazygit<CR>", opts)
+map("n", ";ts", ":SymbolsOutline<CR>", opts)
+map("n", ";tc", ":TSContextToggle<CR>", opts)
+
+--
+--
