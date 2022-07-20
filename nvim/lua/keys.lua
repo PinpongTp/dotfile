@@ -28,7 +28,7 @@ map('n', '<Leader>w', '<C-w>w', { noremap = false })
 -- Buf and Tab
 map('n', '<Tab>', ':bnext<CR>', { noremap = true, silent = true })
 map('n', '<S-Tab>', ':bprevious<CR>', { noremap = true, silent = true })
-map('n', 'bq', ':bw<CR>', { noremap = true, silent = true })
+map('n', 'q<Tab>', ':bw<CR>', { noremap = true, silent = true })
 map('n', '<Leader>b.', ':bnext<CR>', { noremap = true, silent = true })
 map('n', '<Leader>b,', ':bprevious<CR>', { noremap = true, silent = true })
 map('n', '<Leader>bq', ':bw<CR>', { noremap = true, silent = true })
@@ -50,6 +50,14 @@ map('n', '<Leader>m', ':NERDTreeToggle<CR>', { noremap = false })
 map('n', '<Leader>n', ':NvimTreeFindFileToggle<CR>', { noremap = false, silent = true })
 map('n', '<Leader>N', ':NvimTreeFindFile<CR>', { noremap = false, silent = true })
 
+-- hop
+map('n', '<Leader>ff', ':HopChar1<CR>', opts)
+map('n', '<Leader>fF', ':HopPattern<CR>', opts)
+map('n', '<Leader>fl', ':HopLine<CR>', opts)
+map('n', '<Leader>fw', ':HopWord<CR>', opts)
+map('n', '<Leader>fh', ':HopVertical<CR>', opts)
+map('n', 'f', ':HopChar1<CR>', opts)
+map('n', 'F', ':HopPattern<CR>', opts)
 
 -- telescope
 map('n', ';ff', ':Telescope find_files<CR>', opts)
@@ -60,6 +68,9 @@ map('n', ';fl', ':Telescope live_grep<CR>', opts)
 map('n', ';fg', ':Telescope git_files<CR>', opts)
 map('n', ';fm', ':Telescope marks<CR>', opts)
 map('n', ';;', ':Telescope help_tags<CR>', opts)
+
+--
+map('n', ';ft', ':TodoTelescope<CR>', opts)
 
 -- git
 map('n', ';gs', ':Telescope git_status<CR>', opts)
