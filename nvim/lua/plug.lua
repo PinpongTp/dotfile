@@ -66,6 +66,9 @@ return packer.startup(function(use)
   use 'nvim-lua/completion-nvim'
   use 'p00f/nvim-ts-rainbow'
 
+  -- for move
+  use { 'phaazon/hop.nvim', branch = 'v2' }
+
   -- telescope
   use 'nvim-lua/popup.nvim'
   use 'nvim-telescope/telescope.nvim'
@@ -88,6 +91,8 @@ return packer.startup(function(use)
   use 'kshenoy/vim-signature'
   use 'tpope/vim-surround'
   use "lukas-reineke/indent-blankline.nvim"
+  use "folke/todo-comments.nvim"
+
   -- language
   use 'fatih/vim-go'
 

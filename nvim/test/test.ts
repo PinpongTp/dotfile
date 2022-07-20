@@ -1,4 +1,13 @@
-jxport class test {
+//
+// FIX:test
+// TODO:test
+// WARN:test
+// PERF:test
+// NOTE:test
+// PINK:test
+// HACK:test
+//
+export class test {
   testFunction = () => {
     return null
   }
