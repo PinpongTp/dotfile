@@ -10,3 +10,6 @@ node_modules
 /nvim/plugin
 /htop
 .DS_Store
+
+lazygit/state.yml
+lazygit/config.yml
