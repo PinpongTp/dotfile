@@ -10,12 +10,14 @@ end
 
 -- load packer
 local ok, packer = pcall(require, "packer")
-if not ok then
-  return
-end
-
--- init packer
-packer.init { display = { show_all_info = true, prompt_border = 'double' } }
+if not ok then return end
+packer.init {
+  display = {
+    open_fn = require('packer.util').float,
+    show_all_info = true,
+    prompt_border = 'double'
+  }
+}
 
 -- start up --
 return packer.startup(function(use)

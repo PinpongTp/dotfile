@@ -43,3 +43,4 @@ set.termguicolors = true
 set.background = dark
 set.titlestring = vim.fn.expand('%:~:p:h') -- TODO what is :h
 cmd('colorscheme dracula') -- cmd:  Set the colorscheme
+cmd('au TextYankPost * silent! lua vim.highlight.on_yank {higroup="IncSearch", timeout=150}')
