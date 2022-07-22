@@ -14,7 +14,7 @@ map('n', ';ps', ':PackerSync<CR>', opts)
 -- control
 map('n', '<Leader>q', ':q<CR>', { noremap = true, silent = true })
 map('n', '<Leader>Q', ':q!<CR>', { noremap = true, silent = true })
---map('n', '<Leader>w', ':w<CR>', {noremap = true, silent = true})
+map('n', '<Leader>w', ':w<CR>', { noremap = true, silent = true })
 map('n', '<Leader>W', ':wq<CR>', { noremap = true, silent = true })
 map('n', '<Leader>S', ':so %<CR>', { noremap = true })
 
@@ -112,8 +112,7 @@ map('n', ';z', ':ZenMode<CR>', opts)
 -- Insert --
 -- Press jk fast to exit insert mode
 map("i", "JK", "<ESC>", { nowait = true, noremap = true })
-map("i", "iii", "<ESC>", { nowait = true, noremap = true })
-map("i", "iI", "<ESC>", { nowait = true, noremap = true })
+--map("i", "iii", "<ESC>", { nowait = false, noremap = false, silent = false })
 
 -- Move text up and down by visual
 map("x", "J", ":move '>+1<CR>gv-gv", opts)
