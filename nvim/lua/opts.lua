@@ -51,3 +51,6 @@ set.titlestring = vim.fn.expand('%:~:p:h') -- TODO what is :h
 cmd('filetype plugin on') -- for markdown plugin
 cmd('colorscheme dracula') -- cmd:  Set the colorscheme
 cmd('au TextYankPost * silent! lua vim.highlight.on_yank {higroup="IncSearch", timeout=150}')
+
+-- [[ zen mode ]]
+cmd('let g:vim_markdown_folding_disabled = 1') -- for open folding on active markdown file
