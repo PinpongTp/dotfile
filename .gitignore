@@ -13,3 +13,4 @@ node_modules
 
 lazygit/state.yml
 lazygit/config.yml
+.nuxtrc

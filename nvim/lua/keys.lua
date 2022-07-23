@@ -130,7 +130,7 @@ map("n", ";tt", ":FloatermToggle<CR>", opts)
 map("n", "<C-t>", ":FloatermToggle<CR>", opts)
 
 -- toggle and mode
-map("n", ";tg", ":FloatermNew lazygit<CR>", opts)
+map("n", ";tg", ":FloatermNew --width=0.9 --height=0.9 lazygit<CR>", opts)
 map("n", ";ts", ":SymbolsOutline<CR>", opts)
 map("n", ";tc", ":TSContextToggle<CR>", opts)
 
