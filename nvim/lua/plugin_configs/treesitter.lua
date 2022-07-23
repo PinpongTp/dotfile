@@ -19,10 +19,12 @@ require 'nvim-treesitter.configs'.setup {
     "scss",
     "dockerfile",
     "lua",
-    "vim"
+    "vim",
+    "vue"
   },
   autotag = {
     enable = true,
+    filetype = { "html", "vue" }
   },
   playground = {
     enable = true,

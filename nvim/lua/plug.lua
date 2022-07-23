@@ -54,11 +54,25 @@ return packer.startup(function(use)
   use 'folke/lsp-colors.nvim'
   use 'WhoIsSethDaniel/toggle-lsp-diagnostics.nvim'
   -- lap > cmp
+
+
   use 'L3MON4D3/LuaSnip'
-  use 'hrsh7th/cmp-nvim-lsp'
-  use 'hrsh7th/cmp-buffer'
-  use 'hrsh7th/cmp-path'
-  use 'hrsh7th/nvim-cmp'
+  -- completion
+  use {
+    'hrsh7th/nvim-cmp',
+    requires = {
+      'hrsh7th/cmp-buffer',
+      'hrsh7th/cmp-nvim-lsp',
+      'hrsh7th/cmp-path',
+      --'hrsh7th/cmp-cmdline',
+      --'hrsh7th/cmp-nvim-lua',
+      --'f3fora/cmp-spell',
+      --'hrsh7th/cmp-calc',
+      --'ray-x/cmp-treesitter',
+      --'uga-rosa/cmp-dictionary',
+      --'saadparwaiz1/cmp_luasnip',
+    },
+  }
   use 'onsails/lspkind-nvim'
   use 'nvim-lua/plenary.nvim'
 
@@ -101,7 +115,7 @@ return packer.startup(function(use)
 
   -- tab and fold
   use 'windwp/nvim-autopairs'
-  use 'windwp/nvim-ts-autotag'
+  use 'windwp/nvim-ts-autotag' -- setup in treesitter
   --use 'cohama/lexima.vim' -- TODO: remove it same autopairs
   use 'tpope/vim-surround'
 
