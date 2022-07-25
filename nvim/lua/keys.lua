@@ -13,7 +13,8 @@ map('n', ';ps', ':PackerSync<CR>', opts)
 
 -- control
 map('n', '<Leader>q', ':q<CR>', { noremap = true, silent = true })
-map('i', '<Leader>q', ':q<CR>', { noremap = true, silent = true })
+--map('i', '<Leader>q', ':q<CR>', { noremap = true, silent = true })
+map('v', '<Leader>q', ':q<CR>', { noremap = true, silent = true })
 map('n', '<Leader>Q', ':q!<CR>', { noremap = true, silent = true })
 map('n', '<Leader>w', ':w<CR>', { noremap = true, silent = true })
 map('n', '<Leader>W', ':wq<CR>', { noremap = true, silent = true })
