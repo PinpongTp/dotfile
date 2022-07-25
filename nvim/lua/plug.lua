@@ -70,7 +70,7 @@ return packer.startup(function(use)
       --'hrsh7th/cmp-calc',
       --'ray-x/cmp-treesitter',
       --'uga-rosa/cmp-dictionary',
-      --'saadparwaiz1/cmp_luasnip',
+      'saadparwaiz1/cmp_luasnip',
     },
   }
   use 'onsails/lspkind-nvim'

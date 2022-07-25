@@ -57,8 +57,15 @@ cmp.setup({
   }),
 
   formatting = {
-    format = lspkind.cmp_format({ with_text = false, maxwidth = 50 })
+    format = lspkind.cmp_format({
+      mode = 'symbol_text',
+      maxwidth = 50 })
+  },
+  window = {
+    --completion = cmp.config.window.bordered(),
+    documentation = cmp.config.window.bordered(),
   }
 })
+
 
 --vim.cmd [[highlight! default link CmpItemKind CmpItemMenuDefault]]
