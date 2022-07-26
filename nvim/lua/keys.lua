@@ -133,7 +133,8 @@ map("n", "<C-t>", ":FloatermToggle<CR>", opts)
 -- toggle and mode
 map("n", ";tg", ":FloatermNew --width=0.9 --height=0.9 lazygit<CR>", opts)
 map("n", ";ts", ":SymbolsOutline<CR>", opts)
-map("n", ";tc", ":TSContextToggle<CR>", opts)
+map("n", ";tc", ":ColorizerToggle<CR>", opts)
+map("n", ";tC", ":TSContextToggle<CR>", opts) -- context on top window
 
 --
 --
