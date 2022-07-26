@@ -27,6 +27,7 @@ return packer.startup(function(use)
   -- theme
   use { 'dracula/vim', as = 'dracula' }
   use { 'preservim/vim-colors-pencil' }
+  use 'norcalli/nvim-colorizer.lua'
 
   -- zen mode
   use 'preservim/vim-markdown'
