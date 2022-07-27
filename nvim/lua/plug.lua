@@ -29,6 +29,12 @@ return packer.startup(function(use)
   use { 'preservim/vim-colors-pencil' }
   use 'norcalli/nvim-colorizer.lua'
 
+  -- landing page
+  use {
+    'goolord/alpha-nvim',
+    requires = { 'kyazdani42/nvim-web-devicons' },
+  }
+
   -- zen mode
   use 'preservim/vim-markdown'
   use 'folke/zen-mode.nvim'

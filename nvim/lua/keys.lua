@@ -107,6 +107,7 @@ map('n', ';ti', ':IndentBlanklineToggle<CR>', opts)
 
 -- mode
 map('n', ';mz', ':ZenMode<CR>', opts)
+map('n', ';ma', ':Alpha<CR>', opts)
 map('n', ';ml', ':Limelight!<CR>', opts)
 map('n', ';mL', ':Limelight 0.5<CR>', opts)
 map('n', ';z', ':ZenMode<CR>', opts)
