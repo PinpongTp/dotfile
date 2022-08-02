@@ -40,15 +40,13 @@ return packer.startup(function(use)
   use 'folke/zen-mode.nvim'
   use 'junegunn/limelight.vim'
 
-  -- nerdtree
-  --use 'preservim/nerdtree'
+  -- nvimtree
   use {
     'kyazdani42/nvim-tree.lua',
     requires = {
       'kyazdani42/nvim-web-devicons'
     },
   }
-  --use 'xuyuanp/nerdtree-git-plugin'
   -- status bar
   use 'hoob3rt/lualine.nvim'
   -- buffer
@@ -83,7 +81,6 @@ return packer.startup(function(use)
   use 'onsails/lspkind-nvim'
   use 'nvim-lua/plenary.nvim'
 
-
   -- treesitter
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   use 'nvim-treesitter/nvim-treesitter-context'
@@ -91,7 +88,12 @@ return packer.startup(function(use)
   use 'simrat39/symbols-outline.nvim'
   use 'SmiteshP/nvim-navic'
   use 'nvim-lua/completion-nvim'
-  --use 'p00f/nvim-ts-rainbow' -- TODO: remove
+
+  -- debuger
+  use 'mfussenegger/nvim-dap'
+  use 'nvim-telescope/telescope-dap.nvim'
+  use 'theHamsta/nvim-dap-virtual-text'
+  use 'rcarriga/nvim-dap-ui'
 
   -- for move
   use { 'phaazon/hop.nvim', branch = 'v2' }
@@ -123,7 +125,6 @@ return packer.startup(function(use)
   -- tab and fold
   use 'windwp/nvim-autopairs'
   use 'windwp/nvim-ts-autotag' -- setup in treesitter
-  --use 'cohama/lexima.vim' -- TODO: remove it same autopairs
   use 'tpope/vim-surround'
 
   -- language

@@ -46,7 +46,7 @@ telescope.setup {
 }
 
 telescope.load_extension "file_browser"
-
+telescope.load_extension "dap"
 
 local transform_mod = require('telescope.actions.mt').transform_mod
 
