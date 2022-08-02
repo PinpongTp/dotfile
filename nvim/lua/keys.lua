@@ -16,7 +16,7 @@ map('n', '<Leader>q', ':q<CR>', { noremap = true, silent = true })
 --map('i', '<Leader>q', ':q<CR>', { noremap = true, silent = true })
 map('v', '<Leader>q', ':q<CR>', { noremap = true, silent = true })
 map('n', '<Leader>Q', ':q!<CR>', { noremap = true, silent = true })
-map('n', '<Leader>w', ':w<CR>', { noremap = true, silent = true })
+--map('n', '<Leader>w', ':w<CR>', { noremap = true, silent = true })
 map('n', '<Leader>W', ':wq<CR>', { noremap = true, silent = true })
 map('n', '<Leader>S', ':so %<CR>', { noremap = true })
 
@@ -28,7 +28,9 @@ map('n', 'vv', ':noh<CR>', { noremap = true })
 -- Split window
 map('n', 'ss', ':split<CR><C-w>w', { noremap = false })
 map('n', 'sv', ':vsplit<CR><C-w>w', { noremap = false })
-map('n', '<Leader>w', '<C-w>w', { noremap = false })
+
+map('n', '<Leader>w', '<C-w>', { noremap = false })
+map('n', '<Leader>ww', '<C-w>w', { noremap = false })
 
 -- Buf and Tab
 map('n', '<Tab>', ':bnext<CR>', { noremap = true, silent = true })
@@ -78,6 +80,68 @@ map('n', ';;', ':Telescope help_tags<CR>', opts)
 
 --
 map('n', ';ft', ':TodoTelescope<CR>', opts)
+
+
+-- debug
+--map('n', '<Leader>db', ':lua require"dap".toggle_breakpoint()<CR>', opts)
+--map('n', '<Leader>dc', ':lua require"dap".continue()<CR>', opts)
+--map('n', '<Leader>dso', ':lua require"dap".step_over()<CR>', opts)
+--map('n', '<Leader>dsi', ':lua require"dap".step_into()<CR>', opts)
+--map('n', '<Leader>dsO', ':lua require"dap".step_out()<CR>', opts)
+--map('n', '<Leader>dBc', ':lua require"dap".set_breakpoint(vim.fn.input("Breakpoint condition: "))<CR>', opts)
+--map('n', '<Leader>dBm', ':lua require"dap".set_breakpoint(nil, nil, vim.fn.input("Log point message: "))<CR>', opts)
+--map('n', '<Leader>dl', ':lua require"dap".repl.open()<CR>', opts)
+--map('n', '<Leader>dR', ':lua require"dap".run_last()<CR>', opts)
+--map('n', '<Leader>di', ':lua require("dap.ui.widgets").hover()<CR>', opts)
+
+map('n', '<Leader>dc', ':DapContinue<CR>', opts)
+map('n', '<Leader>d>', ':DapStepInto<CR>', opts)
+map('n', '<Leader>d<', ':DapStepOut<CR>', opts)
+map('n', '<Leader>dQ', ':DapTerminate<CR>', opts)
+
+--map('n', '<Leader>dft', ':Telescope dap commands', opts)
+--map('n', '<Leader>dfc', ':Telescope dap configurations', opts)
+map('n', '<Leader>db', ':Telescope dap list_breakpoints', opts)
+--map('n', '<Leader>dfv', ':Telescope dap variables', opts)
+map('n', '<Leader>df', ':Telescope dap frames', opts)
+map('n', '<Leader>dq', ':lua require("dapui").toggle()<CR>', opts)
+map('n', '<Leader>dI', ':lua require("dapui").eval()<CR>', opts)
+
+local debugHelper = require("debugHelper")
+
+vim.keymap.set('n', '<leader>dh', function() require "dap".toggle_breakpoint() end)
+vim.keymap.set('n', '<leader>dH', ":lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>")
+vim.keymap.set('n', '<A-k>', function() require "dap".step_out() end)
+vim.keymap.set('n', "<A-l>", function() require "dap".step_into() end)
+vim.keymap.set('n', '<A-j>', function() require "dap".step_over() end)
+vim.keymap.set('n', '<A-h>', function() require "dap".continue() end)
+vim.keymap.set('n', '<leader>du', function() require "dap".up() end)
+vim.keymap.set('n', '<leader>dd', function() require "dap".down() end)
+vim.keymap.set('n', '<leader>dn', function() require "dap".run_to_cursor() end)
+--vim.keymap.set('n', '<leader>dc', function() require "dap".terminate() end)
+vim.keymap.set('n', '<leader>dR', function() require "dap".clear_breakpoints() end)
+vim.keymap.set('n', '<leader>de', function() require "dap".set_exception_breakpoints({ "all" }) end)
+vim.keymap.set('n', '<leader>da', function() debugHelper.attach() end)
+vim.keymap.set('n', '<leader>dA', function() debugHelper.attachToRemote() end)
+--vim.keymap.set('n', '<leader>dA', function() require "./debugHelper".attachToRemote() end)
+vim.keymap.set('n', '<leader>di', function() require "dap.ui.widgets".hover() end)
+vim.keymap.set('n', '<leader>d?',
+  function() local widgets = require "dap.ui.widgets"; widgets.centered_float(widgets.scopes) end)
+vim.keymap.set('n', '<leader>dk', ':lua require"dap".up()<CR>zz')
+vim.keymap.set('n', '<leader>dj', ':lua require"dap".down()<CR>zz')
+vim.keymap.set('n', '<leader>dr', ':lua require"dap".repl.toggle({}, "vsplit")<CR><C-w>l')
+
+
+-- spector
+--map('n', '<Leader>dd', ':call vimspector#Launch()<CR>', opts)
+--map('n', '<Leader>de', ':call vimspector#Reset()<CR>', opts)
+--map('n', '<Leader>dc', ':call vimspector#Continue()<CR>', opts)
+--map('n', '<Leader>dt', ':call vimspector#ToggleBreakpoint()<CR>', opts)
+--map('n', '<Leader>dT', ':call vimspector#ClearBreakpoints()<CR>', opts)
+--map('n', '<Leader>dk', ':call vimspector#Restart()<CR>', opts)
+--map('n', '<Leader>dh', ':call vimspector#StepOut()<CR>', opts)
+--map('n', '<Leader>dl', ':call vimspector#StepInto()<CR>', opts)
+--map('n', '<Leader>dj', ':call vimspector#StepOver()<CR>', opts)
 
 -- git
 map('n', ';gs', ':Telescope git_status<CR>', opts)

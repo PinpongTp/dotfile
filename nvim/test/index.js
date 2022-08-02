@@ -1,16 +1,26 @@
 let test = () => {
-  console.log("test");
+  const a = {};
+
+  console.log('test');
   var testData = {
-    data: "test",
-    text: "text test for test text",
+    data: 'test',
+    text: 'text test for test text',
     number: 50,
   };
 
-  console.lgg();
+  a.a = 1;
+
+  a.a += 20;
+
+  a.a += 10;
+
+  a.a = 0;
+
+  console.log('a', a);
+
   console.log(test);
-  console.lgg("test");
-  console.log("test");
-  console.log("testData log >> ", testData);
+  console.log('test');
+  console.log('testData log >> ', testData);
   // comment for test comment
 
   /**
@@ -21,6 +31,4 @@ let test = () => {
    */
 };
 
-this.test.testData = {
-  test: "test",
-};
+test();
