@@ -1,0 +1,22 @@
+GET https://google.com
+Content-Type: application/json
+
+###
+
+GET https://google.com
+Content-Type: application/json
+
+###
+
+GET /pub/WWW/ HTTP/1.1
+Host: www.w3.org
+
+###
+
+GET /customer-service/v1/accounts/info?src_system=viz, investor&mobile_no=0880000002 HTTP/1.1
+Host: api-dev.one-viz.com
+X-Apig-AppCode: 719aeba4c7434a57b522ed19e134c3fea9385e7d3cde494fafa582d6f29e2ab9
+transID: 753d9751-45b8-42ed-b5ac-e3bcc0b1f513
+transChannel: SUPERAPP
+transTimestamp: 1659464953
+Cookie: incap_ses_8213_2548748=883uBYA/i33WSq00O3D6cSn86GIAAAAAOpMENx1lC8lPueqRPGSygA==; incap_ses_967_2548748=xytiEMdb+EqQyGzFBXprDcls6WIAAAAAAC85KUCu9K0NrBiDE6FBlw==; nlbi_2548748=SL4IA+b9HATIbSsS1DMm6gAAAAA9HgXk0ztLySqK6WcppQuF; visid_incap_2548748=UhYl+rcLRrywT76oe+O+FfK2nWIAAAAAQUIPAAAAAABAe3zYCQuIm2sZhiIwy/Ln; visid_incap_2580296=MpIqnxG2Ttq4W+PXD39ugoNjqGIAAAAAQUIPAAAAAAAKrOBLmdgf0l7nye/KGjVH; visid_incap_2580298=11KFqIumR9qEe+9DjoTZ2N4Bx2IAAAAAQUIPAAAAAADOaQpNlMlTVpWosNUneM/w
