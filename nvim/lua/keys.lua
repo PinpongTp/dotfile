@@ -7,6 +7,7 @@ vim.g.mapleader = ' '
 map('n', 'x', '"_x', opts)
 map("v", "p", '"_dP', opts)
 map('n', 'dw', 'vb"_d', opts)
+map('n', ";pr", ":so ~/.config/nvim/init.lua<CR>", opts)
 
 -- packer
 map('n', ';ps', ':PackerSync<CR>', opts)
@@ -153,6 +154,12 @@ map('n', ';gl', ':Gitsigns blame_line<CR>', opts)
 map('n', ';grh', ':Gitsigns reset_hunk<CR>', opts)
 map('n', ';grb', ':Gitsigns reset_buffer<CR>', opts)
 
+-- Git --
+map("n", "<C-g>", ":Gitsigns blame_line<CR>", opts)
+map("n", "<Leader>gd", ":Gitsigns diffthis<CR>", opts)
+map("n", "<Leader>gl", ":Gitsigns blame_line<CR>", opts)
+map("n", "<Leader>gb", ":Git blame<CR>", opts)
+
 -- lsp saga
 map('n', '<C-j>', ':Lspsaga diagnostic_jump_next<CR>', { noremap = true, silent = false })
 map('i', '<C-J>', ':Lspsaga diagnostic_jump_next<CR>', { noremap = true, silent = false })
@@ -185,11 +192,9 @@ map("i", "JK", "<ESC>", { nowait = true, noremap = true })
 map("x", "J", ":move '>+1<CR>gv-gv", opts)
 map("x", "K", ":move '<-2<CR>gv-gv", opts)
 
--- Git --
-map("n", "<C-g>", ":Gitsigns blame_line<CR>", opts)
-map("n", "<Leader>gd", ":Gitsigns diffthis<CR>", opts)
-map("n", "<Leader>gl", ":Gitsigns blame_line<CR>", opts)
-map("n", "<Leader>gb", ":Git blame<CR>", opts)
+
+map("n", "<Leader>rr", ":lua require('rest-nvim').run()<CR>", opts)
+map("n", "<Leader>rR", ":lua require('rest-nvim').run(true)<CR>", opts)
 
 -- FloatermNew
 map("n", ";tt", ":FloatermToggle<CR>", opts)
