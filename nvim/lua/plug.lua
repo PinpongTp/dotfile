@@ -30,9 +30,9 @@ return packer.startup(function(use)
   use 'norcalli/nvim-colorizer.lua'
 
   -- rest client
-  --use 'NTBBloodbath/rest.nvim'
+  use 'NTBBloodbath/rest.nvim'
   --use { 'PinpongTp/rest.nvim', branch = 'main' }
-  use '~/Developer/my/nvim/plugins/rest.nvim'
+  --use '~/Developer/my/nvim/plugins/rest.nvim'
 
   -- landing page
   use {
