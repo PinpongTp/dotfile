@@ -17,7 +17,8 @@ require("todo-comments").setup {
     WARN = { icon = " ", color = "warning", alt = { "WARNING", "XXX" } },
     PERF = { icon = " ", alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE" } },
     NOTE = { icon = " ", color = "hint", alt = { "INFO" } },
-    LOVE = { icon = " ", color = "pink", alt = { "PINK" } }
+    LOVE = { icon = " ", color = "pink", alt = { "PINK" } },
+    QA = { icon = " " }
   },
   merge_keywords = true, -- when true, custom keywords will be merged with the defaults
   -- highlighting of the line containing the todo comment

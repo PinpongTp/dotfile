@@ -135,4 +135,7 @@ return packer.startup(function(use)
   -- language
   use 'fatih/vim-go'
 
+  use 'tyru/open-browser.vim'
+  use 'weirongxu/plantuml-previewer.vim'
+
 end)
