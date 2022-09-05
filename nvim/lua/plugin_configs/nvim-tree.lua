@@ -1,5 +1,8 @@
 require("nvim-tree").setup({
   sort_by = "case_sensitive",
+  remove_keymaps = {
+    "s"
+  },
   view = {
     adaptive_size = false,
     width = 30,
@@ -8,6 +11,7 @@ require("nvim-tree").setup({
       list = {
         { key = "<Tab>", action = ":bnext<CR>" },
         { key = "u", action = "dir_up" },
+        { key = "?", action = "toggle_help" },
       },
     },
   },

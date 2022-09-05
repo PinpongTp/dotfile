@@ -1,5 +1,6 @@
 -- [[ keys.lua ]] --
 local map = vim.api.nvim_set_keymap
+local keymap = vim.keymap.set
 local opts = { noremap = true, silent = false }
 vim.g.mapleader = ' '
 
@@ -26,12 +27,18 @@ map('n', 'U', ':redo<CR>', { noremap = true })
 -- un mark
 map('n', 'vv', ':noh<CR>', { noremap = true })
 
--- Split window
+-- Split window and Select/Switch window
 map('n', 'ss', ':split<CR><C-w>w', { noremap = false })
 map('n', 'sv', ':vsplit<CR><C-w>w', { noremap = false })
+map('n', 's-', ':split<CR><C-w>w', { noremap = false })
+map('n', 's|', ':vsplit<CR><C-w>w', { noremap = false })
+map('n', 'sh', '<C-w>h', { noremap = false })
+map('n', 'sj', '<C-w>j', { noremap = false })
+map('n', 'sk', '<C-w>k', { noremap = false })
+map('n', 'sl', '<C-w>l', { noremap = false })
 
-map('n', '<Leader>w', '<C-w>', { noremap = false })
-map('n', '<Leader>ww', '<C-w>w', { noremap = false })
+map('n', '<Leader>w', '<C-w>w', { noremap = false })
+--map('n', '<Leader>ww', '<C-w>w', { noremap = false })
 
 -- Buf and Tab
 map('n', '<Tab>', ':bnext<CR>', { noremap = true, silent = true })
@@ -172,6 +179,15 @@ map('n', 'gh', ':Lspsaga lsp_finder<CR>', { noremap = true, silent = false })
 map('n', 'gp', ':Lspsaga preview_definition<CR>', { noremap = true, silent = false })
 map('n', 'gr', ':Lspsaga rename<CR>', { noremap = true, silent = false })
 map('n', ';td', ':ToggleDiag<CR>', opts)
+
+-- Only jump to error
+keymap("n", "[E", function()
+  require("lspsaga.diagnostic").goto_prev({ severity = vim.diagnostic.severity.ERROR })
+end, { silent = true })
+
+keymap("n", "]E", function()
+  require("lspsaga.diagnostic").goto_next({ severity = vim.diagnostic.severity.ERROR })
+end, { silent = true })
 
 -- indent
 map('n', ';ti', ':IndentBlanklineToggle<CR>', opts)
