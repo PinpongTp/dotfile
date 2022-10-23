@@ -155,6 +155,7 @@ vim.keymap.set('n', '<leader>dr', ':lua require"dap".repl.toggle({}, "vsplit")<C
 map('n', ';gs', ':Telescope git_status<CR>', opts)
 map('n', ';gc', ':Telescope git_commits<CR>', opts)
 map('n', ';gb', ':Telescope git_branches<CR>', opts)
+map('n', ';gC', ':Telescope git_bcommits<CR>', opts)
 map('n', ';gd', ':Gitsigns diffthis<CR>', opts)
 map('n', ';gm', ':Git blame<CR>', opts)
 map('n', ';gl', ':Gitsigns blame_line<CR>', opts)
