@@ -9,7 +9,7 @@ saga.init_lsp_saga {
   finder_action_keys = {
     open = "o",
     vsplit = "s",
-    split = "i",
+    split = "v",
     tabe = "t",
     quit = "q",
   },
@@ -21,6 +21,3 @@ saga.init_lsp_saga {
 
 
 local action = require 'lspsaga.codeaction'
-
-vim.keymap.set("n", "ga", "<cmd>Lspsaga code_action<CR>", { silent = true,noremap = true })
-vim.keymap.set("v", "ga", "<cmd><C-U>Lspsaga range_code_action<CR>", { silent = true,noremap = true })
