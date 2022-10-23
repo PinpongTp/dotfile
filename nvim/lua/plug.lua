@@ -26,6 +26,10 @@ return packer.startup(function(use)
 
   -- theme
   use { 'dracula/vim', as = 'dracula' }
+  use 'axvr/photon.vim'
+  use 'tckmn/hotdog.vim'
+  use 'fenetikm/falcon'
+  use 'rafi/awesome-vim-colorschemes'
   use { 'preservim/vim-colors-pencil' }
   use 'norcalli/nvim-colorizer.lua'
 

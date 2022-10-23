@@ -16,3 +16,6 @@ lazygit/config.yml
 .nuxtrc
 StardewValley
 gtk-2.0
+
+k9s/config.yml
+vue/.vuerc
