@@ -24,6 +24,9 @@ return packer.startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
+  -- for tmux navigator
+  use 'christoomey/vim-tmux-navigator'
+
   -- theme
   use { 'dracula/vim', as = 'dracula' }
   use 'axvr/photon.vim'
