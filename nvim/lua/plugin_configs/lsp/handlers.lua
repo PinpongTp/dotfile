@@ -71,8 +71,9 @@ local function auto_format(client)
   if client.server_capabilities.documentFormattingProvider then
     vim.api.nvim_command [[augroup Format]]
     vim.api.nvim_command [[autocmd! * <buffer>]]
-    vim.api
-        .nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()]]
+    -- vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()]]
+    -- vim. Isp. buf. formatting seg sync is deprecated. Use vim. Isp.buf. format instead
+    vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]
     vim.api.nvim_command [[augroup END]]
   end
 end
@@ -85,7 +86,9 @@ M.on_attach = function(client, bufnr)
   -- TODO: refactor this into a method that checks if string in list
   if client.name == "tsserver" then
     navic.attach(client, bufnr)
-    client.resolved_capabilities.document_formatting = false
+    client.server_capabilities.document_formatting = false
+    -- client.resolved_capabilities.document_formatting = false
+    -- [LSP] Accessing client.resolved_capabilities is deprecated, update your plugins or configuration to access client.server_capabilities instead.The new key/value pairs in server_cap abilities directly match those defined in the language server protocol
   end
 
   if client.name == "sumneko_lua" then
