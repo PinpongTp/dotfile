@@ -9,6 +9,9 @@ node_modules
 /nvim/autoload
 /nvim/plugin
 /htop
+/Microsoft*
+/xbuild
+/filezilla
 .DS_Store
 
 lazygit/state.yml
