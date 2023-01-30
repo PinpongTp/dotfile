@@ -16,7 +16,7 @@ require("todo-comments").setup {
     HACK = { icon = " ", color = "white", alt = { "WHITE" } },
     WARN = { icon = " ", color = "warning", alt = { "WARNING", "XXX" } },
     PERF = { icon = " ", alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE" } },
-    NOTE = { icon = " ", color = "hint", alt = { "INFO" } },
+    NOTE = { icon = " ", color = "hint", alt = { "INFO", "TBC" } },
     LOVE = { icon = " ", color = "pink", alt = { "PINK" } },
     QA = { icon = " " }
   },
