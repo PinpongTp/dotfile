@@ -1,83 +1,72 @@
--- check and load packer to --
-local fn = vim.fn
-local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
-if fn.empty(fn.glob(install_path)) > 0 then
-  packer_bootstrap = fn.system({
-    'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim',
-    install_path
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
   })
 end
-
--- load packer
-local ok, packer = pcall(require, "packer")
-if not ok then return end
-packer.init {
-  display = {
-    open_fn = require('packer.util').float,
-    show_all_info = true,
-    prompt_border = 'double'
-  }
-}
+vim.opt.rtp:prepend(lazypath)
 
 -- start up --
-return packer.startup(function(use)
-  -- Packer can manage itself
-  use 'wbthomason/packer.nvim'
-
+require('lazy').setup({
   -- for tmux navigator
-  use 'christoomey/vim-tmux-navigator'
+  'christoomey/vim-tmux-navigator',
 
   -- theme
-  use { 'dracula/vim', as = 'dracula' }
-  use 'axvr/photon.vim'
-  use 'tckmn/hotdog.vim'
-  use 'fenetikm/falcon'
-  use 'rafi/awesome-vim-colorschemes'
-  use { 'preservim/vim-colors-pencil' }
-  use 'norcalli/nvim-colorizer.lua'
+  { 'dracula/vim', name = 'dracula' },
+  'axvr/photon.vim',
+  'tckmn/hotdog.vim',
+  'fenetikm/falcon',
+  'rafi/awesome-vim-colorschemes',
+  { 'preservim/vim-colors-pencil' },
+  'norcalli/nvim-colorizer.lua',
 
   -- rest client
-  use 'NTBBloodbath/rest.nvim'
+  'NTBBloodbath/rest.nvim',
   --use { 'PinpongTp/rest.nvim', branch = 'main' }
-  --use '~/Developer/my/nvim/plugins/rest.nvim'
+  --'~/Developer/my/nvim/plugins/rest.nvim',
 
   -- landing page
-  use {
+  {
     'goolord/alpha-nvim',
-    requires = { 'kyazdani42/nvim-web-devicons' },
-  }
+    dependencies = { 'kyazdani42/nvim-web-devicons' },
+  },
 
   -- zen mode
-  use 'preservim/vim-markdown'
-  use 'folke/zen-mode.nvim'
-  use 'junegunn/limelight.vim'
+  'preservim/vim-markdown',
+  'folke/zen-mode.nvim',
+  'junegunn/limelight.vim',
 
   -- nvimtree
-  use {
+  {
     'kyazdani42/nvim-tree.lua',
-    requires = {
+    dependencies = {
       'kyazdani42/nvim-web-devicons'
     },
-  }
+  },
   -- status bar
-  use 'hoob3rt/lualine.nvim'
+  'hoob3rt/lualine.nvim',
   -- buffer
-  use 'kdheepak/tabline.nvim'
+  'kdheepak/tabline.nvim',
 
   -- lsp
-  use 'neovim/nvim-lspconfig'
-  use 'williamboman/nvim-lsp-installer'
-  use 'tami5/lspsaga.nvim'
-  use 'folke/lsp-colors.nvim'
-  use 'WhoIsSethDaniel/toggle-lsp-diagnostics.nvim'
+  'neovim/nvim-lspconfig',
+  'williamboman/nvim-lsp-installer',
+  'tami5/lspsaga.nvim',
+  'folke/lsp-colors.nvim',
+  'WhoIsSethDaniel/toggle-lsp-diagnostics.nvim',
   -- lap > cmp
 
 
-  use 'L3MON4D3/LuaSnip'
+  'L3MON4D3/LuaSnip',
   -- completion
-  use {
+  {
     'hrsh7th/nvim-cmp',
-    requires = {
+    dependencies = {
       'hrsh7th/cmp-buffer',
       'hrsh7th/cmp-nvim-lsp',
       'hrsh7th/cmp-path',
@@ -89,60 +78,60 @@ return packer.startup(function(use)
       --'uga-rosa/cmp-dictionary',
       'saadparwaiz1/cmp_luasnip',
     },
-  }
-  use 'onsails/lspkind-nvim'
-  use 'nvim-lua/plenary.nvim'
+  },
+  'onsails/lspkind-nvim',
+  'nvim-lua/plenary.nvim',
 
   -- treesitter
-  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
-  use 'nvim-treesitter/nvim-treesitter-context'
-  use 'nvim-treesitter/playground' -- TD: maybe not use
-  use 'simrat39/symbols-outline.nvim'
-  use 'SmiteshP/nvim-navic'
-  use 'nvim-lua/completion-nvim'
+  { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
+  'nvim-treesitter/nvim-treesitter-context',
+  'nvim-treesitter/playground', -- TD: maybe not use
+  'simrat39/symbols-outline.nvim',
+  'SmiteshP/nvim-navic',
+  'nvim-lua/completion-nvim',
 
   -- debuger
-  use 'mfussenegger/nvim-dap'
-  use 'nvim-telescope/telescope-dap.nvim'
-  use 'theHamsta/nvim-dap-virtual-text'
-  use 'rcarriga/nvim-dap-ui'
+  'mfussenegger/nvim-dap',
+  'nvim-telescope/telescope-dap.nvim',
+  'theHamsta/nvim-dap-virtual-text',
+  'rcarriga/nvim-dap-ui',
 
   -- for move
-  use { 'phaazon/hop.nvim', branch = 'v2' }
+  { 'phaazon/hop.nvim', branch = 'v2' },
 
   -- telescope
-  use 'nvim-lua/popup.nvim'
-  use 'nvim-telescope/telescope.nvim'
-  use 'nvim-telescope/telescope-file-browser.nvim'
+  'nvim-lua/popup.nvim',
+  'nvim-telescope/telescope.nvim',
+  'nvim-telescope/telescope-file-browser.nvim',
   -- for use format and eslint
-  use 'jose-elias-alvarez/null-ls.nvim'
-  use 'eslint/eslint'
+  'jose-elias-alvarez/null-ls.nvim',
+  'eslint/eslint',
 
   -- git
-  use 'lewis6991/gitsigns.nvim'
-  use 'tpope/vim-fugitive'
-  use 'tpope/vim-rhubarb'
+  'lewis6991/gitsigns.nvim',
+  'tpope/vim-fugitive',
+  'tpope/vim-rhubarb',
 
   -- helper
-  use 'akinsho/toggleterm.nvim'
-  use 'voldikss/vim-floaterm'
-  use 'folke/which-key.nvim'
-  use 'kshenoy/vim-signature'
-  use "lukas-reineke/indent-blankline.nvim" -- indentline
+  'akinsho/toggleterm.nvim',
+  'voldikss/vim-floaterm',
+  'folke/which-key.nvim',
+  'kshenoy/vim-signature',
+  "lukas-reineke/indent-blankline.nvim", -- indentline
 
   -- commenter
-  use 'preservim/nerdcommenter'
-  use "folke/todo-comments.nvim"
+  'preservim/nerdcommenter',
+  "folke/todo-comments.nvim",
 
   -- tab and fold
-  use 'windwp/nvim-autopairs'
-  use 'windwp/nvim-ts-autotag' -- setup in treesitter
-  use 'tpope/vim-surround'
+  'windwp/nvim-autopairs',
+  'windwp/nvim-ts-autotag', -- setup in treesitter
+  'tpope/vim-surround',
 
   -- language
-  use 'fatih/vim-go'
+  'fatih/vim-go',
 
-  use 'tyru/open-browser.vim'
-  use 'weirongxu/plantuml-previewer.vim'
+  'tyru/open-browser.vim',
+  'weirongxu/plantuml-previewer.vim'
 
-end)
+})
