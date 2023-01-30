@@ -3,7 +3,6 @@ local map = vim.api.nvim_set_keymap
 local keymap = vim.keymap.set
 local opts = { noremap = true, silent = false }
 vim.g.mapleader = ' '
-
 -- config
 map('n', 'x', '"_x', opts)
 map("v", "p", '"_dP', opts)
@@ -21,6 +20,7 @@ map('n', '<Leader>Q', ':q!<CR>', { noremap = true, silent = true })
 --map('n', '<Leader>w', ':w<CR>', { noremap = true, silent = true })
 map('n', '<Leader>W', ':wq<CR>', { noremap = true, silent = true })
 map('n', '<Leader>S', ':so %<CR>', { noremap = true })
+map('n', '<Leader>e', ':Exp<CR>', { noremap = true })
 
 -- redo
 map('n', 'U', ':redo<CR>', { noremap = true })
