@@ -7,4 +7,6 @@ for _, plugin_config_path in ipairs(plugin_config_files) do
   end
 end
 
+require 'plugin_configs.mason'
 require 'plugin_configs.lsp'
+require 'plugin_configs.dap'

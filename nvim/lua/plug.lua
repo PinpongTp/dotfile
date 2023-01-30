@@ -64,6 +64,11 @@ return packer.startup(function(use)
   -- buffer
   use 'kdheepak/tabline.nvim'
 
+
+  -- mason
+  use 'williamboman/mason.nvim'
+  use 'williamboman/mason-lspconfig.nvim'
+
   -- lsp
   use 'neovim/nvim-lspconfig'
   use 'williamboman/nvim-lsp-installer'
@@ -72,6 +77,11 @@ return packer.startup(function(use)
   use 'WhoIsSethDaniel/toggle-lsp-diagnostics.nvim'
   -- lap > cmp
 
+  -- debuger
+  use 'mfussenegger/nvim-dap'
+  use 'nvim-telescope/telescope-dap.nvim'
+  use 'theHamsta/nvim-dap-virtual-text'
+  use 'rcarriga/nvim-dap-ui'
 
   use 'L3MON4D3/LuaSnip'
   -- completion
@@ -101,11 +111,6 @@ return packer.startup(function(use)
   use 'SmiteshP/nvim-navic'
   use 'nvim-lua/completion-nvim'
 
-  -- debuger
-  use 'mfussenegger/nvim-dap'
-  use 'nvim-telescope/telescope-dap.nvim'
-  use 'theHamsta/nvim-dap-virtual-text'
-  use 'rcarriga/nvim-dap-ui'
 
   -- for move
   use { 'phaazon/hop.nvim', branch = 'v2' }

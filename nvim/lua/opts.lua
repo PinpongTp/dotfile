@@ -41,8 +41,7 @@ cmd('au BufEnter * setlocal cursorline')
 cmd('au BufLeave * setlocal nocursorline')
 
 -- [[ Theme ]]
---set.guifont = "Menlo:h12"
-set.guifont = "Meslo:h12"
+set.guifont = "Menlo:h14"
 --set.guifont = "Mono:h12"
 set.syntax = "ON"
 set.termguicolors = true
