@@ -13,7 +13,7 @@ return {
   'norcalli/nvim-colorizer.lua',
 
   -- rest client
-  'NTBBloodbath/rest.nvim',
+  --'NTBBloodbath/rest.nvim',
   --use { 'PinpongTp/rest.nvim', branch = 'main' }
   --'~/Developer/my/nvim/plugins/rest.nvim',
 
@@ -40,33 +40,57 @@ return {
   -- buffer
   'kdheepak/tabline.nvim',
 
+  {
+    'VonHeikemen/lsp-zero.nvim',
+    branch = 'v1.x',
+    dependencies = {
+      -- LSP Support
+      { 'neovim/nvim-lspconfig' }, -- Required
+      { 'williamboman/mason.nvim' }, -- Optional
+      { 'williamboman/mason-lspconfig.nvim' }, -- Optional
+      { 'tami5/lspsaga.nvim' },
+      { 'WhoIsSethDaniel/toggle-lsp-diagnostics.nvim' },
+
+      -- Autocompletion
+      { 'hrsh7th/nvim-cmp' }, -- Required
+      { 'hrsh7th/cmp-nvim-lsp' }, -- Required
+      { 'hrsh7th/cmp-buffer' }, -- Optional
+      { 'hrsh7th/cmp-path' }, -- Optional
+      { 'saadparwaiz1/cmp_luasnip' }, -- Optional
+      { 'hrsh7th/cmp-nvim-lua' }, -- Optional
+
+      -- Snippets
+      { 'L3MON4D3/LuaSnip' }, -- Required
+      { 'rafamadriz/friendly-snippets' }, -- Optional
+    }
+  },
+
   -- lsp
-  'neovim/nvim-lspconfig',
-  'williamboman/nvim-lsp-installer',
-  'tami5/lspsaga.nvim',
-  'folke/lsp-colors.nvim',
-  'WhoIsSethDaniel/toggle-lsp-diagnostics.nvim',
+  --'neovim/nvim-lspconfig',
+  --'williamboman/nvim-lsp-installer',
+  --'tami5/lspsaga.nvim',
+  --'folke/lsp-colors.nvim',
   -- lap > cmp
 
 
-  'L3MON4D3/LuaSnip',
+  --'L3MON4D3/LuaSnip',
   -- completion
-  {
-    'hrsh7th/nvim-cmp',
-    dependencies = {
-      'hrsh7th/cmp-buffer',
-      'hrsh7th/cmp-nvim-lsp',
-      'hrsh7th/cmp-path',
-      --'hrsh7th/cmp-cmdline',
-      --'hrsh7th/cmp-nvim-lua',
-      --'f3fora/cmp-spell',
-      --'hrsh7th/cmp-calc',
-      --'ray-x/cmp-treesitter',
-      --'uga-rosa/cmp-dictionary',
-      'saadparwaiz1/cmp_luasnip',
-    },
-  },
-  'onsails/lspkind-nvim',
+  --{
+  --'hrsh7th/nvim-cmp',
+  --dependencies = {
+  --'hrsh7th/cmp-buffer',
+  --'hrsh7th/cmp-nvim-lsp',
+  --'hrsh7th/cmp-path',
+  --'hrsh7th/cmp-cmdline',
+  --'hrsh7th/cmp-nvim-lua',
+  --'f3fora/cmp-spell',
+  --'hrsh7th/cmp-calc',
+  --'ray-x/cmp-treesitter',
+  --'uga-rosa/cmp-dictionary',
+  --'saadparwaiz1/cmp_luasnip',
+  --},
+  --},
+  --'onsails/lspkind-nvim',
   'nvim-lua/plenary.nvim',
 
   -- treesitter
