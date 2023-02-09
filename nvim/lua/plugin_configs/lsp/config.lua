@@ -1,11 +1,11 @@
 local status, nvim_lsp = pcall(require, "lspconfig")
 if not status then return end
-local lsp_install = require('nvim-lsp-installer')
+--local lsp_install = require('nvim-lsp-installer')
 local servers = { "tsserver", "vimls", "sumneko_lua", "gopls", "vuels", "html" }
 
-lsp_install.setup({
-  ensure_installed = servers,
-})
+--lsp_install.setup({
+--ensure_installed = servers,
+--})
 
 
 for _, server in pairs(servers) do
