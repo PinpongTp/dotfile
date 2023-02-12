@@ -29,7 +29,7 @@ vim.diagnostic.config({
   float = true,
 })
 
-require 'plugin_configs.lsp.cmp'
+require("plugin_configs.lsp.cmp")
 require("plugin_configs.lsp.config")
 require("plugin_configs.lsp.null-ls")
 require("plugin_configs.lsp.saga")
