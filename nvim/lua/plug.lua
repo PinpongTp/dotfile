@@ -1,148 +1,155 @@
 -- start up --
 return {
-  -- for tmux navigator
-  'christoomey/vim-tmux-navigator',
+    -- for tmux navigator
+    "christoomey/vim-tmux-navigator",
 
-  -- theme
-  { 'dracula/vim', name = 'dracula' },
-  'axvr/photon.vim',
-  'tckmn/hotdog.vim',
-  'fenetikm/falcon',
-  'rafi/awesome-vim-colorschemes',
-  { 'preservim/vim-colors-pencil' },
-  'norcalli/nvim-colorizer.lua',
+    -- theme
+    { "dracula/vim",                name = "dracula" },
+    "axvr/photon.vim",
+    "tckmn/hotdog.vim",
+    "fenetikm/falcon",
+    "rafi/awesome-vim-colorschemes",
+    { "preservim/vim-colors-pencil" },
+    "norcalli/nvim-colorizer.lua",
 
-  -- rest client
-  --'NTBBloodbath/rest.nvim',
-  --use { 'PinpongTp/rest.nvim', branch = 'main' }
-  --'~/Developer/my/nvim/plugins/rest.nvim',
+    -- rest client
+    --'NTBBloodbath/rest.nvim',
+    --use { 'PinpongTp/rest.nvim', branch = 'main' }
+    --'~/Developer/my/nvim/plugins/rest.nvim',
 
-  -- landing page
-  {
-    'goolord/alpha-nvim',
-    dependencies = { 'kyazdani42/nvim-web-devicons' },
-  },
-
-  -- zen mode
-  'preservim/vim-markdown',
-  'folke/zen-mode.nvim',
-  'junegunn/limelight.vim',
-
-  -- nvimtree
-  {
-    'kyazdani42/nvim-tree.lua',
-    dependencies = {
-      'kyazdani42/nvim-web-devicons'
+    -- landing page
+    {
+        "goolord/alpha-nvim",
+        dependencies = { "kyazdani42/nvim-web-devicons" },
     },
-  },
-  -- status bar
-  'hoob3rt/lualine.nvim',
-  -- buffer
-  'kdheepak/tabline.nvim',
 
-  {
-    'VonHeikemen/lsp-zero.nvim',
-    branch = 'v1.x',
-    dependencies = {
-      -- LSP Support
-      { 'neovim/nvim-lspconfig' }, -- Required
-      { 'williamboman/mason.nvim' }, -- Optional
-      { 'williamboman/mason-lspconfig.nvim' }, -- Optional
-      { 'tami5/lspsaga.nvim' },
-      { 'WhoIsSethDaniel/toggle-lsp-diagnostics.nvim' },
+    -- zen mode
+    "preservim/vim-markdown",
+    "folke/zen-mode.nvim",
+    "junegunn/limelight.vim",
 
-      -- Autocompletion
-      { 'hrsh7th/nvim-cmp' }, -- Required
-      { 'hrsh7th/cmp-nvim-lsp' }, -- Required
-      { 'hrsh7th/cmp-buffer' }, -- Optional
-      { 'hrsh7th/cmp-path' }, -- Optional
-      { 'saadparwaiz1/cmp_luasnip' }, -- Optional
-      { 'hrsh7th/cmp-nvim-lua' }, -- Optional
+    -- nvimtree
+    {
+        "kyazdani42/nvim-tree.lua",
+        dependencies = {
+            "kyazdani42/nvim-web-devicons",
+        },
+    },
+    -- status bar
+    "hoob3rt/lualine.nvim",
+    -- buffer
+    "kdheepak/tabline.nvim",
 
-      -- Snippets
-      { 'L3MON4D3/LuaSnip' }, -- Required
-      { 'rafamadriz/friendly-snippets' }, -- Optional
-    }
-  },
+    {
+        "VonHeikemen/lsp-zero.nvim",
+        branch = "v1.x",
+        dependencies = {
+            -- LSP Support
+            { "neovim/nvim-lspconfig" }, -- Required
+            { "williamboman/mason.nvim" }, -- Optional
+            { "williamboman/mason-lspconfig.nvim" }, -- Optional
+            { "tami5/lspsaga.nvim" },
+            { "WhoIsSethDaniel/toggle-lsp-diagnostics.nvim" },
 
-  -- lsp
-  --'neovim/nvim-lspconfig',
-  --'williamboman/nvim-lsp-installer',
-  --'tami5/lspsaga.nvim',
-  --'folke/lsp-colors.nvim',
-  -- lap > cmp
+            -- Autocompletion
+            { "hrsh7th/nvim-cmp" }, -- Required
+            { "hrsh7th/cmp-nvim-lsp" }, -- Required
+            { "hrsh7th/cmp-buffer" }, -- Optional
+            { "hrsh7th/cmp-path" }, -- Optional
+            { "saadparwaiz1/cmp_luasnip" }, -- Optional
+            { "hrsh7th/cmp-nvim-lua" }, -- Optional
 
+            -- Snippets
+            { "L3MON4D3/LuaSnip" }, -- Required
+            { "rafamadriz/friendly-snippets" }, -- Optional
+        },
+    },
 
-  --'L3MON4D3/LuaSnip',
-  -- completion
-  --{
-  --'hrsh7th/nvim-cmp',
-  --dependencies = {
-  --'hrsh7th/cmp-buffer',
-  --'hrsh7th/cmp-nvim-lsp',
-  --'hrsh7th/cmp-path',
-  --'hrsh7th/cmp-cmdline',
-  --'hrsh7th/cmp-nvim-lua',
-  --'f3fora/cmp-spell',
-  --'hrsh7th/cmp-calc',
-  --'ray-x/cmp-treesitter',
-  --'uga-rosa/cmp-dictionary',
-  --'saadparwaiz1/cmp_luasnip',
-  --},
-  --},
-  --'onsails/lspkind-nvim',
-  'nvim-lua/plenary.nvim',
+    -- lsp
+    --'neovim/nvim-lspconfig',
+    --'williamboman/nvim-lsp-installer',
+    --'tami5/lspsaga.nvim',
+    --'folke/lsp-colors.nvim',
+    -- lap > cmp
 
-  -- treesitter
-  { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
-  'nvim-treesitter/nvim-treesitter-context',
-  'nvim-treesitter/playground', -- TD: maybe not use
-  'simrat39/symbols-outline.nvim',
-  'SmiteshP/nvim-navic',
-  'nvim-lua/completion-nvim',
+    --'L3MON4D3/LuaSnip',
+    -- completion
+    --{
+    --'hrsh7th/nvim-cmp',
+    --dependencies = {
+    --'hrsh7th/cmp-buffer',
+    --'hrsh7th/cmp-nvim-lsp',
+    --'hrsh7th/cmp-path',
+    --'hrsh7th/cmp-cmdline',
+    --'hrsh7th/cmp-nvim-lua',
+    --'f3fora/cmp-spell',
+    --'hrsh7th/cmp-calc',
+    --'ray-x/cmp-treesitter',
+    --'uga-rosa/cmp-dictionary',
+    --'saadparwaiz1/cmp_luasnip',
+    --},
+    --},
+    --'onsails/lspkind-nvim',
+    "nvim-lua/plenary.nvim",
 
-  -- debuger
-  'mfussenegger/nvim-dap',
-  'nvim-telescope/telescope-dap.nvim',
-  'theHamsta/nvim-dap-virtual-text',
-  'rcarriga/nvim-dap-ui',
+    -- treesitter
+    --{ 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
+    {
+        "nvim-treesitter/nvim-treesitter",
+        lazy = true,
+        build = function()
+          pcall(require("nvim-treesister.install").update({ with_sync = true }))
+        end,
+        dependencies = {
+            "nvim-treesitter/nvim-treesitter-context",
+            "nvim-treesitter/playground", -- TD: maybe not use
+        },
+    },
+    "simrat39/symbols-outline.nvim",
+    "SmiteshP/nvim-navic",
+    "nvim-lua/completion-nvim",
 
-  -- for move
-  { 'phaazon/hop.nvim', branch = 'v2' },
+    -- debuger
+    "mfussenegger/nvim-dap",
+    "nvim-telescope/telescope-dap.nvim",
+    "theHamsta/nvim-dap-virtual-text",
+    "rcarriga/nvim-dap-ui",
 
-  -- telescope
-  'nvim-lua/popup.nvim',
-  'nvim-telescope/telescope.nvim',
-  'nvim-telescope/telescope-file-browser.nvim',
-  -- for use format and eslint
-  'jose-elias-alvarez/null-ls.nvim',
-  'eslint/eslint',
+    -- for move
+    { "phaazon/hop.nvim", branch = "v2" },
 
-  -- git
-  'lewis6991/gitsigns.nvim',
-  'tpope/vim-fugitive',
-  'tpope/vim-rhubarb',
+    -- telescope
+    "nvim-lua/popup.nvim",
+    "nvim-telescope/telescope.nvim",
+    "nvim-telescope/telescope-file-browser.nvim",
+    -- for use format and eslint
+    "jose-elias-alvarez/null-ls.nvim",
+    "eslint/eslint",
 
-  -- helper
-  'akinsho/toggleterm.nvim',
-  'voldikss/vim-floaterm',
-  'folke/which-key.nvim',
-  'kshenoy/vim-signature',
-  "lukas-reineke/indent-blankline.nvim", -- indentline
+    -- git
+    "lewis6991/gitsigns.nvim",
+    "tpope/vim-fugitive",
+    "tpope/vim-rhubarb",
 
-  -- commenter
-  'preservim/nerdcommenter',
-  "folke/todo-comments.nvim",
+    -- helper
+    "akinsho/toggleterm.nvim",
+    "voldikss/vim-floaterm",
+    "folke/which-key.nvim",
+    "kshenoy/vim-signature",
+    "lukas-reineke/indent-blankline.nvim", -- indentline
 
-  -- tab and fold
-  'windwp/nvim-autopairs',
-  'windwp/nvim-ts-autotag', -- setup in treesitter
-  'tpope/vim-surround',
+    -- commenter
+    "preservim/nerdcommenter",
+    "folke/todo-comments.nvim",
 
-  -- language
-  'fatih/vim-go',
+    -- tab and fold
+    "windwp/nvim-autopairs",
+    "windwp/nvim-ts-autotag", -- setup in treesitter
+    "tpope/vim-surround",
 
-  'tyru/open-browser.vim',
-  'weirongxu/plantuml-previewer.vim'
+    -- language
+    "fatih/vim-go",
 
+    "tyru/open-browser.vim",
+    "weirongxu/plantuml-previewer.vim",
 }
