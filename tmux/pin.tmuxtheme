@@ -30,5 +30,7 @@ setw -g window-status-format "#[fg=default,bg=${C_BG_LIST}] #I:#W#F "
 setw -g window-status-current-format "#[fg=blue,bg=${C_BG_LIST_A},bold] #I:#W#F "
 
 T_GIT="#{simple_git_status}"
+T_CPU="#{cpu_percentage}"
+T_TIME="#[fg=default,bg=default]%H:%M #[fg=#default,bg=#303030,nobold,nounderscore,noitalics]#[fg=default,bg=default] %d-%b-%y "
 
-set -g status-right "${T_GIT} #[fg=blue,bg=default]${TMUX_SEPARATOR_L_THIN} #{prefix_highlight} #[fg=default,bg=default]%H:%M #[fg=#default,bg=#303030,nobold,nounderscore,noitalics]#[fg=default,bg=default] %d-%b-%y "
+set -g status-right "${T_GIT} #[fg=blue,bg=default]${TMUX_SEPARATOR_L_THIN} ${T_CPU} #[fg=blue,bg=default]${TMUX_SEPARATOR_L_THIN} ${T_TIME}#{prefix_highlight}"
