@@ -13,7 +13,8 @@ require("todo-comments").setup({
 		-- TODO:
 		TODONE = { icon = " ", color = "info", alt = { "TDONE", "DONE" } },
 		-- TODONE:
-		HACK = { icon = " ", color = "white", alt = { "WHITE" } },
+		HACK = { icon = " ", color = "white", alt = { "WHITE", "MARK" } },
+		-- HACK:
 		WARN = { icon = " ", color = "warning", alt = { "WARNING", "XXX" } },
 		PERF = { icon = " ", alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE" } },
 		NOTE = { icon = " ", color = "hint", alt = { "INFO", "TBC" } },
