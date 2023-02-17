@@ -185,8 +185,7 @@ map("n", ";gm", ":Git blame<CR>", opts)
 map("n", ";gl", ":Gitsigns blame_line<CR>", opts)
 map("n", ";grh", ":Gitsigns reset_hunk<CR>", opts)
 map("n", ";grb", ":Gitsigns reset_buffer<CR>", opts)
-map("n", ";gah", ":Gitsigns stage_hunk<CR>", opts)
-map("n", ";gab", ":Gitsigns stage_buffer<CR>", opts)
+map("n", ";ga", ":Gitsigns stage_hunk<CR>", opts)
 map("n", ";gu", ":Gitsigns undo_stage_hunk<CR>", opts)
 
 -- Git --
