@@ -23,7 +23,13 @@ return {
 	{ "tckmn/hotdog.vim" },
 	{ "preservim/vim-colors-pencil" },
 
-	"norcalli/nvim-colorizer.lua", -- show color
+	-- show color
+	{
+		"norcalli/nvim-colorizer.lua",
+		config = function()
+			require("colorizer").setup()
+		end,
+	},
 
 	-- rest client
 	--'NTBBloodbath/rest.nvim',
