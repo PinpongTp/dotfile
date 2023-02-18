@@ -85,31 +85,13 @@ return {
 		},
 	},
 
-	-- lsp
-	--'neovim/nvim-lspconfig',
-	--'williamboman/nvim-lsp-installer',
-	--'tami5/lspsaga.nvim',
-	--'folke/lsp-colors.nvim',
-	-- lap > cmp
-
-	--'L3MON4D3/LuaSnip',
-	-- completion
-	--{
-	--'hrsh7th/nvim-cmp',
-	--dependencies = {
-	--'hrsh7th/cmp-buffer',
-	--'hrsh7th/cmp-nvim-lsp',
-	--'hrsh7th/cmp-path',
 	--'hrsh7th/cmp-cmdline',
-	--'hrsh7th/cmp-nvim-lua',
 	--'f3fora/cmp-spell',
 	--'hrsh7th/cmp-calc',
 	--'ray-x/cmp-treesitter',
 	--'uga-rosa/cmp-dictionary',
-	--'saadparwaiz1/cmp_luasnip',
-	--},
-	--},
-	--'onsails/lspkind-nvim',
+	--
+
 	"nvim-lua/plenary.nvim",
 
 	-- treesitter
