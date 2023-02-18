@@ -13,7 +13,8 @@ require("todo-comments").setup({
 		-- TODO:
 		TODONE = { icon = " ", color = "info", alt = { "TDONE", "DONE" } },
 		-- TODONE:
-		HACK = { icon = " ", color = "white", alt = { "WHITE" } },
+		HACK = { icon = " ", color = "white", alt = { "WHITE", "MARK" } },
+		-- HACK:
 		WARN = { icon = " ", color = "warning", alt = { "WARNING", "XXX" } },
 		PERF = { icon = " ", alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE" } },
 		NOTE = { icon = " ", color = "hint", alt = { "INFO", "TBC" } },
@@ -37,11 +38,19 @@ require("todo-comments").setup({
 	-- list of named colors where we try to extract the guifg from the
 	-- list of hilight groups or use the hex color if hl not found as a fallback
 	colors = {
-		error = { "#ff5555" }, -- FIX:
-		warning = { "#ffb86c" }, -- WARN:
-		info = { "#50fa7b" }, -- TODO:
-		hint = { "#8be9fd" }, -- NOTE:
-		default = { "#bd93f9" }, -- PERF:
+		--error = { "#ff5555" }, -- FIX:
+		--warning = { "#ffb86c" }, -- WARN:
+		--info = { "DiagnosticInfo", "green" }, -- TODO:
+		--hint = { "#8be9fd" }, -- NOTE:
+		--default = { "#bd93f9" }, -- PERF:
+		--white = { "#ffffff" }, -- WHITE:
+		--pink = { "#ff79c6" }, -- PINK:
+
+		error = { "DiagnosticError", "ErrorMsg", "#ff5555" },
+		warning = { "DiagnosticWarn", "WarningMsg", "#ffb86c" },
+		info = { "DiagnosticInfo", "#2563EB" },
+		hint = { "DiagnosticHint", "#8be9fd" },
+		default = { "Identifier", "#bd93f9" },
 		white = { "#ffffff" }, -- WHITE:
 		pink = { "#ff79c6" }, -- PINK:
 	},
