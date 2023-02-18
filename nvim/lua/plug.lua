@@ -132,7 +132,13 @@ return {
 	"rcarriga/nvim-dap-ui",
 
 	-- for move
-	{ "phaazon/hop.nvim", branch = "v2" },
+	{
+		"phaazon/hop.nvim",
+		branch = "v2",
+		config = function()
+			require("hop").setup()
+		end,
+	},
 
 	-- telescope
 	"nvim-lua/popup.nvim",
