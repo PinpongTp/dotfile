@@ -1,0 +1,36 @@
+# tmuxtheme by pinpong.co
+TMUX_SEPARATOR_L_BOLD=""
+TMUX_SEPARATOR_L_THIN=""
+TMUX_SEPARATOR_R_BOLD=""
+TMUX_SEPARATOR_R_THIN=""
+
+set -g status-justify "left"
+set -g status "on"
+set -g status-left-style "none"
+set -g message-command-style "fg=#9e9e9e,bg=#303030"
+set -g status-right-style "none"
+set -g pane-active-border-style "fg=blue"
+set -g status-style "none,bg=default"
+set -g message-style "fg=default,bg=default"
+set -g pane-border-style "fg=#303030"
+set -g status-right-length "100"
+set -g status-left-length "100"
+setw -g window-status-activity-style "none,fg=#990000,none"
+setw -g window-status-separator ""
+setw -g window-status-style "none,none,none"
+
+P_C="#{?client_prefix,color4,color8}"
+S_C="#{?client_prefix,color8,color4}"
+set -g status-left "#[fg=${S_C},bg=${P_C},bold,nounderscore,italics] #S #[fg=${P_C},bg=default]${TMUX_SEPARATOR_R_BOLD}"
+
+C_BG_LIST="default"
+C_BG_LIST_A="default"
+
+setw -g window-status-format "#[fg=default,bg=${C_BG_LIST}] #I:#W#F "
+setw -g window-status-current-format "#[fg=blue,bg=${C_BG_LIST_A},bold] #I:#W#F "
+
+T_GIT="#{simple_git_status}"
+T_CPU="#{cpu_percentage}"
+T_TIME="#[fg=default,bg=default]%H:%M #[fg=#default,bg=#303030,nobold,nounderscore,noitalics]#[fg=default,bg=default] %d-%b-%y "
+
+set -g status-right "${T_GIT} #[fg=blue,bg=default]${TMUX_SEPARATOR_L_THIN} ${T_CPU} #[fg=blue,bg=default]${TMUX_SEPARATOR_L_THIN} ${T_TIME}"
