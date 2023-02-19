@@ -228,11 +228,6 @@ map("n", ";ml", ":Limelight!<CR>", opts)
 map("n", ";mL", ":Limelight 0.5<CR>", opts)
 map("n", ";z", ":ZenMode<CR>", opts)
 
--- Insert --
--- Press jk fast to exit insert mode
---map("n", "JK", "<ESC>", { nowait = true, noremap = true })
---map("i", "iii", "<ESC>", { nowait = false, noremap = false, silent = false })
-
 -- Move text up and down by visual
 map("x", "J", ":move '>+1<CR>gv-gv", opts)
 map("x", "K", ":move '<-2<CR>gv-gv", opts)
