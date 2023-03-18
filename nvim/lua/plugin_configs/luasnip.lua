@@ -60,9 +60,10 @@ ls.add_snippets("all", {
 		t({ "Wow! Text!", "And another line." }),
 	}),
 })
-
 local mySnippet = {
 	s("fire", { t("console.log('🔥', "), i(1, ""), t(")") }),
+	s("throw error", { t("throw Error("), i(1, ""), t(")") }),
+	s("throw exception", { t("throw new HttpException("), i(1, ""), t(", HttpStatus.BAD_REQUEST)") }),
 }
 
 ls.add_snippets("javascript", mySnippet)
