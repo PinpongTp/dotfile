@@ -1,0 +1,116 @@
+env:
+  # This value is used to set the `$TERM` environment variable for
+  # each instance of Alacritty. If it is not present, alacritty will
+  # check the local terminfo database and use `alacritty` if it is
+  # available, otherwise `xterm-256color` is used.
+  TERM: xterm-256color
+
+window:
+  # Spread additional padding evenly around the terminal content.
+  padding:
+    x: 0
+    y: 0
+  # Remove buttons
+  decorations: none
+  # Open in full screen
+  # startup_mode: SimpleFullscreen
+  # Dimensions if not SimpleFullscreen
+  dimensions:
+    columns: 140
+    lines: 38
+  opacity: 0.9
+
+# Make background slightly transparent
+#background_opacity: 0.92
+
+cursor:
+  # Block Underline or Beam
+  style: Block
+
+font:
+  normal:
+    # Needs to be powerline font if using zsh theme with powerline
+    family: FuraMono NFM
+  # Font size
+  size: 16
+
+  # Better font rendering for mac
+  #use_thin_strokes: true
+
+schemes:
+  # Tokyo Night theme, based on both:
+  #   https://github.com/ghifarit53/tokyonight-vim
+  #   https://github.com/enkia/tokyo-night-vscode-theme
+  tokyo-night: &tokyo-night # Default colors
+    primary:
+      background: '#1a1b26'
+      foreground: '#a9b1d6'
+
+    # Normal colors
+    normal:
+      black: '#32344a'
+      red: '#f7768e'
+      green: '#9ece6a'
+      yellow: '#e0af68'
+      blue: '#7aa2f7'
+      magenta: '#ad8ee6'
+      cyan: '#449dab'
+      white: '#787c99'
+
+    # Bright colors
+    bright:
+      black: '#444b6a'
+      red: '#ff7a93'
+      green: '#b9f27c'
+      yellow: '#ff9e64'
+      blue: '#7da6ff'
+      magenta: '#bb9af7'
+      cyan: '#0db9d7'
+      white: '#acb0d0'
+
+  tokyo-night-storm: &tokyo-night-storm # Default colors
+    primary:
+      background: '#24283b'
+      foreground: '#a9b1d6'
+
+    # Normal colors
+    normal:
+      black: '#32344a'
+      red: '#f7768e'
+      green: '#9ece6a'
+      yellow: '#e0af68'
+      blue: '#7aa2f7'
+      magenta: '#ad8ee6'
+      cyan: '#449dab'
+      white: '#9699a8'
+
+    # Bright colors
+    bright:
+      black: '#444b6a'
+      red: '#ff7a93'
+      green: '#b9f27c'
+      yellow: '#ff9e64'
+      blue: '#7da6ff'
+      magenta: '#bb9af7'
+      cyan: '#0db9d7'
+      white: '#acb0d0'
+
+# Colors (Hyper)
+colors: *tokyo-night
+
+selection:
+  # This string contains all characters that are used as separators for
+  # "semantic words" in Alacritty.
+  semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
+
+  # When true, selected text will be copied to the primary clipboard
+  save_to_clipboard: true
+
+# Login shell with arguments
+shell:
+  program: /bin/zsh
+  args:
+    - --login
+
+# Startup directory, unset or None for home directory
+working_directory: None
