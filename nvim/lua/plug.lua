@@ -62,6 +62,7 @@ return {
 	{
 		"VonHeikemen/lsp-zero.nvim",
 		branch = "v1.x",
+		priority = 900,
 		dependencies = {
 			-- LSP Support
 			{ "neovim/nvim-lspconfig" }, -- Required
@@ -82,7 +83,31 @@ return {
 			-- Snippets
 			{ "L3MON4D3/LuaSnip" }, -- Required
 			{ "rafamadriz/friendly-snippets" }, -- Optional
+			{ "j-hui/fidget.nvim" },
 		},
+	},
+
+	-- debuger
+	--{
+	--"jay-babu/mason-nvim-dap.nvim",
+	--priority = 899,
+	--config = function()
+	--require("mason-nvim-dap").setup({
+	--automatic_setup = true,
+	--})
+	--end,
+	--},
+	{
+		"rcarriga/nvim-dap-ui",
+		priority = 898,
+		dependencies = {
+			"mfussenegger/nvim-dap",
+			"theHamsta/nvim-dap-virtual-text",
+			"kyazdani42/nvim-web-devicons",
+		},
+		config = function()
+			require("plugin_configs.dap.dap")
+		end,
 	},
 
 	--'hrsh7th/cmp-cmdline',
@@ -113,11 +138,10 @@ return {
 	"SmiteshP/nvim-navic",
 	"nvim-lua/completion-nvim",
 
-	-- debuger
-	"mfussenegger/nvim-dap",
-	"nvim-telescope/telescope-dap.nvim",
-	"theHamsta/nvim-dap-virtual-text",
-	"rcarriga/nvim-dap-ui",
+	--"mfussenegger/nvim-dap",
+	--"nvim-telescope/telescope-dap.nvim",
+	--"theHamsta/nvim-dap-virtual-text",
+	--"rcarriga/nvim-dap-ui",
 
 	-- for move
 	{
@@ -153,7 +177,18 @@ return {
 	"folke/todo-comments.nvim",
 
 	-- language
+	-- go
 	"fatih/vim-go",
+	-- csv
+	--[[{
+		"mechatroner/rainbow_csv",
+		config = function()
+			vim.cmd([[
+        autocmd BufNewFile,BufRead *.csv   set filetype=csv_pipe
+			  let g:rcsv_colorpairs = [['NONE', 'NONE'], ['NONE', 'NONE'], ['yellow', 'yellow'],['NONE', 'NONE'], ['NONE', 'NONE'], ['cyan', 'cyan'], ['NONE', 'NONE'], ['NONE', 'NONE'], ['yellow', 'yellow'],]
+      <])
+		end,
+	},]]
 
 	"tyru/open-browser.vim",
 	"weirongxu/plantuml-previewer.vim",
