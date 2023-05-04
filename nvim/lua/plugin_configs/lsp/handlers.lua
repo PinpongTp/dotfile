@@ -1,6 +1,5 @@
 local M = {}
 
--- TODO: backfill this to template
 M.setup = function()
 	local signs = {
 		{ name = "DiagnosticSignError", text = "" },
@@ -9,18 +8,43 @@ M.setup = function()
 		{ name = "DiagnosticSignInfo", text = "" },
 	}
 
+	local config = {
+		virtual_text = false,
+		signs = { active = signs },
+		update_in_insert = true,
+		underline = true,
+		severity_sort = true,
+		float = {
+			focusable = false,
+			style = "minimal",
+			border = "rounded",
+			source = "always",
+			header = "",
+			prefix = "",
+		},
+	}
+
+	local config2 = {
+		virtual_text = true,
+		signs = true,
+		update_in_insert = false,
+		underline = true,
+		severity_sort = false,
+		float = true,
+	}
+
+	vim.diagnostic.config(config)
+
 	for _, sign in ipairs(signs) do
 		vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
 	end
 
 	vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
 		border = "rounded",
-		width = 60,
 	})
 
 	vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
 		border = "rounded",
-		width = 60,
 	})
 end
 
@@ -45,37 +69,49 @@ local function lsp_keymaps(bufnr)
 	vim.cmd([[ command! Format execute 'lua vim.lsp.buf.format{async=true}' ]])
 end
 
-local function auto_format(client)
-	if client.server_capabilities.documentFormattingProvider then
-		vim.api.nvim_command([[augroup Format]])
-		vim.api.nvim_command([[autocmd! * <buffer>]])
-		--vim.api.nvim_command([[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()]])
-    --vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()]]
-    vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]
-		-- vim. Isp. buf. formatting seg sync is deprecated. Use vim. Isp.buf. format instead
-		--vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]
-		vim.api.nvim_command([[augroup END]])
+local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
+local function auto_format(client, bufnr)
+	--if client.server_capabilities.documentFormattingProvider then
+	if client.supports_method("textDocument/formatting") then
+		vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+		vim.api.nvim_create_autocmd("BufWritePre", {
+			group = augroup,
+			buffer = bufnr,
+			callback = function()
+				-- on 0.8, you should use vim.lsp.buf.format({ bufnr = bufnr }) instead
+				vim.lsp.buf.format()
+			end,
+		})
+		--vim.api.nvim_command([[augroup Format]])
+		--vim.api.nvim_command([[autocmd! * <buffer>]])
+		--vim.api.nvim_command([[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]])
+		--vim.api.nvim_command([[augroup END]])
 	end
+	--end
 end
 
 local navic = require("nvim-navic")
 navic.setup({ depth_limit = 3, highlight = true })
+local navbuddy = require("nvim-navbuddy")
 
 M.on_attach = function(client, bufnr)
+	local cap = client.server_capabilities
 	-- vim.notify(client.name .. " starting...")
 	-- TODO: refactor this into a method that checks if string in list
+
 	if client.name == "tsserver" then
-		navic.attach(client, bufnr)
-		client.server_capabilities.document_formatting = false
+		vim.notify(client.name .. " starting...")
 	end
 
-	if client.name == "sumneko_lua" then
+	if cap.documentSymbolProvider then
 		navic.attach(client, bufnr)
+		navbuddy.attach(client, bufnr)
+		--cap.document_formatting = false
 	end
 
-	lsp_keymaps(bufnr)
 	-- lsp_highlight_document(client)
-	auto_format(client)
+	lsp_keymaps(bufnr)
+	auto_format(client, bufnr)
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
