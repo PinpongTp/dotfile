@@ -233,8 +233,15 @@ map("n", ";z", ":ZenMode<CR>", opts)
 map("x", "J", ":move '>+1<CR>gv-gv", opts)
 map("x", "K", ":move '<-2<CR>gv-gv", opts)
 
-map("n", "<Leader>rr", ":lua require('rest-nvim').run()<CR>", opts)
-map("n", "<Leader>rR", ":lua require('rest-nvim').run(true)<CR>", opts)
+--map("n", "<Leader>rr", ":lua require('rest-nvim').run()<CR>", opts)
+--map("n", "<Leader>rr", ":lua require('rest-nvim')RestNvim<CR>", opts)
+
+keymap("n", "<leader>rr", function()
+	require("rest-nvim").RestNvim()
+end)
+map("n", "<Leader>rp", ":lua require('rest-nvim')RestNvimPreview<CR>", opts)
+map("n", "<Leader>rl", ":lua require('rest-nvim')RestNvimLast<CR>", opts)
+--map("n", "<Leader>rR", ":lua require('rest-nvim').run(true)<CR>", opts)
 
 -- FloatermNew
 map("n", ";tt", ":FloatermToggle<CR>", opts)
