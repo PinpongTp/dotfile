@@ -1,9 +1,8 @@
 require("nvim-tree").setup({
-	on_attach = on_attach,
 	sort_by = "case_sensitive",
 	view = {
 		adaptive_size = false,
-		width = 40,
+		width = 35,
 	},
 	renderer = {
 		group_empty = true,
