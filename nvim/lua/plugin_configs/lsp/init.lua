@@ -1,33 +1,17 @@
-local ok, _ = pcall(require, "lsp-zero")
-if not ok then
-	return
-end
+--local ok, _ = pcall(require, "lsp-zero")
+--if not ok then
+--return
+--end
 
---print('test load lsp-zero')
+----print('test load lsp-zero')
 
-local lsp = require("lsp-zero")
-lsp.preset({
-	name = "minimal",
-	set_lsp_keymaps = false,
-})
-lsp.nvim_workspace()
-lsp.setup()
-
-local signs = {
-	{ name = "DiagnosticSignError", text = "" },
-	{ name = "DiagnosticSignWarn", text = "" },
-	{ name = "DiagnosticSignHint", text = "" },
-	{ name = "DiagnosticSignInfo", text = "" },
-}
-
-vim.diagnostic.config({
-	virtual_text = true,
-	signs = true,
-	update_in_insert = false,
-	underline = true,
-	severity_sort = false,
-	float = true,
-})
+--local lsp = require("lsp-zero")
+--lsp.preset({
+--name = "minimal",
+--set_lsp_keymaps = false,
+--})
+--lsp.nvim_workspace()
+--lsp.setup()
 
 require("plugin_configs.lsp.cmp")
 require("plugin_configs.lsp.config")
