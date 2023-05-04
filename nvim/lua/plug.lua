@@ -110,13 +110,7 @@ return {
 			}, -- Required
 			{ "williamboman/mason.nvim" }, -- Optional
 			{ "williamboman/mason-lspconfig.nvim" }, -- Optional
-			{
-				"nvimdev/lspsaga.nvim",
-				event = "LspAttach",
-				config = function()
-					require("lspsaga").setup({})
-				end,
-			},
+			{ "nvimdev/lspsaga.nvim" },
 			{ "WhoIsSethDaniel/toggle-lsp-diagnostics.nvim" },
 			{ "onsails/lspkind-nvim" },
 
