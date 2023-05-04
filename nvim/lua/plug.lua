@@ -1,7 +1,17 @@
 -- start up --
 return {
 	-- for tmux navigator
-	"christoomey/vim-tmux-navigator",
+	{ "christoomey/vim-tmux-navigator" },
+	{
+		"mrjones2014/smart-splits.nvim",
+		config = function()
+			require("smart-splits").setup({
+				resize_mode = {
+					quit_key = "q",
+				},
+			})
+		end,
+	},
 
 	-- theme
 	{
@@ -9,14 +19,32 @@ return {
 		priority = 1001,
 		config = function()
 			-- load tho colorsheme here
-			vim.cmd([[colorscheme tokyonight]])
 			require("tokyonight").setup({
 				style = "night",
 				transparent = true,
+				transparent_sidebar = true,
+				dim_inactive = true,
+				styles = {
+					sidebars = "transparent",
+					floats = "transparent",
+				},
 			})
+			vim.cmd.colorscheme("tokyonight")
 		end,
 	},
 	{ "patstockwell/vim-monokai-tasty" },
+	{
+		"catppuccin/nvim",
+		name = "catppuccin",
+		priority = 1002,
+		config = function()
+			local cat = require("catppuccin")
+			--cat.options.transparent_background = not cat.options.transparent_background
+			cat.options.transparent_background = true
+			cat.compile()
+			--vim.cmd.colorscheme("catppuccin-mocha")
+		end,
+	},
 
 	{ "dracula/vim", priority = 1000, name = "dracula" },
 	{ "axvr/photon.vim" },
@@ -32,7 +60,13 @@ return {
 	},
 
 	-- rest client
-	--'NTBBloodbath/rest.nvim',
+	{
+		"NTBBloodbath/rest.nvim",
+		config = function()
+			require("rest-nvim").setup()
+		end,
+		dependencies = { "nvim-lua/plenary.nvim" },
+	},
 	--use { 'PinpongTp/rest.nvim', branch = 'main' }
 	--'~/Developer/my/nvim/plugins/rest.nvim',
 
@@ -59,13 +93,21 @@ return {
 	-- buffer
 	"kdheepak/tabline.nvim",
 
+	-- lsp
 	{
 		"VonHeikemen/lsp-zero.nvim",
 		branch = "v1.x",
 		priority = 900,
 		dependencies = {
 			-- LSP Support
-			{ "neovim/nvim-lspconfig" }, -- Required
+			{
+				"SmiteshP/nvim-navbuddy",
+				dependencies = {
+					"neovim/nvim-lspconfig",
+					"SmiteshP/nvim-navic",
+					"MunifTanjim/nui.nvim",
+				},
+			}, -- Required
 			{ "williamboman/mason.nvim" }, -- Optional
 			{ "williamboman/mason-lspconfig.nvim" }, -- Optional
 			{ "tami5/lspsaga.nvim" },
@@ -117,8 +159,6 @@ return {
 	--'uga-rosa/cmp-dictionary',
 	--
 
-	"nvim-lua/plenary.nvim",
-
 	-- treesitter
 	{
 		"nvim-treesitter/nvim-treesitter",
@@ -135,7 +175,6 @@ return {
 		},
 	},
 	"simrat39/symbols-outline.nvim",
-	"SmiteshP/nvim-navic",
 	"nvim-lua/completion-nvim",
 
 	--"mfussenegger/nvim-dap",
