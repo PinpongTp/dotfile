@@ -109,6 +109,9 @@ keymap("n", "<leader>o", "<cmd>Lspsaga outline<CR>")
 -- Hover Doc
 keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>")
 
+--vim.api.nvim_buf_set_keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
+--vim.api.nvim_buf_set_keymap(bufnr, "n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
+
 -- Call hierarchy
 keymap("n", "<Leader>ci", "<cmd>Lspsaga incoming_calls<CR>")
 keymap("n", "<Leader>co", "<cmd>Lspsaga outgoing_calls<CR>")
