@@ -71,7 +71,6 @@ end
 
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 local function auto_format(client, bufnr)
-	--if client.server_capabilities.documentFormattingProvider then
 	if client.supports_method("textDocument/formatting") then
 		vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
 		vim.api.nvim_create_autocmd("BufWritePre", {
@@ -82,12 +81,7 @@ local function auto_format(client, bufnr)
 				vim.lsp.buf.format()
 			end,
 		})
-		--vim.api.nvim_command([[augroup Format]])
-		--vim.api.nvim_command([[autocmd! * <buffer>]])
-		--vim.api.nvim_command([[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]])
-		--vim.api.nvim_command([[augroup END]])
 	end
-	--end
 end
 
 local navic = require("nvim-navic")
