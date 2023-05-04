@@ -89,21 +89,16 @@ navic.setup({ depth_limit = 3, highlight = true })
 local navbuddy = require("nvim-navbuddy")
 
 M.on_attach = function(client, bufnr)
+	vim.notify(client.name .. " starting...")
 	local cap = client.server_capabilities
-	-- vim.notify(client.name .. " starting...")
-	-- TODO: refactor this into a method that checks if string in list
-
-	if client.name == "tsserver" then
-		vim.notify(client.name .. " starting...")
-	end
 
 	if cap.documentSymbolProvider then
 		navic.attach(client, bufnr)
 		navbuddy.attach(client, bufnr)
-		--cap.document_formatting = false
+		-- lsp_highlight_document(client)
 	end
 
-	-- lsp_highlight_document(client)
+	--cap.document_formatting = false
 	lsp_keymaps(bufnr)
 	auto_format(client, bufnr)
 end
