@@ -189,21 +189,6 @@ map("n", "<Leader>gd", ":Gitsigns diffthis<CR>", opts)
 map("n", "<Leader>gl", ":Gitsigns blame_line<CR>", opts)
 map("n", "<Leader>gb", ":Git blame<CR>", opts)
 
--- lsp saga
-map("n", "<C-j>", "<cmd>Lspsaga diagnostic_jump_next<CR>", { noremap = true, silent = false })
-map("i", "<C-J>", "<cmd>Lspsaga diagnostic_jump_next<CR>", { noremap = true, silent = false })
-map("n", "]e", "<cmd>Lspsaga diagnostic_jump_next<CR>", { noremap = true, silent = false })
-map("n", "[e", "<cmd>Lspsaga diagnostic_jump_prev<CR>", { noremap = true, silent = false })
-map("n", "K", "<cmd>Lspsaga hover_doc<CR>", { noremap = true, silent = false })
-map("i", "<C-k>", "<cmd>Lspsaga signature_help<CR>", { noremap = true, silent = false })
-map("n", "gk", "<cmd>Lspsaga signature_help<CR>", { noremap = true, silent = false })
-map("n", "gh", "<cmd>Lspsaga lsp_finder<CR>", { noremap = true, silent = false })
-map("n", "gp", "<cmd>Lspsaga preview_definition<CR>", { noremap = true, silent = false })
-map("n", "gr", "<cmd>Lspsaga rename<CR>", { noremap = true, silent = false })
-map("n", ";td", "<cmd>ToggleDiag<CR>", opts)
-map("n", "ga", "<cmd>Lspsaga code_action<CR>", { silent = true, noremap = true })
-map("v", "ga", "<cmd><C-U>Lspsaga range_code_action<CR>", { silent = true, noremap = true })
-
 -- Only jump to error
 keymap("n", "[E", function()
 	require("lspsaga.diagnostic").goto_prev({ severity = vim.diagnostic.severity.ERROR })

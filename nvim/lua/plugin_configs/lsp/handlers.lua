@@ -59,16 +59,6 @@ local function lsp_highlight_document(client)
 	-- end
 end
 
-local function lsp_keymaps(bufnr)
-	local opts = { noremap = true, silent = true }
-	vim.api.nvim_buf_set_keymap(bufnr, "n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
-	vim.api.nvim_buf_set_keymap(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
-	vim.api.nvim_buf_set_keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
-	vim.api.nvim_buf_set_keymap(bufnr, "n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
-	--vim.api.nvim_buf_set_keymap(bufnr, "n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
-	--vim.cmd([[ command! Format execute 'lua vim.lsp.buf.format{async=true}' ]])
-end
-
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 local function auto_format(client, bufnr)
 	if client.supports_method("textDocument/formatting") then
@@ -104,7 +94,6 @@ M.on_attach = function(client, bufnr)
 	end
 
 	--cap.document_formatting = false
-	lsp_keymaps(bufnr)
 	auto_format(client, bufnr)
 end
 
