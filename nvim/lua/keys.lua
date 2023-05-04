@@ -7,7 +7,6 @@ vim.g.mapleader = " "
 map("n", "x", '"_x', opts)
 map("v", "p", '"_dP', opts)
 map("n", "dw", 'vb"_d', opts)
-map("n", ";pr", ":so ~/.config/nvim/init.lua<CR>", opts)
 
 -- packer
 map("n", ";ps", ":PackerSync<CR>", opts)
@@ -33,13 +32,8 @@ map("n", "sv", ":vsplit<CR><C-w>w", { noremap = false })
 map("n", "s-", ":split<CR><C-w>w", { noremap = false })
 map("n", "s|", ":vsplit<CR><C-w>w", { noremap = false })
 map("n", "sr", ":SmartResizeMode<CR>", { noremap = false })
---map("n", "sh", "<C-w>h", { noremap = false })
---map("n", "sj", "<C-w>j", { noremap = false })
---map("n", "sk", "<C-w>k", { noremap = false })
---map("n", "sl", "<C-w>l", { noremap = false })
 
 map("n", "<Leader>w", "<C-w>w", { noremap = false })
---map('n', '<Leader>ww', '<C-w>w', { noremap = false })
 
 -- Buf and Tab
 map("n", "<Tab>", ":bnext<CR>", { noremap = true, silent = true })
