@@ -245,5 +245,7 @@ map("n", ";ts", ":SymbolsOutline<CR>", opts)
 map("n", ";tc", ":ColorizerToggle<CR>", opts)
 map("n", ";tC", ":TSContextToggle<CR>", opts) -- context on top window
 
+-- navbuddy
+map("n", ";fn", ":Navbuddy<CR>", opts) -- context on top window
 --
 --
