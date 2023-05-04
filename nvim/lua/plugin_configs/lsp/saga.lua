@@ -3,6 +3,31 @@ if not ok then
 	return
 end
 
+saga.setup({
+	ui = {
+		title = true,
+		border = "rounded",
+		--border = "single",
+		winblend = 0,
+		expand = "",
+		collapse = "",
+		code_action = "💡",
+		incoming = " ",
+		outgoing = " ",
+		hover = " ",
+		kind = {},
+		colors = {
+			normal_bh = "NONE",
+		},
+	},
+	symbol_in_winbar = {
+		enable = true,
+	},
+	beacon = {
+		enable = false,
+	},
+})
+
 --[[saga.init_lsp_saga({
 	error_sign = "",
 	warn_sign = "",

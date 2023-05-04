@@ -22,6 +22,7 @@ if not status then
 	return
 end
 
+require("plugin_configs.lsp.handlers").setup()
 local handlers = require("plugin_configs.lsp.handlers")
 for _, server in ipairs(servers) do
 	local opts = {
