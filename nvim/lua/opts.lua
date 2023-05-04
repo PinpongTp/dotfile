@@ -47,7 +47,7 @@ set.guifont = "Meslo:h12"
 --set.guifont = "Mono:h12"
 set.syntax = "ON"
 set.termguicolors = true
-set.background = dark
+--set.background = dark
 set.titlestring = vim.fn.expand("%:~:p:h") -- TODO what is :h
 cmd("filetype plugin on") -- for markdown plugin
 cmd('au TextYankPost * silent! lua vim.highlight.on_yank {higroup="IncSearch", timeout=150}')
