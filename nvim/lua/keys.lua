@@ -201,6 +201,7 @@ map("n", ";ts", ":SymbolsOutline<CR>", opts) -- TODO: remove this
 map("n", ";tc", ":ColorizerToggle<CR>", opts)
 map("n", ";tC", ":TSContextToggle<CR>", opts) -- context on top window
 map("n", ";ti", ":IndentBlanklineToggle<CR>", opts)
+map("n", ";tn", ":set rnu!<CR>", opts)
 
 -- navbuddy
 map("n", ";fn", ":Navbuddy<CR>", opts) -- context on top window
