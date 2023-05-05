@@ -28,12 +28,16 @@ cmd("set nobackup")
 -- [[ Setup ]]
 set.mouse = "a"
 
+--set.timeoutlen = 500
+--set.ttimeoutlen = 0
+--set.timeout = true
+
 set.wrap = true
 --set.scrolloff = 999
 set.ttyfast = true
 set.number = true
 set.showcmd = false
-set.relativenumber = true
+set.relativenumber = false
 set.title = true
 set.colorcolumn = "120"
 --set.cmdheight = 2
