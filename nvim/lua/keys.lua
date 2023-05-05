@@ -1,6 +1,6 @@
 -- [[ keys.lua ]] --
 local map = vim.api.nvim_set_keymap
-local keymap = vim.keymap.set
+local keymap = vim.keymap.set -- TODO: refactor
 local opts = { noremap = true, silent = false }
 vim.g.mapleader = " "
 -- config
@@ -13,7 +13,6 @@ map("n", ";ps", ":PackerSync<CR>", opts)
 
 -- control
 map("n", "<Leader>q", ":q<CR>", { noremap = true, silent = true })
---map('i', '<Leader>q', ':q<CR>', { noremap = true, silent = true })
 map("v", "<Leader>q", ":q<CR>", { noremap = true, silent = true })
 map("n", "<Leader>Q", ":q!<CR>", { noremap = true, silent = true })
 --map('n', '<Leader>w', ':w<CR>', { noremap = true, silent = true })
@@ -21,8 +20,6 @@ map("n", "<Leader>W", ":wq<CR>", { noremap = true, silent = true })
 map("n", "<Leader>S", ":so %<CR>", { noremap = true })
 map("n", "<Leader>e", ":Exp<CR>", { noremap = true })
 
--- redo
--- map("n", "U", ":redo<CR>", { noremap = true })
 -- un mark
 map("n", "vv", ":noh<CR>", { noremap = true })
 
@@ -56,8 +53,6 @@ map("n", "<Leader>t<", ":tabm -1<CR>", { noremap = true, silent = true })
 map("n", "<Leader>t>", ":tabm +1<CR>", { noremap = true, silent = true })
 map("n", "<Leader>tq", ":q<CR>", { noremap = true, silent = true })
 
--- nerdTree
---[[map('n', '<Leader>m', ':NERDTreeToggle<CR>', { noremap = false })]]
 -- nvimTree
 map("n", "<Leader>n", ":NvimTreeFindFileToggle<CR>", { noremap = false, silent = true })
 map("n", "<Leader>N", ":NvimTreeFindFile<CR>", { noremap = false, silent = true })
@@ -69,7 +64,6 @@ map("n", "<Leader>fl", ":HopLine<CR>", opts)
 map("n", "<Leader>fw", ":HopWord<CR>", opts)
 map("n", "<Leader>fh", ":HopVertical<CR>", opts)
 map("n", "F", ":HopChar1<CR>", opts)
---map('n', 'F', ':HopPattern<CR>', opts)
 
 -- telescope
 map("n", ";ff", ":Telescope find_files<CR>", opts)
@@ -82,8 +76,6 @@ map("n", ";fm", ":Telescope marks<CR>", opts)
 map("n", ";fc", ":Telescope colorscheme<CR>", opts)
 map("n", ";fs", ":Telescope git_status<CR>", opts)
 map("n", ";;", ":Telescope help_tags<CR>", opts)
-
---
 map("n", ";ft", ":TodoTelescope<CR>", opts)
 
 -- debug
@@ -159,17 +151,6 @@ keymap("n", "<leader>dk", ':lua require"dap".up()<CR>zz')
 keymap("n", "<leader>dj", ':lua require"dap".down()<CR>zz')
 keymap("n", "<leader>dr", ':lua require"dap".repl.toggle({}, "vsplit")<CR><C-w>l')
 
--- spector
---map('n', '<Leader>dd', ':call vimspector#Launch()<CR>', opts)
---map('n', '<Leader>de', ':call vimspector#Reset()<CR>', opts)
---map('n', '<Leader>dc', ':call vimspector#Continue()<CR>', opts)
---map('n', '<Leader>dt', ':call vimspector#ToggleBreakpoint()<CR>', opts)
---map('n', '<Leader>dT', ':call vimspector#ClearBreakpoints()<CR>', opts)
---map('n', '<Leader>dk', ':call vimspector#Restart()<CR>', opts)
---map('n', '<Leader>dh', ':call vimspector#StepOut()<CR>', opts)
---map('n', '<Leader>dl', ':call vimspector#StepInto()<CR>', opts)
---map('n', '<Leader>dj', ':call vimspector#StepOver()<CR>', opts)
-
 -- git
 map("n", ";gs", ":Telescope git_status<CR>", opts)
 map("n", ";gc", ":Telescope git_commits<CR>", opts)
@@ -188,18 +169,6 @@ map("n", "<C-g>", ":Gitsigns blame_line<CR>", opts)
 map("n", "<Leader>gd", ":Gitsigns diffthis<CR>", opts)
 map("n", "<Leader>gl", ":Gitsigns blame_line<CR>", opts)
 map("n", "<Leader>gb", ":Git blame<CR>", opts)
-
--- Only jump to error
-keymap("n", "[E", function()
-	require("lspsaga.diagnostic").goto_prev({ severity = vim.diagnostic.severity.ERROR })
-end, { silent = true })
-
-keymap("n", "]E", function()
-	require("lspsaga.diagnostic").goto_next({ severity = vim.diagnostic.severity.ERROR })
-end, { silent = true })
-
--- indent
-map("n", ";ti", ":IndentBlanklineToggle<CR>", opts)
 
 -- mode
 map("n", ";mz", ":ZenMode<CR>", opts)
@@ -228,9 +197,10 @@ map("n", "<C-t>", ":FloatermToggle<CR>", opts)
 
 -- toggle and mode
 map("n", ";tg", ":FloatermNew --width=0.9 --height=0.9 lazygit<CR>", opts)
-map("n", ";ts", ":SymbolsOutline<CR>", opts)
+map("n", ";ts", ":SymbolsOutline<CR>", opts) -- TODO: remove this
 map("n", ";tc", ":ColorizerToggle<CR>", opts)
 map("n", ";tC", ":TSContextToggle<CR>", opts) -- context on top window
+map("n", ";ti", ":IndentBlanklineToggle<CR>", opts)
 
 -- navbuddy
 map("n", ";fn", ":Navbuddy<CR>", opts) -- context on top window
