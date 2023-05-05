@@ -12,16 +12,16 @@ map("n", "dw", 'vb"_d', opts)
 map("n", ";ps", ":PackerSync<CR>", opts)
 
 -- control
-map("n", "<Leader>q", ":q<CR>", { noremap = true, silent = true })
-map("v", "<Leader>q", ":q<CR>", { noremap = true, silent = true })
-map("n", "<Leader>Q", ":q!<CR>", { noremap = true, silent = true })
+map("n", "<Leader>q", ":q<CR>", opts)
+map("v", "<Leader>q", ":q<CR>", opts)
+map("n", "<Leader>Q", ":q!<CR>", opts)
 --map('n', '<Leader>w', ':w<CR>', { noremap = true, silent = true })
-map("n", "<Leader>W", ":wq<CR>", { noremap = true, silent = true })
-map("n", "<Leader>S", ":so %<CR>", { noremap = true })
+map("n", "<Leader>W", ":wq<CR>", opts)
+map("n", "<Leader>S", ":so %<CR>", opts)
 map("n", "<Leader>e", ":Exp<CR>", { noremap = true })
 
 -- un mark
-map("n", "vv", ":noh<CR>", { noremap = true })
+map("n", "vv", ":noh<CR>", opts)
 
 -- Split window and Select/Switch window
 map("n", "ss", ":split<CR><C-w>w", { noremap = false })
