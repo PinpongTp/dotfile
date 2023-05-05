@@ -95,19 +95,9 @@ return {
 
 	-- lsp
 	{
-		"VonHeikemen/lsp-zero.nvim",
-		branch = "v1.x",
-		priority = 900,
+		"neovim/nvim-lspconfig",
 		dependencies = {
-			-- LSP Support
-			{
-				"SmiteshP/nvim-navbuddy",
-				dependencies = {
-					"neovim/nvim-lspconfig",
-					"SmiteshP/nvim-navic",
-					"MunifTanjim/nui.nvim",
-				},
-			}, -- Required
+			-- Required
 			{ "williamboman/mason.nvim" }, -- Optional
 			{ "williamboman/mason-lspconfig.nvim" }, -- Optional
 			{ "nvimdev/lspsaga.nvim" },
@@ -122,10 +112,24 @@ return {
 			{ "saadparwaiz1/cmp_luasnip" }, -- Optional
 			{ "hrsh7th/cmp-nvim-lua" }, -- Optional
 
-			-- Snippets
-			{ "L3MON4D3/LuaSnip" }, -- Required
-			{ "rafamadriz/friendly-snippets" }, -- Optional
+			-- LSP Support
 			{ "j-hui/fidget.nvim" },
+			{
+				"SmiteshP/nvim-navbuddy",
+				dependencies = {
+					"SmiteshP/nvim-navic",
+					"MunifTanjim/nui.nvim",
+				},
+			},
+
+			-- Snippets
+			{
+				"L3MON4D3/LuaSnip",
+				dependencies = {
+					-- check what is this
+					"rafamadriz/friendly-snippets", -- Optional
+				},
+			}, -- Required
 		},
 	},
 
@@ -243,4 +247,9 @@ return {
 
 	"tyru/open-browser.vim",
 	"weirongxu/plantuml-previewer.vim",
+
+	-- list for research
+	--"andymass/vim-matchup",
+	--"ray-x/lsp_signature.nvim",
+	--
 }
