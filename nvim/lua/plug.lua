@@ -174,7 +174,19 @@ return {
 			"tpope/vim-surround",
 		},
 	},
-	"simrat39/symbols-outline.nvim",
+	{
+
+		"simrat39/symbols-outline.nvim",
+		config = function()
+			require("symbols-outline").setup({
+				keymaps = {
+					hover_symbol = "K",
+					--toggle_preview = "",
+					-- TODO: update pluging and check preview function
+				},
+			})
+		end,
+	},
 	"nvim-lua/completion-nvim",
 
 	--"mfussenegger/nvim-dap",
