@@ -197,11 +197,14 @@ map("n", "<C-t>", ":FloatermToggle<CR>", opts)
 
 -- toggle and mode
 map("n", ";tg", ":FloatermNew --width=0.9 --height=0.9 lazygit<CR>", opts)
-map("n", ";ts", ":SymbolsOutline<CR>", opts) -- TODO: remove this
 map("n", ";tc", ":ColorizerToggle<CR>", opts)
 map("n", ";tC", ":TSContextToggle<CR>", opts) -- context on top window
 map("n", ";ti", ":IndentBlanklineToggle<CR>", opts)
 map("n", ";tn", ":set rnu!<CR>", opts)
+
+-- toggle outline
+map("n", "<Leader>o", ":SymbolsOutline<CR>", opts) -- TODO: remove this
+--map("n", "<Leader>O", ":Lspsaga outline<CR>", opts) -- setup at saga config
 
 -- navbuddy
 map("n", ";fn", ":Navbuddy<CR>", opts) -- context on top window
