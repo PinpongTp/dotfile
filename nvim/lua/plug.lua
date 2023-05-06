@@ -40,7 +40,8 @@ return {
 
 	-- show color
 	{
-		"norcalli/nvim-colorizer.lua",
+		--"norcalli/nvim-colorizer.lua",
+		"NvChad/nvim-colorizer.lua",
 		config = function()
 			require("colorizer").setup()
 		end,
@@ -64,9 +65,14 @@ return {
 	},
 
 	-- zen mode
-	"preservim/vim-markdown",
-	"folke/zen-mode.nvim",
-	"junegunn/limelight.vim",
+	{
+		"folke/zen-mode.nvim",
+		lazy = true,
+		dependencies = {
+			"preservim/vim-markdown",
+			"junegunn/limelight.vim",
+		},
+	},
 
 	-- nvimtree
 	{
