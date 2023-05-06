@@ -16,6 +16,7 @@ return {
 	-- theme
 	{
 		"folke/tokyonight.nvim",
+		lazy = false,
 		priority = 1001,
 		config = function()
 			-- load tho colorsheme here
@@ -33,22 +34,8 @@ return {
 		end,
 	},
 	{ "patstockwell/vim-monokai-tasty" },
-	{
-		"catppuccin/nvim",
-		name = "catppuccin",
-		priority = 1002,
-		config = function()
-			local cat = require("catppuccin")
-			--cat.options.transparent_background = not cat.options.transparent_background
-			cat.options.transparent_background = true
-			cat.compile()
-			--vim.cmd.colorscheme("catppuccin-mocha")
-		end,
-	},
-
 	{ "dracula/vim", priority = 1000, name = "dracula" },
 	{ "axvr/photon.vim" },
-	{ "tckmn/hotdog.vim" },
 	{ "preservim/vim-colors-pencil" },
 
 	-- show color
@@ -161,7 +148,6 @@ return {
 	--'hrsh7th/cmp-calc',
 	--'ray-x/cmp-treesitter',
 	--'uga-rosa/cmp-dictionary',
-	--
 
 	-- treesitter
 	{
@@ -209,8 +195,11 @@ return {
 
 	-- telescope
 	"nvim-lua/popup.nvim",
-	"nvim-telescope/telescope.nvim",
-	"nvim-telescope/telescope-file-browser.nvim",
+	{
+		"nvim-telescope/telescope-file-browser.nvim",
+		lazy = false,
+		dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
+	},
 	-- for use format and eslint
 	"jose-elias-alvarez/null-ls.nvim",
 	"eslint/eslint",
@@ -223,7 +212,7 @@ return {
 	-- helper
 	"akinsho/toggleterm.nvim",
 	"voldikss/vim-floaterm",
-	"folke/which-key.nvim",
+	{ "folke/which-key.nvim", lazy = false },
 	"kshenoy/vim-signature",
 	"lukas-reineke/indent-blankline.nvim", -- indentline
 
@@ -251,5 +240,5 @@ return {
 	-- list for research
 	--"andymass/vim-matchup",
 	--"ray-x/lsp_signature.nvim",
-	--
+	--"Wansmer/treesj"
 }
