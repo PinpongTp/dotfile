@@ -178,8 +178,8 @@ map("n", ";mL", ":Limelight 0.5<CR>", opts)
 map("n", ";z", ":ZenMode<CR>", opts)
 
 -- Move text up and down by visual
-map("x", "J", ":move '>+1<CR>gv-gv", opts)
-map("x", "K", ":move '<-2<CR>gv-gv", opts)
+map("v", "J", ":m '>+1<CR>gv=gv", opts)
+map("v", "K", ":m '<-2<CR>gv=gv", opts)
 
 --map("n", "<Leader>rr", ":lua require('rest-nvim').run()<CR>", opts)
 --map("n", "<Leader>rr", ":lua require('rest-nvim')RestNvim<CR>", opts)
