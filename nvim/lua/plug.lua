@@ -30,7 +30,38 @@ return {
 					floats = "transparent",
 				},
 			})
-			vim.cmd.colorscheme("tokyonight")
+			--vim.cmd.colorscheme("tokyonight")
+		end,
+	},
+	{
+		"pgdouyon/vim-yin-yang",
+		priority = 1001,
+		config = function()
+			--vim.cmd.colorscheme("yin")
+		end,
+	},
+	{
+		"catppuccin/nvim",
+		name = "catppuccin",
+		config = function()
+			require("catppuccin").setup({
+				flavour = "mocha",
+				background = {
+					light = "latte",
+					dark = "mocha",
+				},
+				transparent_background = true,
+				style = {
+					comments = { "italic" },
+				},
+				integrations = {
+					cmp = true,
+					nvimtree = true,
+					indent_blankline = { enabled = true, colored_indent_levels = false },
+				},
+			})
+			require("catppuccin").compile()
+			vim.cmd.colorscheme("catppuccin")
 		end,
 	},
 	{ "patstockwell/vim-monokai-tasty" },
@@ -183,7 +214,7 @@ return {
 			})
 		end,
 	},
-	"nvim-lua/completion-nvim",
+	--"nvim-lua/completion-nvim",
 
 	--"mfussenegger/nvim-dap",
 	--"nvim-telescope/telescope-dap.nvim",
