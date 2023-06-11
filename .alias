@@ -29,6 +29,7 @@ alias tmc="tmux new -s"
 
 # for develop
 alias run="sudo yarn run start:dev"
+alias dev="yarn run start:dev"
 # alias y="yarn"
 
 # cat
