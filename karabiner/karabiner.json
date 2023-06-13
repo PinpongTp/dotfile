@@ -270,6 +270,29 @@
             ]
           },
           {
+            "description": "I+O to change lang",
+            "manipulators": [
+              {
+                "from": {
+                  "simultaneous": [
+                    {
+                      "key_code": "i"
+                    },
+                    {
+                      "key_code": "o"
+                    }
+                  ]
+                },
+                "to": [
+                  {
+                    "key_code": "caps_lock"
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
             "description": "S+D -> (S)uper(D)uper Mode",
             "manipulators": [
               {
