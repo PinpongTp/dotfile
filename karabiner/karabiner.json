@@ -252,19 +252,9 @@
             "description": "Caps Lock → Hyper Key (⌃⌥⇧⌘) (Caps Lock if alone)",
             "manipulators": [
               {
-                "from": {
-                  "key_code": "caps_lock"
-                },
-                "to": [
-                  {
-                    "key_code": "left_control"
-                  }
-                ],
-                "to_if_alone": [
-                  {
-                    "key_code": "escape"
-                  }
-                ],
+                "from": { "key_code": "caps_lock" },
+                "to": [{ "key_code": "left_control" }],
+                "to_if_alone": [{ "key_code": "escape" }],
                 "type": "basic"
               }
             ]
@@ -274,20 +264,9 @@
             "manipulators": [
               {
                 "from": {
-                  "simultaneous": [
-                    {
-                      "key_code": "i"
-                    },
-                    {
-                      "key_code": "o"
-                    }
-                  ]
+                  "simultaneous": [{ "key_code": "i" }, { "key_code": "o" }]
                 },
-                "to": [
-                  {
-                    "key_code": "caps_lock"
-                  }
-                ],
+                "to": [{ "key_code": "caps_lock" }],
                 "type": "basic"
               }
             ]
@@ -297,20 +276,9 @@
             "manipulators": [
               {
                 "from": {
-                  "simultaneous": [
-                    {
-                      "key_code": "q"
-                    },
-                    {
-                      "key_code": "w"
-                    }
-                  ]
+                  "simultaneous": [{ "key_code": "q" }, { "key_code": "w" }]
                 },
-                "to": [
-                  {
-                    "key_code": "escape"
-                  }
-                ],
+                "to": [{ "key_code": "escape" }],
                 "type": "basic"
               }
             ]
@@ -320,14 +288,7 @@
             "manipulators": [
               {
                 "from": {
-                  "simultaneous": [
-                    {
-                      "key_code": "s"
-                    },
-                    {
-                      "key_code": "d"
-                    }
-                  ],
+                  "simultaneous": [{ "key_code": "s" }, { "key_code": "d" }],
                   "simultaneous_options": {
                     "detect_key_down_uninterruptedly": true,
                     "key_down_order": "insensitive",
