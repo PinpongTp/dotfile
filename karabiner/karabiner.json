@@ -253,7 +253,7 @@
             "manipulators": [
               {
                 "from": { "key_code": "caps_lock" },
-                "to": [{ "key_code": "left_control" }],
+                "to_if_held_down": [{ "key_code": "left_control" }],
                 "to_if_alone": [{ "key_code": "escape" }],
                 "type": "basic"
               }
