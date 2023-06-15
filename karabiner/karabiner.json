@@ -284,6 +284,18 @@
             ]
           },
           {
+            "description": "OP to Backspace",
+            "manipulators": [
+              {
+                "from": {
+                  "simultaneous": [{ "key_code": "o" }, { "key_code": "p" }]
+                },
+                "to": [{ "key_code": "delete_or_backspace" }],
+                "type": "basic"
+              }
+            ]
+          },
+          {
             "description": "S+D -> (S)uper(D)uper Mode",
             "manipulators": [
               {
