@@ -293,6 +293,29 @@
             ]
           },
           {
+            "description": "QW to ESC",
+            "manipulators": [
+              {
+                "from": {
+                  "simultaneous": [
+                    {
+                      "key_code": "q"
+                    },
+                    {
+                      "key_code": "w"
+                    }
+                  ]
+                },
+                "to": [
+                  {
+                    "key_code": "escape"
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
             "description": "S+D -> (S)uper(D)uper Mode",
             "manipulators": [
               {
