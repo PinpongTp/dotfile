@@ -300,6 +300,29 @@
             ]
           },
           {
+            "description": "I+O+P to change lang",
+            "manipulators": [
+              {
+                "from": {
+                  "simultaneous": [
+                    { "key_code": "i" },
+                    { "key_code": "o" },
+                    { "key_code": "p" }
+                  ]
+                },
+                "to": [
+                  {
+                    "repeat": false,
+                    "key_code": "spacebar",
+                    "modifiers": ["left_control", "left_alt"],
+                    "lazy": true
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
             "description": "I+O to change lang",
             "manipulators": [
               {
@@ -310,7 +333,7 @@
                   {
                     "repeat": false,
                     "key_code": "spacebar",
-                    "modifiers": ["left_control", "left_alt"],
+                    "modifiers": ["left_control"],
                     "lazy": true
                   }
                 ],
