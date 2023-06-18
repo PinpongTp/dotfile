@@ -285,6 +285,21 @@
             ]
           },
           {
+            "description": "kl; to enter/ return",
+            "manipulators": [
+              {
+                "from": {
+                  "simultaneous": [
+                    { "key_code": "l" },
+                    { "key_code": "semicolon" }
+                  ]
+                },
+                "to": [{ "key_code": "return_or_enter" }],
+                "type": "basic"
+              }
+            ]
+          },
+          {
             "description": "I+O to change lang",
             "manipulators": [
               {
