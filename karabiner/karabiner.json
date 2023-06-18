@@ -306,7 +306,14 @@
                 "from": {
                   "simultaneous": [{ "key_code": "i" }, { "key_code": "o" }]
                 },
-                "to": [{ "key_code": "caps_lock" }],
+                "to": [
+                  {
+                    "repeat": false,
+                    "key_code": "spacebar",
+                    "modifiers": ["left_control", "left_alt"],
+                    "lazy": true
+                  }
+                ],
                 "type": "basic"
               }
             ]
