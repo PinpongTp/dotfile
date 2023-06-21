@@ -366,6 +366,139 @@
             ]
           },
           {
+            "description": "K+L -> (K)eyNum(L)ayout Mode",
+            "manipulators": [
+              {
+                "from": {
+                  "simultaneous": [{ "key_code": "k" }, { "key_code": "l" }],
+                  "simultaneous_options": {
+                    "detect_key_down_uninterruptedly": true,
+                    "key_down_order": "insensitive",
+                    "key_up_order": "insensitive",
+                    "key_up_when": "any",
+                    "to_after_key_up": [
+                      {
+                        "set_variable": {
+                          "name": "num-mode",
+                          "value": 0
+                        }
+                      }
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "set_variable": {
+                      "name": "num-mode",
+                      "value": 1
+                    }
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "KL + q > 1",
+            "manipulators": [
+              {
+                "conditions": [
+                  {
+                    "name": "num-mode",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "from": {
+                  "key_code": "q",
+                  "modifiers": { "optional": ["any"] }
+                },
+                "to": [{ "key_code": "1" }],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "KL + w > 2",
+            "manipulators": [
+              {
+                "conditions": [
+                  {
+                    "name": "num-mode",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "from": {
+                  "key_code": "w",
+                  "modifiers": { "optional": ["any"] }
+                },
+                "to": [{ "key_code": "2" }],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "KL + e > 3",
+            "manipulators": [
+              {
+                "conditions": [
+                  {
+                    "name": "num-mode",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "from": {
+                  "key_code": "e",
+                  "modifiers": { "optional": ["any"] }
+                },
+                "to": [{ "key_code": "3" }],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "KL + r > 4",
+            "manipulators": [
+              {
+                "conditions": [
+                  {
+                    "name": "num-mode",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "from": {
+                  "key_code": "r",
+                  "modifiers": { "optional": ["any"] }
+                },
+                "to": [{ "key_code": "4" }],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "KL + t > 5",
+            "manipulators": [
+              {
+                "conditions": [
+                  {
+                    "name": "num-mode",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "from": {
+                  "key_code": "t",
+                  "modifiers": { "optional": ["any"] }
+                },
+                "to": [{ "key_code": "5" }],
+                "type": "basic"
+              }
+            ]
+          },
+          {
             "description": "S+D -> (S)uper(D)uper Mode",
             "manipulators": [
               {
