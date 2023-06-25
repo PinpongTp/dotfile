@@ -275,20 +275,6 @@
             ]
           },
           {
-            "description": "; to ctl",
-            "manipulators": [
-              {
-                "from": {
-                  "key_code": "semicolon"
-                },
-                "to": [{ "key_code": "left_control" }],
-                "to_if_held_down": [{ "key_code": "left_control" }],
-                "to_if_alone": [{ "key_code": "semicolon" }],
-                "type": "basic"
-              }
-            ]
-          },
-          {
             "description": "z to shift",
             "manipulators": [
               {
@@ -313,14 +299,11 @@
             ]
           },
           {
-            "description": "combo l; to enter/ return",
+            "description": "combo kl to enter/ return",
             "manipulators": [
               {
                 "from": {
-                  "simultaneous": [
-                    { "key_code": "l" },
-                    { "key_code": "semicolon" }
-                  ]
+                  "simultaneous": [{ "key_code": "k" }, { "key_code": "l" }]
                 },
                 "to": [{ "key_code": "return_or_enter" }],
                 "type": "basic"
@@ -383,11 +366,11 @@
             ]
           },
           {
-            "description": "combo as to ESC",
+            "description": "combo WE to ESC",
             "manipulators": [
               {
                 "from": {
-                  "simultaneous": [{ "key_code": "a" }, { "key_code": "s" }],
+                  "simultaneous": [{ "key_code": "w" }, { "key_code": "e" }],
                   "modifiers": { "optional": ["any"] }
                 },
                 "to": [{ "key_code": "escape" }],
@@ -408,11 +391,14 @@
             ]
           },
           {
-            "description": "combo K+L -> Open symbol 1 Mode",
+            "description": "combo l; -> Open symbol 1 Mode",
             "manipulators": [
               {
                 "from": {
-                  "simultaneous": [{ "key_code": "k" }, { "key_code": "l" }],
+                  "simultaneous": [
+                    { "key_code": "l" },
+                    { "key_code": "semicolon" }
+                  ],
                   "simultaneous_options": {
                     "detect_key_down_uninterruptedly": true,
                     "key_down_order": "insensitive",
