@@ -752,6 +752,139 @@
             ]
           },
           {
+            "description": "combo jk -> Open symbol2 Mode",
+            "manipulators": [
+              {
+                "from": {
+                  "simultaneous": [{ "key_code": "j" }, { "key_code": "k" }],
+                  "simultaneous_options": {
+                    "detect_key_down_uninterruptedly": true,
+                    "key_down_order": "insensitive",
+                    "key_up_order": "insensitive",
+                    "key_up_when": "any",
+                    "to_after_key_up": [
+                      {
+                        "set_variable": {
+                          "name": "symbol-mode-2",
+                          "value": 0
+                        }
+                      }
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "set_variable": {
+                      "name": "symbol-mode-2",
+                      "value": 1
+                    }
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "symbol2 + q > !",
+            "manipulators": [
+              {
+                "conditions": [
+                  {
+                    "name": "symbol-mode-2",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "from": {
+                  "key_code": "q",
+                  "modifiers": { "optional": ["any"] }
+                },
+                "to": [
+                  {
+                    "key_code": "1",
+                    "modifiers": ["left_shift"]
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "symbol2 + w > @",
+            "manipulators": [
+              {
+                "conditions": [
+                  {
+                    "name": "symbol-mode-2",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "from": {
+                  "key_code": "w",
+                  "modifiers": { "optional": ["any"] }
+                },
+                "to": [
+                  {
+                    "key_code": "2",
+                    "modifiers": ["left_shift"]
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "symbol2 + e > #",
+            "manipulators": [
+              {
+                "conditions": [
+                  {
+                    "name": "symbol-mode-2",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "from": {
+                  "key_code": "e",
+                  "modifiers": { "optional": ["any"] }
+                },
+                "to": [
+                  {
+                    "key_code": "3",
+                    "modifiers": ["left_shift"]
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "symbol2 + r > $",
+            "manipulators": [
+              {
+                "conditions": [
+                  {
+                    "name": "symbol-mode-2",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "from": {
+                  "key_code": "r",
+                  "modifiers": { "optional": ["any"] }
+                },
+                "to": [
+                  {
+                    "key_code": "4",
+                    "modifiers": ["left_shift"]
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
             "description": "S+D -> (S)uper(D)uper Mode",
             "manipulators": [
               {
