@@ -285,7 +285,7 @@
             ]
           },
           {
-            "description": "kl; to enter/ return",
+            "description": "combo l; to enter/ return",
             "manipulators": [
               {
                 "from": {
@@ -300,7 +300,7 @@
             ]
           },
           {
-            "description": "I+O+P to change lang",
+            "description": "combo IOP to change lang",
             "manipulators": [
               {
                 "from": {
@@ -323,7 +323,7 @@
             ]
           },
           {
-            "description": "I+O to change lang",
+            "description": "combo IO to change lang",
             "manipulators": [
               {
                 "from": {
@@ -342,7 +342,7 @@
             ]
           },
           {
-            "description": "QW to ESC",
+            "description": "combo QW to ESC",
             "manipulators": [
               {
                 "from": {
@@ -354,7 +354,7 @@
             ]
           },
           {
-            "description": "OP to Backspace",
+            "description": "combo OP to Backspace",
             "manipulators": [
               {
                 "from": {
@@ -366,7 +366,7 @@
             ]
           },
           {
-            "description": "K+L -> Open symbol 1 Mode",
+            "description": "combo K+L -> Open symbol 1 Mode",
             "manipulators": [
               {
                 "from": {
