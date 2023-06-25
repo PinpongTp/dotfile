@@ -432,7 +432,7 @@
             ]
           },
           {
-            "description": "l; + q > ~",
+            "description": "symbol1 + q > ~",
             "manipulators": [
               {
                 "conditions": [
@@ -457,7 +457,7 @@
             ]
           },
           {
-            "description": "l; + w > _",
+            "description": "symbol1 + w > _",
             "manipulators": [
               {
                 "conditions": [
@@ -477,7 +477,7 @@
             ]
           },
           {
-            "description": "l; + e > +",
+            "description": "symbol1 + e > +",
             "manipulators": [
               {
                 "conditions": [
@@ -499,7 +499,7 @@
             ]
           },
           {
-            "description": "l; + r > (",
+            "description": "symbol1 + r > (",
             "manipulators": [
               {
                 "conditions": [
@@ -519,7 +519,7 @@
             ]
           },
           {
-            "description": "l; + u > )",
+            "description": "symbol1 + u > )",
             "manipulators": [
               {
                 "conditions": [
@@ -539,7 +539,7 @@
             ]
           },
           {
-            "description": "l; + a > `",
+            "description": "symbol1 + a > `",
             "manipulators": [
               {
                 "conditions": [
@@ -559,7 +559,7 @@
             ]
           },
           {
-            "description": "l; + s > -",
+            "description": "symbol1 + s > -",
             "manipulators": [
               {
                 "conditions": [
@@ -579,7 +579,7 @@
             ]
           },
           {
-            "description": "l; + d > =",
+            "description": "symbol1 + d > =",
             "manipulators": [
               {
                 "conditions": [
@@ -599,7 +599,7 @@
             ]
           },
           {
-            "description": "l; + f > {",
+            "description": "symbol1 + f > {",
             "manipulators": [
               {
                 "conditions": [
@@ -625,7 +625,7 @@
             ]
           },
           {
-            "description": "l; + j > }",
+            "description": "symbol1 + j > }",
             "manipulators": [
               {
                 "conditions": [
@@ -651,7 +651,7 @@
             ]
           },
           {
-            "description": "l; + x > |",
+            "description": "symbol1 + x > |",
             "manipulators": [
               {
                 "conditions": [
@@ -677,7 +677,7 @@
             ]
           },
           {
-            "description": "l; + c > \\",
+            "description": "symbol1 + c > \\",
             "manipulators": [
               {
                 "conditions": [
@@ -702,7 +702,7 @@
             ]
           },
           {
-            "description": "l; + v > [",
+            "description": "symbol1 + v > [",
             "manipulators": [
               {
                 "conditions": [
@@ -727,7 +727,7 @@
             ]
           },
           {
-            "description": "l; + m > ]",
+            "description": "symbol1 + m > ]",
             "manipulators": [
               {
                 "conditions": [
