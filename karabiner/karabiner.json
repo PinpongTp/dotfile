@@ -1108,6 +1108,26 @@
             ]
           },
           {
+            "description": "num-mode + n > 0",
+            "manipulators": [
+              {
+                "conditions": [
+                  {
+                    "name": "num-mode",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "from": {
+                  "key_code": "n",
+                  "modifiers": { "optional": ["any"] }
+                },
+                "to": [{ "key_code": "0" }],
+                "type": "basic"
+              }
+            ]
+          },
+          {
             "description": "num-mode + m > 1",
             "manipulators": [
               {
@@ -1122,12 +1142,7 @@
                   "key_code": "m",
                   "modifiers": { "optional": ["any"] }
                 },
-                "to": [
-                  {
-                    "key_code": "1"
-                  }
-                ],
-
+                "to": [{ "key_code": "1" }],
                 "type": "basic"
               }
             ]
