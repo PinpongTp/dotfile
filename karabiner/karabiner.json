@@ -396,7 +396,7 @@
             ]
           },
           {
-            "description": "combo l; -> Open symbol 1 Mode",
+            "description": "combo l; -> Open symbol1 Mode",
             "manipulators": [
               {
                 "from": {
@@ -432,7 +432,7 @@
             ]
           },
           {
-            "description": "KL + q > ~",
+            "description": "l; + q > ~",
             "manipulators": [
               {
                 "conditions": [
@@ -457,7 +457,7 @@
             ]
           },
           {
-            "description": "KL + w > _",
+            "description": "l; + w > _",
             "manipulators": [
               {
                 "conditions": [
@@ -477,7 +477,7 @@
             ]
           },
           {
-            "description": "KL + e > +",
+            "description": "l; + e > +",
             "manipulators": [
               {
                 "conditions": [
@@ -499,7 +499,7 @@
             ]
           },
           {
-            "description": "KL + r > (",
+            "description": "l; + r > (",
             "manipulators": [
               {
                 "conditions": [
@@ -519,7 +519,7 @@
             ]
           },
           {
-            "description": "KL + u > )",
+            "description": "l; + u > )",
             "manipulators": [
               {
                 "conditions": [
@@ -539,7 +539,7 @@
             ]
           },
           {
-            "description": "KL + a > `",
+            "description": "l; + a > `",
             "manipulators": [
               {
                 "conditions": [
@@ -559,7 +559,7 @@
             ]
           },
           {
-            "description": "KL + s > -",
+            "description": "l; + s > -",
             "manipulators": [
               {
                 "conditions": [
@@ -579,7 +579,7 @@
             ]
           },
           {
-            "description": "KL + d > =",
+            "description": "l; + d > =",
             "manipulators": [
               {
                 "conditions": [
@@ -599,7 +599,7 @@
             ]
           },
           {
-            "description": "KL + f > {",
+            "description": "l; + f > {",
             "manipulators": [
               {
                 "conditions": [
@@ -625,7 +625,7 @@
             ]
           },
           {
-            "description": "KL + j > }",
+            "description": "l; + j > }",
             "manipulators": [
               {
                 "conditions": [
@@ -651,7 +651,7 @@
             ]
           },
           {
-            "description": "KL + x > |",
+            "description": "l; + x > |",
             "manipulators": [
               {
                 "conditions": [
@@ -677,7 +677,7 @@
             ]
           },
           {
-            "description": "KL + c > \\",
+            "description": "l; + c > \\",
             "manipulators": [
               {
                 "conditions": [
@@ -702,7 +702,7 @@
             ]
           },
           {
-            "description": "KL + v > [",
+            "description": "l; + v > [",
             "manipulators": [
               {
                 "conditions": [
@@ -727,7 +727,7 @@
             ]
           },
           {
-            "description": "KL + m > ]",
+            "description": "l; + m > ]",
             "manipulators": [
               {
                 "conditions": [
@@ -1070,6 +1070,64 @@
                     "modifiers": ["left_command"]
                   }
                 ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "combo df -> Open num Mode",
+            "manipulators": [
+              {
+                "from": {
+                  "simultaneous": [{ "key_code": "d" }, { "key_code": "f" }],
+                  "simultaneous_options": {
+                    "detect_key_down_uninterruptedly": true,
+                    "key_down_order": "insensitive",
+                    "key_up_order": "insensitive",
+                    "key_up_when": "any",
+                    "to_after_key_up": [
+                      {
+                        "set_variable": {
+                          "name": "num-mode",
+                          "value": 0
+                        }
+                      }
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "set_variable": {
+                      "name": "num-mode",
+                      "value": 1
+                    }
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "num-mode + m > 1",
+            "manipulators": [
+              {
+                "conditions": [
+                  {
+                    "name": "num-mode",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "from": {
+                  "key_code": "m",
+                  "modifiers": { "optional": ["any"] }
+                },
+                "to": [
+                  {
+                    "key_code": "1"
+                  }
+                ],
+
                 "type": "basic"
               }
             ]
