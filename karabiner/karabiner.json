@@ -1401,6 +1401,26 @@
             ]
           },
           {
+            "description": "fun-mode + ; > 5",
+            "manipulators": [
+              {
+                "conditions": [
+                  {
+                    "name": "fun-mode",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "from": {
+                  "key_code": "k",
+                  "modifiers": { "optional": ["any"] }
+                },
+                "to": [{ "key_code": "f5" }],
+                "type": "basic"
+              }
+            ]
+          },
+          {
             "description": "Map Shift + Backspace to Forward Delete",
             "manipulators": [
               {
