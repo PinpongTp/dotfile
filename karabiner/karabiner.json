@@ -1208,6 +1208,66 @@
             ]
           },
           {
+            "description": "num-mode + j > 1",
+            "manipulators": [
+              {
+                "conditions": [
+                  {
+                    "name": "num-mode",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "from": {
+                  "key_code": "j",
+                  "modifiers": { "optional": ["any"] }
+                },
+                "to": [{ "key_code": "4" }],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "num-mode + k > 5",
+            "manipulators": [
+              {
+                "conditions": [
+                  {
+                    "name": "num-mode",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "from": {
+                  "key_code": "k",
+                  "modifiers": { "optional": ["any"] }
+                },
+                "to": [{ "key_code": "5" }],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "num-mode + l > 6",
+            "manipulators": [
+              {
+                "conditions": [
+                  {
+                    "name": "num-mode",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "from": {
+                  "key_code": "l",
+                  "modifiers": { "optional": ["any"] }
+                },
+                "to": [{ "key_code": "6" }],
+                "type": "basic"
+              }
+            ]
+          },
+          {
             "description": "Map Shift + Backspace to Forward Delete",
             "manipulators": [
               {
