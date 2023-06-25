@@ -1128,6 +1128,26 @@
             ]
           },
           {
+            "description": "num-mode + space > 0",
+            "manipulators": [
+              {
+                "conditions": [
+                  {
+                    "name": "num-mode",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "from": {
+                  "key_code": "spacebar",
+                  "modifiers": { "optional": ["any"] }
+                },
+                "to": [{ "key_code": "0" }],
+                "type": "basic"
+              }
+            ]
+          },
+          {
             "description": "num-mode + m > 1",
             "manipulators": [
               {
@@ -1143,6 +1163,46 @@
                   "modifiers": { "optional": ["any"] }
                 },
                 "to": [{ "key_code": "1" }],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "num-mode + , > 2",
+            "manipulators": [
+              {
+                "conditions": [
+                  {
+                    "name": "num-mode",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "from": {
+                  "key_code": "comma",
+                  "modifiers": { "optional": ["any"] }
+                },
+                "to": [{ "key_code": "2" }],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "num-mode + . > 3",
+            "manipulators": [
+              {
+                "conditions": [
+                  {
+                    "name": "num-mode",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "from": {
+                  "key_code": "period",
+                  "modifiers": { "optional": ["any"] }
+                },
+                "to": [{ "key_code": "3" }],
                 "type": "basic"
               }
             ]
