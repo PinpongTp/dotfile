@@ -1208,7 +1208,7 @@
             ]
           },
           {
-            "description": "num-mode + j > 1",
+            "description": "num-mode + j > 4",
             "manipulators": [
               {
                 "conditions": [
