@@ -261,6 +261,34 @@
             ]
           },
           {
+            "description": "A to ctl",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "a"
+                },
+                "to": [{ "key_code": "left_control" }],
+                "to_if_held_down": [{ "key_code": "left_control" }],
+                "to_if_alone": [{ "key_code": "a" }],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "; to ctl",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "semicolon"
+                },
+                "to": [{ "key_code": "left_control" }],
+                "to_if_held_down": [{ "key_code": "left_control" }],
+                "to_if_alone": [{ "key_code": "semicolon" }],
+                "type": "basic"
+              }
+            ]
+          },
+          {
             "description": "z to shift",
             "manipulators": [
               {
@@ -346,7 +374,8 @@
             "manipulators": [
               {
                 "from": {
-                  "simultaneous": [{ "key_code": "q" }, { "key_code": "w" }]
+                  "simultaneous": [{ "key_code": "q" }, { "key_code": "w" }],
+                  "modifiers": { "optional": ["any"] }
                 },
                 "to": [{ "key_code": "tab" }],
                 "type": "basic"
@@ -358,7 +387,8 @@
             "manipulators": [
               {
                 "from": {
-                  "simultaneous": [{ "key_code": "a" }, { "key_code": "s" }]
+                  "simultaneous": [{ "key_code": "a" }, { "key_code": "s" }],
+                  "modifiers": { "optional": ["any"] }
                 },
                 "to": [{ "key_code": "escape" }],
                 "type": "basic"
