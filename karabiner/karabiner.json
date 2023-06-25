@@ -261,20 +261,6 @@
             ]
           },
           {
-            "description": "A to ctl",
-            "manipulators": [
-              {
-                "from": {
-                  "key_code": "a"
-                },
-                "to": [{ "key_code": "left_control" }],
-                "to_if_held_down": [{ "key_code": "left_control" }],
-                "to_if_alone": [{ "key_code": "a" }],
-                "type": "basic"
-              }
-            ]
-          },
-          {
             "description": "z to shift",
             "manipulators": [
               {
