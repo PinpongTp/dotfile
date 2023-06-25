@@ -311,14 +311,14 @@
             ]
           },
           {
-            "description": "combo IOP to change lang",
+            "description": "combo UIO to change lang",
             "manipulators": [
               {
                 "from": {
                   "simultaneous": [
+                    { "key_code": "u" },
                     { "key_code": "i" },
-                    { "key_code": "o" },
-                    { "key_code": "p" }
+                    { "key_code": "o" }
                   ]
                 },
                 "to": [
@@ -334,11 +334,11 @@
             ]
           },
           {
-            "description": "combo IO to change lang",
+            "description": "combo UI to change lang",
             "manipulators": [
               {
                 "from": {
-                  "simultaneous": [{ "key_code": "i" }, { "key_code": "o" }]
+                  "simultaneous": [{ "key_code": "u" }, { "key_code": "i" }]
                 },
                 "to": [
                   {
@@ -379,13 +379,32 @@
             ]
           },
           {
-            "description": "combo OP to Backspace",
+            "description": "combo io to Backspace",
             "manipulators": [
               {
                 "from": {
-                  "simultaneous": [{ "key_code": "o" }, { "key_code": "p" }]
+                  "simultaneous": [{ "key_code": "i" }, { "key_code": "o" }]
                 },
                 "to": [{ "key_code": "delete_or_backspace" }],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "combo shift io to  Forward Delete",
+            "manipulators": [
+              {
+                "from": {
+                  "simultaneous": [{ "key_code": "i" }, { "key_code": "o" }],
+                  "modifiers": {
+                    "mandatory": ["shift"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "delete_forward"
+                  }
+                ],
                 "type": "basic"
               }
             ]
