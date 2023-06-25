@@ -342,11 +342,23 @@
             ]
           },
           {
-            "description": "combo QW to ESC",
+            "description": "combo QW to tab",
             "manipulators": [
               {
                 "from": {
                   "simultaneous": [{ "key_code": "q" }, { "key_code": "w" }]
+                },
+                "to": [{ "key_code": "tab" }],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "combo as to ESC",
+            "manipulators": [
+              {
+                "from": {
+                  "simultaneous": [{ "key_code": "a" }, { "key_code": "s" }]
                 },
                 "to": [{ "key_code": "escape" }],
                 "type": "basic"
