@@ -62,6 +62,7 @@ ls.add_snippets("all", {
 })
 local mySnippet = {
 	s("fire", { t("console.log('🔥', "), i(1, ""), t(")") }),
+	s("try", { t("try {"), i(1, ""), t("} catch (error) {}") }),
 	s("throw error", { t("throw Error("), i(1, ""), t(")") }),
 	s("throw exception", { t("throw new HttpException("), i(1, ""), t(", HttpStatus.BAD_REQUEST)") }),
 }
