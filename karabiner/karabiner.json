@@ -289,7 +289,10 @@
             "manipulators": [
               {
                 "from": {
-                  "simultaneous": [{ "key_code": "k" }, { "key_code": "l" }]
+                  "simultaneous": [{ "key_code": "k" }, { "key_code": "l" }],
+                  "modifiers": {
+                    "optional": ["any"]
+                  }
                 },
                 "to": [{ "key_code": "return_or_enter" }],
                 "type": "basic"
