@@ -24,3 +24,7 @@ k9s/config.yml
 vue/.vuerc
 
 nvim/lazy-lock.json
+karabiner/automatic_backups
+karabiner/assets/complex_modifications/1686681782.json
+jgit/config
+nvim/lua/.luarc.json
