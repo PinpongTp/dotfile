@@ -14,7 +14,7 @@ map("n", ";ps", ":PackerSync<CR>", opts)
 -- control
 map("n", "<Leader>q", ":q<CR>", opts)
 map("v", "<Leader>q", ":q<CR>", opts)
-map("n", "<Leader>Q", ":q!<CR>", opts)
+map("n", "<Leader>Q", ":qa!<CR>", opts)
 --map('n', '<Leader>w', ':w<CR>', { noremap = true, silent = true })
 map("n", "<Leader>W", ":wq<CR>", opts)
 map("n", "<Leader>S", ":so %<CR>", opts)
@@ -35,7 +35,20 @@ map("n", "<Leader>w", "<C-w>w", { noremap = false })
 -- Buf and Tab
 map("n", "<Tab>", ":bnext<CR>", { noremap = true, silent = true })
 map("n", "<S-Tab>", ":bprevious<CR>", { noremap = true, silent = true })
-map("n", "q<Tab>", ":bw<CR>", { noremap = true, silent = true })
+--map("n", "q<Tab>", ":bw<CR>", { noremap = true, silent = true })
+
+local cmd = vim.api.nvim_command
+keymap("n", "q<Tab>", function()
+	local is_open = require("nvim-tree.view").is_visible()
+	local api = require("nvim-tree.api")
+	if is_open then
+		api.tree.close()
+		vim.cmd(":bw")
+		api.tree.toggle({ focus = false })
+	else
+		vim.cmd(":bw")
+	end
+end)
 map("n", "<Leader>b.", ":bnext<CR>", { noremap = true, silent = true })
 map("n", "<Leader>b,", ":bprevious<CR>", { noremap = true, silent = true })
 map("n", "<Leader>bq", ":bw<CR>", { noremap = true, silent = true })
@@ -180,7 +193,6 @@ map("n", ";z", ":ZenMode<CR>", opts)
 -- Move text up and down by visual
 map("v", "J", ":m '>+1<CR>gv=gv", opts)
 map("v", "K", ":m '<-2<CR>gv=gv", opts)
-
 --map("n", "<Leader>rr", ":lua require('rest-nvim').run()<CR>", opts)
 --map("n", "<Leader>rr", ":lua require('rest-nvim')RestNvim<CR>", opts)
 
