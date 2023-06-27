@@ -399,14 +399,11 @@
             ]
           },
           {
-            "description": "combo l; -> Open symbol1 Mode",
+            "description": "combo jl -> Open symbol1 Mode",
             "manipulators": [
               {
                 "from": {
-                  "simultaneous": [
-                    { "key_code": "l" },
-                    { "key_code": "semicolon" }
-                  ],
+                  "simultaneous": [{ "key_code": "j" }, { "key_code": "l" }],
                   "simultaneous_options": {
                     "detect_key_down_uninterruptedly": true,
                     "key_down_order": "insensitive",
