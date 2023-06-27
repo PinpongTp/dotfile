@@ -345,11 +345,11 @@
             ]
           },
           {
-            "description": "combo QW to tab",
+            "description": "combo xc to tab",
             "manipulators": [
               {
                 "from": {
-                  "simultaneous": [{ "key_code": "q" }, { "key_code": "w" }],
+                  "simultaneous": [{ "key_code": "x" }, { "key_code": "c" }],
                   "modifiers": { "optional": ["any"] }
                 },
                 "to": [{ "key_code": "tab" }],
