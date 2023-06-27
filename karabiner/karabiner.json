@@ -403,7 +403,7 @@
             "manipulators": [
               {
                 "from": {
-                  "simultaneous": [{ "key_code": "j" }, { "key_code": "f" }],
+                  "simultaneous": [{ "key_code": "j" }, { "key_code": "l" }],
                   "simultaneous_options": {
                     "detect_key_down_uninterruptedly": true,
                     "key_down_order": "insensitive",
