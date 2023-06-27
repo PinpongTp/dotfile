@@ -371,6 +371,19 @@
             ]
           },
           {
+            "description": "combo er to tab",
+            "manipulators": [
+              {
+                "from": {
+                  "simultaneous": [{ "key_code": "e" }, { "key_code": "r" }],
+                  "modifiers": { "optional": ["any"] }
+                },
+                "to": [{ "key_code": "tab" }],
+                "type": "basic"
+              }
+            ]
+          },
+          {
             "description": "combo io to Backspace",
             "manipulators": [
               {
