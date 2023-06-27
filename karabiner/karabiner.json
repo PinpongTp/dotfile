@@ -243,7 +243,7 @@
         "parameters": {
           "basic.simultaneous_threshold_milliseconds": 25,
           "basic.to_delayed_action_delay_milliseconds": 500,
-          "basic.to_if_alone_timeout_milliseconds": 200,
+          "basic.to_if_alone_timeout_milliseconds": 220,
           "basic.to_if_held_down_threshold_milliseconds": 100,
           "mouse_motion_to_scroll.speed": 100
         },
