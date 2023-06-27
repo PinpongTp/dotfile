@@ -403,11 +403,11 @@
             ]
           },
           {
-            "description": "combo jl -> Open symbol1 Mode",
+            "description": "combo jk -> Open symbol1 Mode",
             "manipulators": [
               {
                 "from": {
-                  "simultaneous": [{ "key_code": "j" }, { "key_code": "l" }],
+                  "simultaneous": [{ "key_code": "j" }, { "key_code": "k" }],
                   "simultaneous_options": {
                     "detect_key_down_uninterruptedly": true,
                     "key_down_order": "insensitive",
@@ -523,7 +523,7 @@
             ]
           },
           {
-            "description": "symbol1 + u > )",
+            "description": "symbol1 + t > )",
             "manipulators": [
               {
                 "conditions": [
@@ -534,7 +534,7 @@
                   }
                 ],
                 "from": {
-                  "key_code": "u",
+                  "key_code": "t",
                   "modifiers": { "optional": ["any"] }
                 },
                 "to": [{ "key_code": "0", "modifiers": ["left_shift"] }],
@@ -629,7 +629,7 @@
             ]
           },
           {
-            "description": "symbol1 + j > }",
+            "description": "symbol1 + g > }",
             "manipulators": [
               {
                 "conditions": [
@@ -640,7 +640,7 @@
                   }
                 ],
                 "from": {
-                  "key_code": "j",
+                  "key_code": "g",
                   "modifiers": { "optional": ["any"] }
                 },
                 "to": [
@@ -731,7 +731,7 @@
             ]
           },
           {
-            "description": "symbol1 + m > ]",
+            "description": "symbol1 + b > ]",
             "manipulators": [
               {
                 "conditions": [
@@ -742,7 +742,7 @@
                   }
                 ],
                 "from": {
-                  "key_code": "m",
+                  "key_code": "b",
                   "modifiers": { "optional": ["any"] }
                 },
                 "to": [
@@ -756,11 +756,11 @@
             ]
           },
           {
-            "description": "combo jk -> Open symbol2 Mode",
+            "description": "combo ji -> Open symbol2 Mode",
             "manipulators": [
               {
                 "from": {
-                  "simultaneous": [{ "key_code": "j" }, { "key_code": "k" }],
+                  "simultaneous": [{ "key_code": "j" }, { "key_code": "i" }],
                   "simultaneous_options": {
                     "detect_key_down_uninterruptedly": true,
                     "key_down_order": "insensitive",
