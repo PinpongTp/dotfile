@@ -1642,11 +1642,11 @@
             ]
           },
           {
-            "description": "combo er -> Open fun Mode",
+            "description": "combo ef -> Open fun Mode",
             "manipulators": [
               {
                 "from": {
-                  "simultaneous": [{ "key_code": "e" }, { "key_code": "r" }],
+                  "simultaneous": [{ "key_code": "e" }, { "key_code": "f" }],
                   "simultaneous_options": {
                     "detect_key_down_uninterruptedly": true,
                     "key_down_order": "insensitive",
