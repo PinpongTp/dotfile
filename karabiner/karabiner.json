@@ -297,14 +297,14 @@
             ]
           },
           {
-            "description": "combo UIO to change lang",
+            "description": "combo m,. to change lang",
             "manipulators": [
               {
                 "from": {
                   "simultaneous": [
-                    { "key_code": "u" },
-                    { "key_code": "i" },
-                    { "key_code": "o" }
+                    { "key_code": "m" },
+                    { "key_code": "comma" },
+                    { "key_code": "period" }
                   ]
                 },
                 "to": [
@@ -320,11 +320,14 @@
             ]
           },
           {
-            "description": "combo UI to change lang",
+            "description": "combo ,. to change lang",
             "manipulators": [
               {
                 "from": {
-                  "simultaneous": [{ "key_code": "u" }, { "key_code": "i" }]
+                  "simultaneous": [
+                    { "key_code": "comma" },
+                    { "key_code": "period" }
+                  ]
                 },
                 "to": [
                   {
