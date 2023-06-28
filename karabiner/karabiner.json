@@ -416,6 +416,81 @@
             ]
           },
           {
+            "description": "combo a; -> Open symbol1 Mode",
+            "manipulators": [
+              {
+                "from": {
+                  "simultaneous": [{ "key_code": "a" }],
+                  "simultaneous_options": {
+                    "detect_key_down_uninterruptedly": true,
+                    "key_down_order": "insensitive",
+                    "key_up_order": "insensitive",
+                    "key_up_when": "any",
+                    "to_after_key_up": [
+                      {
+                        "set_variable": {
+                          "name": "layer-symbol",
+                          "value": 0
+                        }
+                      }
+                    ]
+                  }
+                },
+                "parameters": {
+                  "basic.to_if_alone_timeout_milliseconds": 150,
+                  "basic.to_if_held_down_threshold_milliseconds": 150
+                },
+                "to_if_alone": [
+                  {
+                    "key_code": "a"
+                  }
+                ],
+                "to": [
+                  {
+                    "set_variable": {
+                      "name": "layer-symbol",
+                      "value": 1
+                    }
+                  }
+                ],
+                "to_if_held_down": [
+                  {
+                    "set_variable": {
+                      "name": "layer-symbol",
+                      "value": 1
+                    }
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "sym + , > {",
+            "manipulators": [
+              {
+                "conditions": [
+                  {
+                    "name": "layer-symbol",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "from": {
+                  "key_code": "comma",
+                  "modifiers": { "optional": ["any"] }
+                },
+                "to": [
+                  {
+                    "key_code": "open_bracket",
+                    "modifiers": ["left_shift"]
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
             "description": "combo jk -> Open symbol1 Mode",
             "manipulators": [
               {
