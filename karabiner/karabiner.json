@@ -466,6 +466,31 @@
             ]
           },
           {
+            "description": "sym + . > }",
+            "manipulators": [
+              {
+                "conditions": [
+                  {
+                    "name": "layer-symbol",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "from": {
+                  "key_code": "period",
+                  "modifiers": { "optional": ["any"] }
+                },
+                "to": [
+                  {
+                    "key_code": "close_bracket",
+                    "modifiers": ["left_shift"]
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
             "description": "sym + , > {",
             "manipulators": [
               {
