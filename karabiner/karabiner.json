@@ -392,15 +392,9 @@
               {
                 "from": {
                   "simultaneous": [{ "key_code": "i" }, { "key_code": "o" }],
-                  "modifiers": {
-                    "mandatory": ["shift"]
-                  }
+                  "modifiers": { "mandatory": ["shift"] }
                 },
-                "to": [
-                  {
-                    "key_code": "delete_forward"
-                  }
-                ],
+                "to": [{ "key_code": "delete_forward" }],
                 "type": "basic"
               }
             ]
@@ -426,14 +420,7 @@
                     ]
                   }
                 },
-                "to": [
-                  {
-                    "set_variable": {
-                      "name": "sym-mode",
-                      "value": 1
-                    }
-                  }
-                ],
+                "to": [{ "set_variable": { "name": "sym-mode", "value": 1 } }],
                 "type": "basic"
               },
               {
@@ -448,29 +435,17 @@
                     "key_up_order": "insensitive",
                     "key_up_when": "any",
                     "to_after_key_up": [
-                      {
-                        "set_variable": {
-                          "name": "sym-mode",
-                          "value": 0
-                        }
-                      }
+                      { "set_variable": { "name": "sym-mode", "value": 0 } }
                     ]
                   }
                 },
-                "to": [
-                  {
-                    "set_variable": {
-                      "name": "sym-mode",
-                      "value": 1
-                    }
-                  }
-                ],
+                "to": [{ "set_variable": { "name": "sym-mode", "value": 1 } }],
                 "type": "basic"
               }
             ]
           },
           {
-            "description": "sym + . > }",
+            "description": "sym + . > } and , > {",
             "manipulators": [
               {
                 "conditions": [
@@ -481,12 +456,7 @@
                   { "key_code": "close_bracket", "modifiers": ["left_shift"] }
                 ],
                 "type": "basic"
-              }
-            ]
-          },
-          {
-            "description": "sym + , > {",
-            "manipulators": [
+              },
               {
                 "conditions": [
                   { "name": "sym-mode", "type": "variable_if", "value": 1 }
@@ -500,7 +470,7 @@
             ]
           },
           {
-            "description": "sym + k > (",
+            "description": "sym + k > ( and l > )",
             "manipulators": [
               {
                 "conditions": [
@@ -509,12 +479,7 @@
                 "from": { "key_code": "k" },
                 "to": [{ "key_code": "9", "modifiers": ["left_shift"] }],
                 "type": "basic"
-              }
-            ]
-          },
-          {
-            "description": "sym + l > )",
-            "manipulators": [
+              },
               {
                 "conditions": [
                   { "name": "sym-mode", "type": "variable_if", "value": 1 }
@@ -526,7 +491,7 @@
             ]
           },
           {
-            "description": "sym + i > [",
+            "description": "sym + i > [ and o > ]",
             "manipulators": [
               {
                 "conditions": [
@@ -535,12 +500,7 @@
                 "from": { "key_code": "i" },
                 "to": [{ "key_code": "open_bracket" }],
                 "type": "basic"
-              }
-            ]
-          },
-          {
-            "description": "sym + o > ]",
-            "manipulators": [
+              },
               {
                 "conditions": [
                   { "name": "sym-mode", "type": "variable_if", "value": 1 }
@@ -552,7 +512,7 @@
             ]
           },
           {
-            "description": "sym + r > '",
+            "description": "sym + r > ' and u > \"",
             "manipulators": [
               {
                 "conditions": [
@@ -561,12 +521,7 @@
                 "from": { "key_code": "r" },
                 "to": [{ "key_code": "quote" }],
                 "type": "basic"
-              }
-            ]
-          },
-          {
-            "description": "sym + u > \"",
-            "manipulators": [
+              },
               {
                 "conditions": [
                   { "name": "sym-mode", "type": "variable_if", "value": 1 }
@@ -591,27 +546,14 @@
             ]
           },
           {
-            "description": "sym + ; > #",
+            "description": "sym + ; > &",
             "manipulators": [
               {
                 "conditions": [
                   { "name": "sym-mode", "type": "variable_if", "value": 1 }
                 ],
                 "from": { "key_code": "semicolon" },
-                "to": [{ "key_code": "3", "modifiers": ["left_shift"] }],
-                "type": "basic"
-              }
-            ]
-          },
-          {
-            "description": "sym + / > @",
-            "manipulators": [
-              {
-                "conditions": [
-                  { "name": "sym-mode", "type": "variable_if", "value": 1 }
-                ],
-                "from": { "key_code": "slash" },
-                "to": [{ "key_code": "2", "modifiers": ["left_shift"] }],
+                "to": [{ "key_code": "7", "modifiers": ["left_shift"] }],
                 "type": "basic"
               }
             ]
@@ -625,6 +567,55 @@
                 ],
                 "from": { "key_code": "m" },
                 "to": [{ "key_code": "4", "modifiers": ["left_shift"] }],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "sym + n > ~",
+            "manipulators": [
+              {
+                "conditions": [
+                  { "name": "sym-mode", "type": "variable_if", "value": 1 }
+                ],
+                "from": { "key_code": "n" },
+                "to": [
+                  {
+                    "key_code": "grave_accent_and_tilde",
+                    "modifiers": ["left_shift"]
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "sym + j > _",
+            "manipulators": [
+              {
+                "conditions": [
+                  { "name": "sym-mode", "type": "variable_if", "value": 1 }
+                ],
+                "from": { "key_code": "j" },
+                "to": [{ "key_code": "hyphen", "modifiers": ["left_shift"] }],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "sym + h > |",
+            "manipulators": [
+              {
+                "conditions": [
+                  { "name": "sym-mode", "type": "variable_if", "value": 1 }
+                ],
+                "from": { "key_code": "h" },
+                "to": [
+                  {
+                    "key_code": "backslash",
+                    "modifiers": ["left_shift"]
+                  }
+                ],
                 "type": "basic"
               }
             ]
