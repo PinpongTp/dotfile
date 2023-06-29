@@ -484,20 +484,11 @@
             "manipulators": [
               {
                 "conditions": [
-                  {
-                    "name": "sym-mode",
-                    "type": "variable_if",
-                    "value": 1
-                  }
+                  { "name": "sym-mode", "type": "variable_if", "value": 1 }
                 ],
-                "from": {
-                  "key_code": "period"
-                },
+                "from": { "key_code": "period" },
                 "to": [
-                  {
-                    "key_code": "close_bracket",
-                    "modifiers": ["left_shift"]
-                  }
+                  { "key_code": "close_bracket", "modifiers": ["left_shift"] }
                 ]
               }
             ]
@@ -507,20 +498,11 @@
             "manipulators": [
               {
                 "conditions": [
-                  {
-                    "name": "sym-mode",
-                    "type": "variable_if",
-                    "value": 1
-                  }
+                  { "name": "sym-mode", "type": "variable_if", "value": 1 }
                 ],
-                "from": {
-                  "key_code": "comma"
-                },
+                "from": { "key_code": "comma" },
                 "to": [
-                  {
-                    "key_code": "open_bracket",
-                    "modifiers": ["left_shift"]
-                  }
+                  { "key_code": "open_bracket", "modifiers": ["left_shift"] }
                 ]
               }
             ]
