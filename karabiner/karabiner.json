@@ -420,7 +420,7 @@
             "manipulators": [
               {
                 "from": {
-                  "simultaneous": [{ "key_code": "a" }],
+                  "simultaneous": [{ "key_code": "s" }, { "key_code": "a" }],
                   "simultaneous_options": {
                     "detect_key_down_uninterruptedly": true,
                     "key_down_order": "insensitive",
@@ -436,22 +436,12 @@
                     ]
                   }
                 },
-                "parameters": {
-                  "basic.to_if_alone_timeout_milliseconds": 150,
-                  "basic.to_if_held_down_threshold_milliseconds": 150
-                },
-                "to_after_key_up": [
-                  {
-                    "key_code": "a"
-                  }
-                ],
-                "to_if_held_down": [
+                "to": [
                   {
                     "set_variable": {
                       "name": "layer-symbol",
                       "value": 1
-                    },
-                    "halt": true
+                    }
                   }
                 ],
                 "type": "basic"
