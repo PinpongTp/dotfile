@@ -562,6 +562,32 @@
             ]
           },
           {
+            "description": "sym + r > '",
+            "manipulators": [
+              {
+                "conditions": [
+                  { "name": "sym-mode", "type": "variable_if", "value": 1 }
+                ],
+                "from": { "key_code": "r" },
+                "to": [{ "key_code": "quote" }],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "sym + u > \"",
+            "manipulators": [
+              {
+                "conditions": [
+                  { "name": "sym-mode", "type": "variable_if", "value": 1 }
+                ],
+                "from": { "key_code": "u" },
+                "to": [{ "key_code": "quote", "modifiers": ["left_shift"] }],
+                "type": "basic"
+              }
+            ]
+          },
+          {
             "description": "combo jk -> Open symbol1 Mode",
             "manipulators": [
               {
