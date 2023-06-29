@@ -536,6 +536,32 @@
             ]
           },
           {
+            "description": "sym + i > [",
+            "manipulators": [
+              {
+                "conditions": [
+                  { "name": "sym-mode", "type": "variable_if", "value": 1 }
+                ],
+                "from": { "key_code": "i" },
+                "to": [{ "key_code": "open_bracket" }],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "sym + o > ]",
+            "manipulators": [
+              {
+                "conditions": [
+                  { "name": "sym-mode", "type": "variable_if", "value": 1 }
+                ],
+                "from": { "key_code": "o" },
+                "to": [{ "key_code": "close_bracket" }],
+                "type": "basic"
+              }
+            ]
+          },
+          {
             "description": "combo jk -> Open symbol1 Mode",
             "manipulators": [
               {
