@@ -295,7 +295,7 @@
             ]
           },
           {
-            "description": "combo m,. to change lang",
+            "description": "combo ,. and m,. to change lang",
             "manipulators": [
               {
                 "from": {
@@ -314,12 +314,7 @@
                   }
                 ],
                 "type": "basic"
-              }
-            ]
-          },
-          {
-            "description": "combo ,. to change lang",
-            "manipulators": [
+              },
               {
                 "from": {
                   "simultaneous": [
