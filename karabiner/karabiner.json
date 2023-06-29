@@ -621,6 +621,64 @@
             ]
           },
           {
+            "description": "sym + s > - and d > +",
+            "manipulators": [
+              {
+                "conditions": [
+                  { "name": "sym-mode", "type": "variable_if", "value": 1 }
+                ],
+                "from": { "key_code": "s" },
+                "to": [{ "key_code": "hyphen" }],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  { "name": "sym-mode", "type": "variable_if", "value": 1 }
+                ],
+                "from": { "key_code": "d" },
+                "to": [{ "key_code": "equal_sign", "modifiers": "left_shift" }],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  { "name": "sym-mode", "type": "variable_if", "value": 1 }
+                ],
+                "from": { "key_code": "f" },
+                "to": [{ "key_code": "equal_sign" }],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "sym + x > / and c > * and v > \\",
+            "manipulators": [
+              {
+                "conditions": [
+                  { "name": "sym-mode", "type": "variable_if", "value": 1 }
+                ],
+                "from": { "key_code": "x" },
+                "to": [{ "key_code": "backslash" }],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  { "name": "sym-mode", "type": "variable_if", "value": 1 }
+                ],
+                "from": { "key_code": "c" },
+                "to": [{ "key_code": "8", "modifiers": ["left_shift"] }],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  { "name": "sym-mode", "type": "variable_if", "value": 1 }
+                ],
+                "from": { "key_code": "v" },
+                "to": [{ "key_code": "slash" }],
+                "type": "basic"
+              }
+            ]
+          },
+          {
             "description": "combo jk -> Open symbol1 Mode",
             "manipulators": [
               {
