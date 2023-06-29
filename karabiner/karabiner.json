@@ -261,7 +261,7 @@
             ]
           },
           {
-            "description": "z to shift",
+            "description": "/ and z to shift",
             "manipulators": [
               {
                 "from": { "key_code": "z" },
@@ -269,12 +269,7 @@
                 "to_if_held_down": [{ "key_code": "left_shift" }],
                 "to_if_alone": [{ "key_code": "z" }],
                 "type": "basic"
-              }
-            ]
-          },
-          {
-            "description": "/ to shift",
-            "manipulators": [
+              },
               {
                 "from": { "key_code": "slash" },
                 "to": [{ "key_code": "right_shift" }],
@@ -284,6 +279,7 @@
               }
             ]
           },
+
           {
             "description": "combo kl to enter/ return",
             "manipulators": [
