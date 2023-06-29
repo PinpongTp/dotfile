@@ -489,7 +489,8 @@
                 "from": { "key_code": "period" },
                 "to": [
                   { "key_code": "close_bracket", "modifiers": ["left_shift"] }
-                ]
+                ],
+                "type": "basic"
               }
             ]
           },
@@ -503,7 +504,34 @@
                 "from": { "key_code": "comma" },
                 "to": [
                   { "key_code": "open_bracket", "modifiers": ["left_shift"] }
-                ]
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "sym + k > (",
+            "manipulators": [
+              {
+                "conditions": [
+                  { "name": "sym-mode", "type": "variable_if", "value": 1 }
+                ],
+                "from": { "key_code": "k" },
+                "to": [{ "key_code": "9", "modifiers": ["left_shift"] }],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "sym + l > )",
+            "manipulators": [
+              {
+                "conditions": [
+                  { "name": "sym-mode", "type": "variable_if", "value": 1 }
+                ],
+                "from": { "key_code": "l" },
+                "to": [{ "key_code": "0", "modifiers": ["left_shift"] }],
+                "type": "basic"
               }
             ]
           },
