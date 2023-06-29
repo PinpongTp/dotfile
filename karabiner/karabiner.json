@@ -416,7 +416,7 @@
             ]
           },
           {
-            "description": "combo a; -> Open symbol1 Mode",
+            "description": "combo as , l;  -> Open sym-mode",
             "manipulators": [
               {
                 "from": {
@@ -429,7 +429,7 @@
                     "to_after_key_up": [
                       {
                         "set_variable": {
-                          "name": "layer-symbol",
+                          "name": "sym-mode",
                           "value": 0
                         }
                       }
@@ -439,7 +439,38 @@
                 "to": [
                   {
                     "set_variable": {
-                      "name": "layer-symbol",
+                      "name": "sym-mode",
+                      "value": 1
+                    }
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "simultaneous": [
+                    { "key_code": "l" },
+                    { "key_code": "semicolon" }
+                  ],
+                  "simultaneous_options": {
+                    "detect_key_down_uninterruptedly": true,
+                    "key_down_order": "insensitive",
+                    "key_up_order": "insensitive",
+                    "key_up_when": "any",
+                    "to_after_key_up": [
+                      {
+                        "set_variable": {
+                          "name": "sym-mode",
+                          "value": 0
+                        }
+                      }
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "set_variable": {
+                      "name": "sym-mode",
                       "value": 1
                     }
                   }
@@ -454,7 +485,7 @@
               {
                 "conditions": [
                   {
-                    "name": "layer-symbol",
+                    "name": "sym-mode",
                     "type": "variable_if",
                     "value": 1
                   }
@@ -467,8 +498,7 @@
                     "key_code": "close_bracket",
                     "modifiers": ["left_shift"]
                   }
-                ],
-                "type": "basic"
+                ]
               }
             ]
           },
@@ -478,7 +508,7 @@
               {
                 "conditions": [
                   {
-                    "name": "layer-symbol",
+                    "name": "sym-mode",
                     "type": "variable_if",
                     "value": 1
                   }
@@ -491,8 +521,7 @@
                     "key_code": "open_bracket",
                     "modifiers": ["left_shift"]
                   }
-                ],
-                "type": "basic"
+                ]
               }
             ]
           },
