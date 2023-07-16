@@ -15,6 +15,8 @@ map("n", ";ps", ":PackerSync<CR>", opts)
 map("n", "<Leader>q", ":q<CR>", opts)
 map("v", "<Leader>q", ":q<CR>", opts)
 map("n", "<Leader>Q", ":qa!<CR>", opts)
+map("n", ";w", ":w<CR>", opts)
+
 --map('n', '<Leader>w', ':w<CR>', { noremap = true, silent = true })
 map("n", "<Leader>W", ":wq<CR>", opts)
 map("n", "<Leader>S", ":so %<CR>", opts)
