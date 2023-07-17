@@ -5,6 +5,9 @@ local opts = { noremap = true, silent = false }
 vim.g.mapleader = " "
 -- config
 map("n", "x", '"_x', opts)
+map("v", "x", '"_x', opts)
+--map("v", "d", '"_d', opts)
+--map("n", "d", '"_d', opts)
 map("v", "p", '"_dP', opts)
 map("n", "dw", 'vb"_d', opts)
 
