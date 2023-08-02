@@ -137,7 +137,7 @@ return {
 			{ "hrsh7th/cmp-nvim-lua" }, -- Optional
 
 			-- LSP Support
-			{ "j-hui/fidget.nvim" },
+			{ "j-hui/fidget.nvim", tag = "legacy", event = "LspAttach" },
 			{
 				"SmiteshP/nvim-navbuddy",
 				dependencies = {
