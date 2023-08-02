@@ -11,10 +11,10 @@ null_ls.setup({
 	on_attach = require("plugin_configs.lsp.handlers").on_attach,
 	debug = true,
 	sources = {
-		formatting.prettier.with({ extra_args = { "--single-quote" } }),
+		formatting.prettierd.with({ extra_args = { "--single-quote" } }),
 		formatting.stylua,
-		diagnostics.eslint,
-		code_actions.eslint,
+		diagnostics.eslint_d,
+		code_actions.eslint_d,
 		--code_actions.gitsigns,
 	},
 })
