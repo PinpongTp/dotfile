@@ -12,6 +12,8 @@ node_modules
 /Microsoft*
 /xbuild
 /filezilla
+*/secrets
+/github-copilot
 .DS_Store
 
 lazygit/state.yml
