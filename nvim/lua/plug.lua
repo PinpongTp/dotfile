@@ -262,6 +262,33 @@ return {
 	{
 		"github/copilot.vim",
 	},
+	-- Lazy
+	{
+		"jackMort/ChatGPT.nvim",
+		config = function()
+			local home = vim.fn.expand("$HOME")
+			require("chatgpt").setup({
+				api_key_cmd = "gpg -d --passphrase abcd " .. home .. "/.config/nvim/secrets/chatgpt-api-key.txt.gpg",
+				edit_with_instructions = {
+					diff = false,
+					keymaps = {
+						close = "<C-c>",
+						accept = "<C-y>",
+						toggle_diff = "<C-d>",
+						toggle_settings = "<C-o>",
+						cycle_windows = "<Tab>",
+						use_output_as_input = "<C-i>",
+					},
+				},
+			})
+		end,
+		event = "VeryLazy",
+		dependencies = {
+			"MunifTanjim/nui.nvim",
+			"nvim-lua/plenary.nvim",
+			"nvim-telescope/telescope.nvim",
+		},
+	},
 
 	-- helper
 	"akinsho/toggleterm.nvim",
