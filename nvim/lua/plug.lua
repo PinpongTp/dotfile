@@ -258,6 +258,11 @@ return {
 	"tpope/vim-fugitive",
 	"tpope/vim-rhubarb",
 
+	-- copilot
+	{
+		"github/copilot.vim",
+	},
+
 	-- helper
 	"akinsho/toggleterm.nvim",
 	"voldikss/vim-floaterm",
