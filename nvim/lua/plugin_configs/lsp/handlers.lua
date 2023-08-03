@@ -57,7 +57,7 @@ navic.setup({ depth_limit = 3, highlight = true })
 local navbuddy = require("nvim-navbuddy")
 
 M.on_attach = function(client, bufnr)
-	vim.notify(client.name .. " starting...")
+	--vim.notify(client.name .. " starting...")
 	local cap = client.server_capabilities
 
 	if cap.documentSymbolProvider then
