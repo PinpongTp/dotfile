@@ -2,6 +2,13 @@
 local set = vim.opt
 local cmd = vim.api.nvim_command
 
+-- [[ Folding ]]
+set.foldcolumn = "0" -- '0' is not bad
+set.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
+set.foldlevelstart = 99
+set.foldenable = true
+set.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
+
 -- [[ Encoding ]]
 set.encoding = "utf-8"
 set.fileencoding = "utf-8"
