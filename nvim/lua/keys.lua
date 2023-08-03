@@ -188,6 +188,9 @@ map("n", "<Leader>gd", ":Gitsigns diffthis<CR>", opts)
 map("n", "<Leader>gl", ":Gitsigns blame_line<CR>", opts)
 map("n", "<Leader>gb", ":Git blame<CR>", opts)
 
+-- gpt
+--map("n", "<Leader>Cc", ":ChatGPT<CR>", opts)
+
 -- mode
 map("n", ";mz", ":ZenMode<CR>", opts)
 map("n", ";ma", ":Alpha<CR>", opts)
