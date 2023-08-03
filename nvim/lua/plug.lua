@@ -263,7 +263,7 @@ return {
 		"github/copilot.vim",
 	},
 	-- Lazy
-	{
+	--[[{
 		"jackMort/ChatGPT.nvim",
 		config = function()
 			local home = vim.fn.expand("$HOME")
@@ -288,7 +288,7 @@ return {
 			"nvim-lua/plenary.nvim",
 			"nvim-telescope/telescope.nvim",
 		},
-	},
+	},]]
 
 	-- helper
 	"akinsho/toggleterm.nvim",
