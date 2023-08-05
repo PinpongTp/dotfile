@@ -29,7 +29,8 @@ saga.setup({
 })
 
 local keymap = vim.keymap.set
-keymap("n", "gh", "<cmd>Lspsaga lsp_finder<CR>")
+--keymap("n", "gh", "<cmd>Lspsaga lsp_finder<CR>")
+keymap("n", "gh", "<cmd>Lspsaga finder<CR>")
 keymap({ "n", "v" }, "<leader>ca", "<cmd>Lspsaga code_action<CR>")
 keymap({ "n", "v" }, "ga", "<cmd>Lspsaga code_action<CR>")
 --keymap("n", "gr", "<cmd>Lspsaga rename<CR>")
