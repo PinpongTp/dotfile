@@ -21,9 +21,22 @@ cmp.setup({
 	mapping = cmp.mapping.preset.insert({
 		["<C-d>"] = cmp.mapping.scroll_docs(-4),
 		["<C-f>"] = cmp.mapping.scroll_docs(4),
-		["<C-Space>"] = cmp.mapping.complete(),
-		["<C-e>"] = cmp.mapping.close(),
-		["<Tab>"] = cmp.mapping(function(fallback)
+		--[[["<C-l>"] = cmp.mapping.complete(),
+		["<C-q>"] = cmp.mapping.close(),]]
+		--[[["<C-e>"] = cmp.mapping.about(),
+		["<C-j>"] = cmp.mapping(function(fallback)
+			if cmp.visible() then
+				cmp.select_next_item()
+			else
+				fallback()
+			end
+		end, { "i", "s" }),
+		["<C-k>"] = cmp.mapping(function()
+			if cmp.visible() then
+				cmp.select_prev_item()
+			end
+		end, { "i", "s" }),]]
+		--[[["<Tab>"] = cmp.mapping(function(fallback)
 			if cmp.visible() then
 				cmp.select_next_item()
 			elseif luasnip.expand_or_jumpable() then
@@ -42,7 +55,7 @@ cmp.setup({
 			else
 				fallback()
 			end
-		end, { "i", "s" }),
+		end, { "i", "s" }),]]
 		["<CR>"] = cmp.mapping.confirm({
 			behavior = cmp.ConfirmBehavior.Replace,
 			select = true,
