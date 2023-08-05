@@ -11,7 +11,7 @@ ls.config.set_config({
 	ext_opts = { [types.choiceNode] = { active = { virt_text = { { "<- choice", "Comment" } } } } },
 })
 
-local opts = { silent = true }
+--[[local opts = { silent = true }
 vim.keymap.set({ "i", "s" }, "<c-l>", function()
 	if ls.expand_or_jumpable() then
 		ls.expand_or_jump()
@@ -27,7 +27,7 @@ vim.keymap.set({ "i" }, "<c-e>", function()
 		ls.change_choice(1)
 	end
 end, opts)
-vim.keymap.set({ "i" }, "<c-u>", require("luasnip.extras.select_choice"), opts)
+vim.keymap.set({ "i" }, "<c-u>", require("luasnip.extras.select_choice"), opts)]]
 
 local s = ls.snippet
 local sn = ls.snippet_node
