@@ -4,6 +4,7 @@
 #normal alias/comand
 alias so="source"
 alias vim="nvim"
+alias cl="clear"
 
 #file
 alias config="cd ~/.config"
