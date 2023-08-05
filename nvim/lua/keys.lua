@@ -219,6 +219,10 @@ map("n", "<Leader>rl", ":lua require('rest-nvim')RestNvimLast<CR>", opts)
 map("n", ";tt", ":FloatermToggle<CR>", opts)
 map("n", "<C-t>", ":FloatermToggle<CR>", opts)
 
+-- floating
+map("n", "zR", ":lua require('ufo').openAllFolds()<CR>", opts)
+map("n", "zM", ":lua require('ufo').closeAllFolds()<CR>", opts)
+
 -- toggle and mode
 map("n", ";tg", ":FloatermNew --width=0.9 --height=0.9 lazygit<CR>", opts)
 map("n", ";tc", ":ColorizerToggle<CR>", opts)
