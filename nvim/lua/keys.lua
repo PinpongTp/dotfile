@@ -230,6 +230,17 @@ map("n", ";tC", ":TSContextToggle<CR>", opts) -- context on top window
 map("n", ";ti", ":IndentBlanklineToggle<CR>", opts)
 map("n", ";tn", ":set rnu!<CR>", opts)
 
+local is_fold_column_show = false
+keymap("n", ";tf", function()
+	if is_fold_column_show then
+		vim.cmd(":set foldcolumn=0")
+	else
+		vim.cmd(":set foldcolumn=1")
+	end
+
+	is_fold_column_show = not is_fold_column_show
+end)
+
 -- toggle outline
 map("n", "<Leader>o", ":SymbolsOutline<CR>", opts) -- TODO: remove this
 --map("n", "<Leader>O", ":Lspsaga outline<CR>", opts) -- setup at saga config
