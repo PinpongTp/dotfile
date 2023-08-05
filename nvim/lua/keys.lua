@@ -188,6 +188,10 @@ map("n", "<Leader>gd", ":Gitsigns diffthis<CR>", opts)
 map("n", "<Leader>gl", ":Gitsigns blame_line<CR>", opts)
 map("n", "<Leader>gb", ":Git blame<CR>", opts)
 
+-- github copilot
+--map("i", "<Right>", ":copilot#Accept()<CR>", opts)
+-- map key for insert mode
+
 -- gpt
 --map("n", "<Leader>Cc", ":ChatGPT<CR>", opts)
 
