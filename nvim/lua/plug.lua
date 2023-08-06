@@ -259,8 +259,13 @@ return {
 	"tpope/vim-rhubarb",
 
 	-- copilot
-	{
+	--[[{
 		"github/copilot.vim",
+	},]]
+	{
+		"zbirenbaum/copilot.lua",
+		cmd = "Copilot",
+		event = "InsertEnter",
 	},
 	-- Lazy
 	--[[{
