@@ -8,8 +8,15 @@ M.setup = function()
 		{ name = "DiagnosticSignInfo", text = "" },
 	}]]
 
-	local signs = {
+	--[[local signs = {
 		{ name = "DiagnosticSignError", text = "" },
+		{ name = "DiagnosticSignWarn", text = "" },
+		{ name = "DiagnosticSignHint", text = "" },
+		{ name = "DiagnosticSignInfo", text = "" },
+	}]]
+
+	local signs = {
+		{ name = "DiagnosticSignError", text = "" },
 		{ name = "DiagnosticSignWarn", text = "" },
 		{ name = "DiagnosticSignHint", text = "" },
 		{ name = "DiagnosticSignInfo", text = "" },
