@@ -14,6 +14,7 @@ node_modules
 /filezilla
 */secrets
 /github-copilot
+/GameMakerStudio2
 .DS_Store
 
 lazygit/state.yml
