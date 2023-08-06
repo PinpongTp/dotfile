@@ -38,7 +38,8 @@ lualine.setup({
 			{
 				"diagnostics",
 				sources = { "nvim_diagnostic" },
-				symbols = { error = " ", warn = " ", info = " ", hint = " " },
+				--symbols = { error = " ", warn = " ", info = " ", hint = " " },
+				symbols = { error = " ", warn = " ", info = " ", hint = " " },
 			}, -- 'encoding',
 		},
 		lualine_y = { "filetype" },
@@ -58,7 +59,8 @@ lualine.setup({
 			{
 				"diagnostics",
 				sources = { "nvim_diagnostic", "vim_lsp" },
-				symbols = { error = " ", warn = " ", info = " ", hint = " " },
+				--symbols = { error = " ", warn = " ", info = " ", hint = " " },
+				symbols = { error = " ", warn = " ", info = " ", hint = " " },
 			}, -- 'encoding',
 		},
 		lualine_y = { "location" },
