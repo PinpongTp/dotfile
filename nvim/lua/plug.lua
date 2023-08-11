@@ -339,16 +339,6 @@ return {
 	-- go
 	"fatih/vim-go",
 	-- csv
-	--[[{
-		"mechatroner/rainbow_csv",
-		config = function()
-			vim.cmd([[
-        autocmd BufNewFile,BufRead *.csv   set filetype=csv_pipe
-			  let g:rcsv_colorpairs = [['NONE', 'NONE'], ['NONE', 'NONE'], ['yellow', 'yellow'],['NONE', 'NONE'], ['NONE', 'NONE'], ['cyan', 'cyan'], ['NONE', 'NONE'], ['NONE', 'NONE'], ['yellow', 'yellow'],]
-      <])
-		end,
-	},]]
-
 	"tyru/open-browser.vim",
 	"weirongxu/plantuml-previewer.vim",
 
