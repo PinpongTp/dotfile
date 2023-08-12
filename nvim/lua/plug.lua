@@ -13,7 +13,7 @@ return {
 		end,
 	},
 
-	-- theme
+	-- colorsheme
 	{
 		"folke/tokyonight.nvim",
 		lazy = false,
@@ -30,19 +30,20 @@ return {
 					floats = "transparent",
 				},
 			})
-			--vim.cmd.colorscheme("tokyonight")
+			--[[vim.cmd.colorscheme("tokyonight")]]
 		end,
 	},
 	{
-		"tamton-aquib/duck.nvim",
+		"PinpongTp/eva01.vim",
+		lazy = false,
+		priority = 1000,
 		config = function()
-			vim.keymap.set("n", "<leader>dd", function()
-				require("duck").hatch()
-			end, {})
-			vim.keymap.set("n", "<leader>dk", function()
-				require("duck").cook()
-			end, {})
+			vim.cmd.colorscheme("eva01")
 		end,
+	},
+	{
+		"yassinebridi/vim-purpura",
+		lazy = false,
 	},
 
 	{
@@ -62,7 +63,7 @@ return {
 					light = "latte",
 					dark = "mocha",
 				},
-				--transparent_background = true,
+				transparent_background = true,
 				style = {
 					comments = { "italic" },
 				},
@@ -72,14 +73,35 @@ return {
 					indent_blankline = { enabled = true, colored_indent_levels = false },
 				},
 			})
-			require("catppuccin").compile()
-			vim.cmd.colorscheme("catppuccin")
+			--require("catppuccin").compile()
+			--vim.cmd.colorscheme("catppuccin")
 		end,
 	},
 	{ "patstockwell/vim-monokai-tasty" },
 	{ "dracula/vim", priority = 1000, name = "dracula" },
 	{ "axvr/photon.vim" },
 	{ "preservim/vim-colors-pencil" },
+
+	-- theme
+	{
+		"m4xshen/smartcolumn.nvim",
+		opts = {
+			colorcolumn = "140",
+			scope = "file",
+			disabled_filetypes = { "help", "text", "markdown", "NvimTree", "lazy", "mason", "help", "alpha" },
+		},
+	},
+	{
+		"tamton-aquib/duck.nvim",
+		config = function()
+			vim.keymap.set("n", "<leader>dd", function()
+				require("duck").hatch()
+			end, {})
+			vim.keymap.set("n", "<leader>dk", function()
+				require("duck").cook()
+			end, {})
+		end,
+	},
 
 	-- show color
 	{
