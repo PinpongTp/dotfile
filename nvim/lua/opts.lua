@@ -46,7 +46,7 @@ set.number = true
 set.showcmd = false
 set.relativenumber = false
 set.title = true
-set.colorcolumn = "120"
+--set.colorcolumn = "120"
 --set.cmdheight = 2
 --set.cursorline = true
 cmd("au BufEnter * setlocal cursorline")
