@@ -38,7 +38,16 @@ return {
 		lazy = false,
 		priority = 1000,
 		config = function()
-			vim.cmd.colorscheme("eva01")
+			--vim.cmd.colorscheme("eva01")
+		end,
+	},
+	{
+		"PinpongTp/comic",
+		--dir = "~/Developer/theme/vim/comic",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			vim.cmd.colorscheme("comic")
 		end,
 	},
 	{
@@ -224,7 +233,8 @@ return {
 	{
 		"nvim-treesitter/nvim-treesitter",
 		lazy = true,
-		build = ":TSUpdate",
+		--build = ":TSUpdate",
+		--event = { "BufReadPost", "BufNewFile" },
 		dependencies = {
 			"nvim-treesitter/nvim-treesitter-context",
 			"nvim-treesitter/playground", -- TD: maybe not use
