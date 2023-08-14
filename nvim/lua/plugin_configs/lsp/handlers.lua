@@ -74,6 +74,7 @@ M.on_attach = function(client, bufnr)
 	--vim.notify(client.name .. " starting...")
 	local cap = client.server_capabilities
 
+	cap.semanticTokensProvider = nil
 	if cap.documentSymbolProvider then
 		navic.attach(client, bufnr)
 		navbuddy.attach(client, bufnr)
