@@ -13,23 +13,25 @@ export class test {
   }
 }
 
-test = {
-
-
-}
 
 export default function foo(a: number): number {
   console.log("test log"); 
-        let error = {};
+  console.log(`test ${test}`)
+
+  let error = {};
   test test = {};
   test zz = ''
+
+  const _test = new test
+  const va = _test.testFunction()
+  console.log(va)
   console.log(zz)
+
   const testtext = "test";
   console.log(test);
   console.log(testtext);
   if (true) {
-
-    console.log()
+    console.log(66)
   }
 }
 
