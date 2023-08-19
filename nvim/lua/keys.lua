@@ -243,7 +243,7 @@ keymap("n", ";tf", function()
 	end
 
 	is_fold_column_show = not is_fold_column_show
-end)
+end, { desc = "toggle fold column" })
 
 -- toggle outline
 map("n", "<Leader>o", ":SymbolsOutline<CR>", opts) -- TODO: remove this
