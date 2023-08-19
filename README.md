@@ -98,6 +98,16 @@
   - `w` : save
   - `z` : zen mode
   - `f` : find & telescope
+    - `f` : find file
+    - `h` : find hidden
+    - `d` : file browser
+    - `b` : buffer
+    - `l` : live grep
+    - `g` : git file
+    - `m` : mark
+    - `c` : color
+    - `s` : git status
+    - `t` : todo
   - `g` : git
   - `m` : mode
   - `p` : packer --> todo remove
