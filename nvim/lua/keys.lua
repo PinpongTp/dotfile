@@ -72,6 +72,7 @@ map("n", "<Leader>t>", ":tabm +1<CR>", { noremap = true, silent = true })
 map("n", "<Leader>tq", ":q<CR>", { noremap = true, silent = true })
 
 -- nvimTree
+map("n", "<Leader>m", ":NvimTreeFindFileToggle<CR>", { noremap = false, silent = true })
 map("n", "<Leader>n", ":NvimTreeFindFileToggle<CR>", { noremap = false, silent = true })
 map("n", "<Leader>N", ":NvimTreeFindFile<CR>", { noremap = false, silent = true })
 
@@ -216,15 +217,18 @@ map("n", "<Leader>rl", ":lua require('rest-nvim')RestNvimLast<CR>", opts)
 --map("n", "<Leader>rR", ":lua require('rest-nvim').run(true)<CR>", opts)
 
 -- FloatermNew
-map("n", ";tt", ":FloatermToggle<CR>", opts)
-map("n", "<C-t>", ":FloatermToggle<CR>", opts)
+--map("n", ";tt", ":FloatermToggle<CR>", opts)
+--map("n", "<C-t>", ":FloatermToggle<CR>", opts)
 
 -- floating
 map("n", "zR", ":lua require('ufo').openAllFolds()<CR>", opts)
 map("n", "zM", ":lua require('ufo').closeAllFolds()<CR>", opts)
 
 -- toggle and mode
-map("n", ";tg", ":FloatermNew --width=0.9 --height=0.9 lazygit<CR>", opts)
+--map("n", ";tg", ":FloatermNew --width=0.9 --height=0.9 lazygit<CR>", opts)
+--map("n", "<c-t>", ":ToggleTerm<CR>", opts)
+--map("n", "<c-q>", ":ToggleTermToggleAll!<CR>", opts)
+--vim.api.nvim_set_keymap("t", "<C-t>", "<C-\\><C-n>:ToggleTerm<CR>", { noremap = true, silent = true })
 map("n", ";tc", ":ColorizerToggle<CR>", opts)
 map("n", ";tC", ":TSContextToggle<CR>", opts) -- context on top window
 map("n", ";ti", ":IndentBlanklineToggle<CR>", opts)
