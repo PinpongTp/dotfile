@@ -77,7 +77,7 @@
   - `m` : Menu
   - `n` : NvimTree
   - `N` : NvimTree definition
-  - `O` : Outline lsp
+  - `O` : OutLine lsp
   - `o` : OutLine
   - `q` : :q
   - `Q` : :q!
@@ -93,3 +93,12 @@
   - `r` : rest vim
   - `s` : saga
   - `t` : tab
+- `;`
+  - `;` : help
+  - `w` : save
+  - `z` : zen mode
+  - `f` : find & telescope
+  - `g` : git
+  - `m` : mode
+  - `p` : packer --> todo remove
+  - `t` : toggle
