@@ -70,3 +70,26 @@
 ### Plug which key
 
 - `<c-r>` view copy history
+
+### Keymap
+
+- `<Leader>`
+  - `m` : Menu
+  - `n` : NvimTree
+  - `N` : NvimTree definition
+  - `O` : Outline lsp
+  - `o` : OutLine
+  - `q` : :q
+  - `Q` : :q!
+  - `S` : :so % --> todo remove
+  - `W` : :wq
+  - `w` : swap-pane
+  - `b` : buffer
+  - `c` : comment
+  - `d` : dap
+  - `f` : find (hob)
+  - `g` : git
+  - `h` : git hunk
+  - `r` : rest vim
+  - `s` : saga
+  - `t` : tab
