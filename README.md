@@ -102,3 +102,11 @@
   - `m` : mode
   - `p` : packer --> todo remove
   - `t` : toggle
+- `]`
+  - `e` : next error and warning
+  - `E` : next error
+  - `c` : next change
+- `g`
+  - `h` : lsp saga finder
+  - `a` : code action
+  - `d` : goto definition
