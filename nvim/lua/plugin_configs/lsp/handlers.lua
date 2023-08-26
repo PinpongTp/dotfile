@@ -8,13 +8,6 @@ M.setup = function()
 		{ name = "DiagnosticSignInfo", text = "" },
 	}]]
 
-	--[[local signs = {
-		{ name = "DiagnosticSignError", text = "" },
-		{ name = "DiagnosticSignWarn", text = "" },
-		{ name = "DiagnosticSignHint", text = "" },
-		{ name = "DiagnosticSignInfo", text = "" },
-	}]]
-
 	local signs = {
 		{ name = "DiagnosticSignError", text = "" },
 		{ name = "DiagnosticSignWarn", text = "" },
@@ -78,7 +71,7 @@ M.on_attach = function(client, bufnr)
 	if cap.documentSymbolProvider then
 		navic.attach(client, bufnr)
 		navbuddy.attach(client, bufnr)
-		-- lsp_highlight_document(client)
+		lsp_highlight_document(client)
 	end
 
 	--cap.document_formatting = false
