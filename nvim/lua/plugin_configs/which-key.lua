@@ -16,7 +16,6 @@ if true then
 
 	wk.register({
 		["<Leader>"] = {
-			e = { name = "Exp" },
 			c = { name = "+Commant" },
 			t = { name = "+Tab" },
 			b = { name = "+Buffer" },
@@ -24,14 +23,8 @@ if true then
 			f = { name = "+FindText" },
 		},
 		[";"] = {
-			f = { name = "Find & Telescope", f = { "find file" }, l = { "live grep" } },
-			t = {
-				name = "Toggle",
-				g = { "git signs" },
-				n = { "line numbers" },
-				i = { "indent lines" },
-				t = { "floaterm" },
-			},
+			f = { name = "+Find & Telescope" },
+			t = { name = "+Toggle & Terminal" },
 		},
 	})
 end

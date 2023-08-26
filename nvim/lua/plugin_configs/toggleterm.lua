@@ -5,7 +5,6 @@ end
 
 tg.setup({
 	open_mapping = [[<c-t>]],
-
 	shade_terminals = true,
 	close_on_exit = true,
 	direction = "float",
@@ -23,4 +22,10 @@ function _lazygit_toggle()
 	lazygit:toggle()
 end
 
-vim.api.nvim_set_keymap("n", ";tg", "<cmd>lua _lazygit_toggle()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap(
+	"n",
+	";tg",
+	"<cmd>lua _lazygit_toggle()<CR>",
+	{ noremap = true, silent = true, desc = "Lazygit" }
+)
+vim.api.nvim_set_keymap("n", "<c-z>", ":ToggleTerm direction=horizontal<CR>", { noremap = true, silent = true })
