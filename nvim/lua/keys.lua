@@ -9,7 +9,6 @@ map("v", "x", '"_x', opts)
 --map("v", "d", '"_d', opts)
 --map("n", "d", '"_d', opts)
 map("v", "p", '"_dP', opts)
-map("n", "dw", 'vb"_d', opts)
 
 map("n", "tj", "10j", opts)
 map("n", "tk", "10k", opts)
@@ -18,9 +17,12 @@ map("n", "tk", "10k", opts)
 map("n", ";ps", ":PackerSync<CR>", opts)
 
 -- control
-map("n", "<Leader>q", ":qa<CR>", opts)
+
+map("n", "<Leader>q", ":q<CR>", opts)
 map("n", "<Leader>Q", ":qa!<CR>", opts)
 map("n", ";w", ":w<CR>", opts)
+map("n", ";q", ":q<CR>", opts)
+map("n", ";Q", ":qa<CR>", opts)
 
 --map('n', '<Leader>w', ':w<CR>', { noremap = true, silent = true })
 map("n", "<Leader>W", ":wq<CR>", opts)
@@ -188,5 +190,3 @@ map("n", "<Leader>o", ":SymbolsOutline<CR>", opts) -- TODO: remove this
 
 -- navbuddy
 map("n", ";fn", ":Navbuddy<CR>", opts) -- context on top window
---
---
