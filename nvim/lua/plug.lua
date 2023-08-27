@@ -150,10 +150,16 @@ return {
 
 	-- nvimtree
 	{
-		"kyazdani42/nvim-tree.lua",
+		"antosha417/nvim-lsp-file-operations",
 		dependencies = {
-			"kyazdani42/nvim-web-devicons",
+			"kyazdani42/nvim-tree.lua",
+			dependencies = {
+				"kyazdani42/nvim-web-devicons",
+			},
 		},
+		config = function()
+			require("lsp-file-operations").setup()
+		end,
 	},
 	-- status bar
 	"hoob3rt/lualine.nvim",
