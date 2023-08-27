@@ -180,6 +180,11 @@ return {
 			{ "saadparwaiz1/cmp_luasnip" }, -- Optional
 			{ "hrsh7th/cmp-nvim-lua" }, -- Optional
 
+			--'f3fora/cmp-spell',
+			--'hrsh7th/cmp-calc',
+			--'ray-x/cmp-treesitter',
+			--'uga-rosa/cmp-dictionary',
+
 			-- LSP Support
 			{ "j-hui/fidget.nvim", tag = "legacy", event = "LspAttach" }, -- show lsp status right buttom
 			{
@@ -200,29 +205,6 @@ return {
 			}, -- Required
 		},
 	},
-
-	-- debuger
-	--{
-	--"jay-babu/mason-nvim-dap.nvim",
-	--priority = 899,
-	--config = function()
-	--require("mason-nvim-dap").setup({
-	--automatic_setup = true,
-	--})
-	--end,
-	--},
-	--[[{
-		"rcarriga/nvim-dap-ui",
-		priority = 898,
-		dependencies = {
-			"mfussenegger/nvim-dap",
-			"theHamsta/nvim-dap-virtual-text",
-			"kyazdani42/nvim-web-devicons",
-		},
-		config = function()
-			require("plugin_configs.dap.dap")
-		end,
-	},]]
 
 	{
 		"mfussenegger/nvim-dap",
@@ -297,12 +279,7 @@ return {
 									cwd = vim.fn.getcwd(),
 									sourceMaps = true,
 									protocol = "inspector",
-									skipFiles = {
-										"<node_internals>/**",
-										"node_modules/**",
-										"<node_internals>/**/*.js",
-										"",
-									},
+									skipFiles = { "<node_internals>/**", "node_modules/**" },
 								},
 							}
 							require("mason-nvim-dap").default_setup(config)
@@ -328,7 +305,7 @@ return {
 				desc = "Toggle Breakpoint",
 			},
 			{
-				"<C-b>",
+				";b",
 				function()
 					require("dap").toggle_breakpoint()
 				end,
@@ -453,11 +430,8 @@ return {
 		end,]]
 	},
 
-	--'hrsh7th/cmp-cmdline',
-	--'f3fora/cmp-spell',
-	--'hrsh7th/cmp-calc',
-	--'ray-x/cmp-treesitter',
-	--'uga-rosa/cmp-dictionary',
+	--"nvim-lua/completion-nvim",
+	--"nvim-telescope/telescope-dap.nvim",
 
 	-- treesitter
 	{
@@ -488,12 +462,6 @@ return {
 			})
 		end,
 	},
-	--"nvim-lua/completion-nvim",
-
-	--"mfussenegger/nvim-dap",
-	--"nvim-telescope/telescope-dap.nvim",
-	--"theHamsta/nvim-dap-virtual-text",
-	--"rcarriga/nvim-dap-ui",
 
 	-- for move
 	{
