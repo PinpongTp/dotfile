@@ -6,13 +6,76 @@ end
 local navic = require("nvim-navic")
 local tabline = require("tabline")
 
+ShowPath = 0
+vim.api.nvim_set_keymap("n", ";ts", ":lua ToggleFileName()<CR>", { noremap = true, silent = true })
+function ToggleFileName()
+	if ShowPath == 0 then
+		ShowPath = 1
+
+		require("lualine").setup({
+			sections = {
+				lualine_b = {
+					{
+						"filename",
+						file_status = false,
+						path = ShowPath,
+					},
+				},
+			},
+		})
+	else
+		ShowPath = 0
+
+		require("lualine").setup({
+			sections = {
+				lualine_b = {},
+			},
+		})
+	end
+end
+
+navic.setup({
+	depth_limit = 4,
+	highlight = false,
+	separator = " > ",
+	icons = {
+		File = "󰈙 ",
+		Module = " ",
+		Namespace = "󰌗 ",
+		Package = " ",
+		Class = "󰌗 ",
+		Method = "󰆧 ",
+		Property = " ",
+		Field = " ",
+		Constructor = " ",
+		Enum = "󰕘",
+		Interface = "󰕘",
+		Function = "󰊕 ",
+		Variable = "󰆧 ",
+		Constant = "󰏿 ",
+		String = "󰀬 ",
+		Number = "󰎠 ",
+		Boolean = "◩ ",
+		Array = "󰅪 ",
+		Object = "󰅩 ",
+		Key = "󰌋 ",
+		Null = "󰟢 ",
+		EnumMember = " ",
+		Struct = "󰌗 ",
+		Event = " ",
+		Operator = "󰆕 ",
+		TypeParameter = "󰊄 ",
+	},
+})
+
 lualine.setup({
 	options = {
 		icons_enabled = true,
 		theme = "auto",
 		--section_separators = { left = '', right = '' },
-		--component_separators = { left = '', right = '' },
-		section_separators = { left = "", right = "" },
+		--component_separators = { left = "", right = "" },
+		--section_separators = { left = "", right = "" },
+		section_separators = { left = "", right = "" },
 		component_separators = { left = "", right = "" },
 		disabled_filetypes = { "NvimTree", "lspsagaoutline" },
 	},
@@ -23,14 +86,8 @@ lualine.setup({
 		lualine_b = {},
 		lualine_c = {
 			{
-				"filename",
-				file_status = false,
-				path = 1, -- 0 = just filename, 1 = relative path, 2 = absolute path
-			},
-			{
 				"navic",
 				color_correction = nil,
-				navic_opts = nil,
 			},
 		},
 		lualine_x = {
@@ -52,7 +109,7 @@ lualine.setup({
 			{
 				"filename",
 				file_status = true, -- displays file status (readonly status, modified status)
-				path = 1, -- 0 = just filename, 1 = relative path, 2 = absolute path
+				path = ShowPath,
 			},
 		},
 		lualine_x = {
