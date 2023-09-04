@@ -4,7 +4,7 @@ if not status then
 end
 
 tg.setup({
-	open_mapping = [[<c-t>]],
+	open_mapping = [[<c-x>]],
 	shade_terminals = true,
 	close_on_exit = true,
 	direction = "float",
