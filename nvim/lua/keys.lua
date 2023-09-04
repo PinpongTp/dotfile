@@ -13,9 +13,6 @@ map("v", "p", '"_dP', opts)
 map("n", "tj", "10j", opts)
 map("n", "tk", "10k", opts)
 
--- packer
-map("n", ";ps", ":PackerSync<CR>", opts)
-
 -- control
 
 map("n", "<Leader>q", ":q<CR>", opts)
