@@ -36,6 +36,11 @@ map("n", "s-", ":split<CR><C-w>w", { noremap = false })
 map("n", "s|", ":vsplit<CR><C-w>w", { noremap = false })
 map("n", "sr", ":SmartResizeMode<CR>", { noremap = false })
 
+keymap("n", "<C-Up>", ":resize -2<CR>", opts)
+keymap("n", "<C-Down>", ":resize +2<CR>", opts)
+keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
+keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
+
 map("n", "<Leader>w", "<C-w>w", { noremap = false, desc = "Switch Window" })
 
 -- Buf and Tab
