@@ -37,7 +37,7 @@ keymap({ "n", "v" }, "ga", "<cmd>Lspsaga code_action<CR>") -- get action
 keymap("n", "gr", "<cmd>Lspsaga rename ++project<CR>") -- get rename
 keymap("n", "<space>rn", vim.lsp.buf.rename)
 keymap("n", "gl", vim.lsp.buf.references)
-vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help)
+--vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help)
 keymap("n", "gp", "<cmd>Lspsaga peek_definition<CR>")
 --keymap("n", "gd", "<cmd>Lspsaga goto_definition<CR>") -- get goto definition
 keymap("n", "gd", vim.lsp.buf.definition)
