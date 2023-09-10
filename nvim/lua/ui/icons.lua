@@ -1,8 +1,8 @@
 local Icons = {
 	Text = "󰉿",
 	File = "",
-	Module = "",
-	Namespace = "",
+	Module = "",
+	Namespace = "",
 	Package = "",
 	Class = "",
 	Method = "",
