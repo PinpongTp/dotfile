@@ -1,4 +1,5 @@
 local cmp_status_ok, cmp = pcall(require, "cmp")
+local icons = require("ui.icons")
 if not cmp_status_ok then
 	return
 end
@@ -51,10 +52,7 @@ cmp.setup({
 			if cmp.visible() then
 				cmp.select_prev_item()
 			elseif luasnip.jumpable(-1) then
-				luasnip.jump(-1)
-			else
-				fallback()
-			end
+				luasnip.jump(-1) else fallback() end
 		end, { "i", "s" }),]]
 		["<CR>"] = cmp.mapping.confirm({
 			behavior = cmp.ConfirmBehavior.Replace,
@@ -65,14 +63,24 @@ cmp.setup({
 	sources = cmp.config.sources({
 		{ name = "nvim_lsp" },
 		{ name = "luasnip" },
-	}, {
 		{ name = "buffer" },
+		{ name = "path" },
 	}),
 
 	formatting = {
+		fields = { "abbr", "kind", "menu" },
 		format = lspkind.cmp_format({
-			mode = "symbol_text",
 			maxwidth = 50,
+			before = function(entry, item)
+				local menu_icon = {
+					nvim_lsp = "[Lsp]",
+					luasnip = "[Snp]",
+					buffer = "[Buf]",
+					path = "[Pat]",
+				}
+				item.menu = menu_icon[entry.source.name]
+				return item
+			end,
 		}),
 	},
 	window = {
@@ -85,4 +93,5 @@ cmp.setup({
 	},
 })
 
+--winhighlight = "NormalFloat:Pmenu,FloatBorder:Pmenu,CursorLine:NormalFloat",
 --vim.cmd [[highlight! default link CmpItemKind CmpItemMenuDefault]]
