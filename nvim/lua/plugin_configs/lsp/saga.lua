@@ -6,7 +6,6 @@ end
 saga.setup({
 	ui = {
 		title = true,
-		--border = "rounded",
 		border = "single",
 		winblend = 0,
 		expand = "",
