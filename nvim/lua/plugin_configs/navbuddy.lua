@@ -1,5 +1,6 @@
 local navbuddy = require("nvim-navbuddy")
 local actions = require("nvim-navbuddy.actions")
+local icons = require("ui.icons")
 
 navbuddy.setup({
 	window = {
@@ -35,34 +36,7 @@ navbuddy.setup({
 			branch = " ",
 		},
 	},
-	icons = {
-		File = " ",
-		Module = " ",
-		Namespace = " ",
-		Package = " ",
-		Class = " ",
-		Method = " ",
-		Property = " ",
-		Field = " ",
-		Constructor = " ",
-		Enum = "練",
-		Interface = "練",
-		Function = " ",
-		Variable = " ",
-		Constant = " ",
-		String = " ",
-		Number = " ",
-		Boolean = "◩ ",
-		Array = " ",
-		Object = " ",
-		Key = " ",
-		Null = "ﳠ ",
-		EnumMember = " ",
-		Struct = " ",
-		Event = " ",
-		Operator = " ",
-		TypeParameter = " ",
-	},
+	icons = icons,
 	use_default_mappings = true, -- If set to false, only mappings set
 	-- by user are set. Else default
 	-- mappings are used for keys
