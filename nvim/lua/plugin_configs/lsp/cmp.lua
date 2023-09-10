@@ -1,5 +1,5 @@
 local cmp_status_ok, cmp = pcall(require, "cmp")
-local icons = require("ui.icons")
+local window = require("ui.window")
 if not cmp_status_ok then
 	return
 end
@@ -84,12 +84,8 @@ cmp.setup({
 		}),
 	},
 	window = {
-		completion = cmp.config.window.bordered({
-			border = "single",
-		}),
-		documentation = cmp.config.window.bordered({
-			border = "single",
-		}),
+		completion = cmp.config.window.bordered(window),
+		documentation = cmp.config.window.bordered(window),
 	},
 })
 
