@@ -1,4 +1,5 @@
 local status, lualine = pcall(require, "lualine")
+local icons = require("ui.icons")
 if not status then
 	return
 end
@@ -34,38 +35,17 @@ function ToggleFileName()
 	end
 end
 
+-- loop icons and add space after each
+local icons_space = {}
+for k, v in pairs(icons) do
+	icons_space[k] = v .. " "
+end
+
 navic.setup({
 	depth_limit = 4,
 	highlight = false,
 	separator = " > ",
-	icons = {
-		File = " ",
-		Module = " ",
-		Namespace = " ",
-		Package = " ",
-		Class = " ",
-		Method = " ",
-		Property = " ",
-		Field = " ",
-		Constructor = " ",
-		Enum = "練",
-		Interface = "練",
-		Function = " ",
-		Variable = " ",
-		Constant = " ",
-		String = " ",
-		Number = " ",
-		Boolean = "◩ ",
-		Array = " ",
-		Object = " ",
-		Key = " ",
-		Null = "ﳠ ",
-		EnumMember = " ",
-		Struct = " ",
-		Event = " ",
-		Operator = " ",
-		TypeParameter = " ",
-	},
+	icons = icons_space,
 })
 
 lualine.setup({
