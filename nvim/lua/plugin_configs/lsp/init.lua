@@ -1,3 +1,4 @@
+require("plugin_configs.lsp.lspkind")
 require("plugin_configs.lsp.cmp")
 require("plugin_configs.lsp.config")
 require("plugin_configs.lsp.null-ls")
