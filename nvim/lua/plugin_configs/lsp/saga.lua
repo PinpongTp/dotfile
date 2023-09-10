@@ -6,8 +6,8 @@ end
 saga.setup({
 	ui = {
 		title = true,
-		border = "rounded",
-		--border = "single",
+		--border = "rounded",
+		border = "single",
 		winblend = 0,
 		expand = "",
 		collapse = "",
@@ -25,6 +25,9 @@ saga.setup({
 	},
 	beacon = {
 		enable = false,
+	},
+	outline = {
+		layout = "normal",
 	},
 })
 
