@@ -77,7 +77,7 @@ map("n", "<Leader>tq", ":q<CR>", { noremap = true, silent = true })
 
 -- nvimTree
 map("n", "<Leader>m", ":NvimTreeFindFileToggle<CR>", { noremap = false, silent = true })
-map("n", "<Leader>n", ":NvimTreeFindFileToggle<CR>", { noremap = false, silent = true })
+--map("n", "<Leader>n", ":NvimTreeFindFileToggle<CR>", { noremap = false, silent = true })
 map("n", "<Leader>N", ":NvimTreeFindFile<CR>", { noremap = false, silent = true })
 
 -- hop
@@ -193,4 +193,4 @@ map("n", "<Leader>o", ":SymbolsOutline<CR>", opts) -- TODO: remove this
 --map("n", "<Leader>O", ":Lspsaga outline<CR>", opts) -- setup at saga config
 
 -- navbuddy
-map("n", ";fn", ":Navbuddy<CR>", opts) -- context on top window
+map("n", "<Leader>n", ":Navbuddy<CR>", opts) -- context on top window
