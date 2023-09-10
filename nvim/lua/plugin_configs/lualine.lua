@@ -91,7 +91,14 @@ lualine.setup({
 			},
 		},
 		lualine_x = {
-			{ "diff" },
+			{
+				"diff",
+				diff_color = {
+					added = "DiffAddedGutterLineNr",
+					modified = "DiffModifiedGutterLineNr",
+					removed = "DiffRemovedGutterLineNr",
+				},
+			},
 			{
 				"diagnostics",
 				sources = { "nvim_diagnostic" },
