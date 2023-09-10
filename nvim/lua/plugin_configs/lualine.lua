@@ -114,7 +114,7 @@ lualine.setup({
 		lualine_a = {},
 		lualine_b = {},
 		lualine_c = { tabline.tabline_buffers },
-		lualine_x = { tabline.tabline_tabs, padding = 0 },
+		lualine_x = { { tabline.tabline_tabs, padding = 0 } },
 		lualine_y = {},
 		lualine_z = {},
 	},
