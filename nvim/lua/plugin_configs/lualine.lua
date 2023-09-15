@@ -43,7 +43,7 @@ end
 
 navic.setup({
 	depth_limit = 4,
-	highlight = false,
+	highlight = true,
 	separator = " > ",
 	icons = icons_space,
 })
