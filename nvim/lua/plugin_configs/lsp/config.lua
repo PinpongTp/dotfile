@@ -1,4 +1,4 @@
-local servers = { "tsserver", "vimls", "lua_ls", "gopls", "vuels", "html" }
+local servers = { "tsserver", "vimls", "lua_ls", "gopls", "vuels", "html", "astro" }
 
 local mason = require("mason")
 local mason_lsp = require("mason")
@@ -29,6 +29,10 @@ for _, server in ipairs(servers) do
 		on_attach = handlers.on_attach,
 		capabilities = handlers.capabilities,
 	}
+
+	if server == "astro" then
+		opts.filetypes = { "astro" }
+	end
 
 	local has_custom_opts, server_custom_opts = pcall(require, "plugin_configs.lsp.settings." .. server)
 	if has_custom_opts then
