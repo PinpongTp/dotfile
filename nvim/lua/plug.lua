@@ -485,6 +485,14 @@ return {
 					ft = "Outline",
 					open = "SymbolsOutlineOpen",
 				},
+				{
+					ft = "Outline saga",
+					open = "lspsaga outline",
+				},
+				{
+					ft = "NavBuddy",
+					open = "Navbuddy",
+				},
 			},
 			bottom = {},
 			right = {},
