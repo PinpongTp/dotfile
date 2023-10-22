@@ -12,6 +12,7 @@ require("nvim-treesitter.configs").setup({
 		"tsx",
 		"javascript",
 		"typescript",
+		"astro",
 		"toml",
 		"fish",
 		"php",
@@ -29,7 +30,7 @@ require("nvim-treesitter.configs").setup({
 	},
 	autotag = {
 		enable = true,
-		filetype = { "html", "vue" },
+		filetype = { "html", "vue", "astro" },
 	},
 	playground = {
 		enable = true,
@@ -54,7 +55,7 @@ require("nvim-treesitter.configs").setup({
 local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
 parser_config.tsx.filetype_to_parsername = { "javascript", "typescript.tsx" }
 
-if true then
+if false then
 	require("treesitter-context").setup({
 		enable = false, -- Enable this plugin (Can be enabled/disabled later via commands)
 		max_lines = 0, -- How many lines the window should span. Values <= 0 mean no limit.
