@@ -172,7 +172,7 @@ map("n", "zM", ":lua require('ufo').closeAllFolds()<CR>", opts)
 --vim.api.nvim_set_keymap("t", "<C-t>", "<C-\\><C-n>:ToggleTerm<CR>", { noremap = true, silent = true })
 map("n", ";tc", ":ColorizerToggle<CR>", opts)
 map("n", ";tC", ":TSContextToggle<CR>", opts) -- context on top window
-map("n", ";ti", ":IndentBlanklineToggle<CR>", opts)
+map("n", ";ti", ":IBLToggle<CR>", opts)
 map("n", ";tn", ":set rnu!<CR>", opts)
 map("n", ";tm", ":Mason<CR>", { desc = "Mason" })
 map("n", ";tl", ":Lazy<CR>", { desc = "Lazy" })

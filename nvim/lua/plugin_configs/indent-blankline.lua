@@ -1,8 +1,18 @@
---vim.cmd([[highlight IndentBlanklineIndent1 guifg=#333333 gui=nocombine]])
-
-vim.cmd([[let g:indent_blankline_enabled = v:false]])
-
-require("indent_blankline").setup({
-	show_current_context = true,
-	show_current_context_start = true,
+require("ibl").setup({
+	enabled = false,
+	indent = {
+		char = "▏",
+		highlight = { "IndentGuide", "VertSplit" },
+		smart_indent_cap = true,
+	},
+	scope = {
+		enabled = true,
+		show_start = true,
+		show_end = true,
+		show_exact_scope = true, -- tbc
+		highlight = { "IndentGuideOdd" },
+		include = {
+			node_type = { ["*"] = { "*" } },
+		},
+	},
 })
