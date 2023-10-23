@@ -622,7 +622,7 @@ return {
 	"voldikss/vim-floaterm",
 	{ "folke/which-key.nvim", lazy = false },
 	"kshenoy/vim-signature",
-	"lukas-reineke/indent-blankline.nvim", -- indentline
+	{ "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
 
 	-- commenter
 	"preservim/nerdcommenter",
