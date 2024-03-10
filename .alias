@@ -6,6 +6,8 @@ alias so="source"
 alias vim="nvim"
 alias cl="clear"
 
+alias yy="yarn"
+
 #file
 alias config="cd ~/.config"
 alias cf="cd ~/.config"
