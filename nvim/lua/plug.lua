@@ -51,11 +51,6 @@ return {
 		end,
 	},
 	{
-		"yassinebridi/vim-purpura",
-		lazy = false,
-	},
-
-	{
 		"pgdouyon/vim-yin-yang",
 		priority = 1001,
 		config = function()
