@@ -6,6 +6,7 @@ alias so="source"
 alias vim="nvim"
 alias cl="clear"
 
+alias ff="ls | grep"
 alias yy="yarn"
 
 #file
