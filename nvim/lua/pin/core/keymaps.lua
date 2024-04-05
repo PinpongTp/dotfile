@@ -4,6 +4,8 @@ local keymap = vim.keymap
 
 keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" })
 
+keymap.set("n", ";tn", ":set rnu!<CR>", { desc = "Toggle relative line number" })
+
 keymap.set("n", "vv", ":nohl<CR>", { desc = "Clear search highlights" })
 
 keymap.set("n", "<leader>q", ":q<CR>", { desc = "Exit vim" })
