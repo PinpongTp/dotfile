@@ -12,4 +12,8 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 
-require("lazy").setup("pin.plugins")
+require("lazy").setup("pin.plugins", {
+  change_detection = {
+    notify = false,
+  }
+})
