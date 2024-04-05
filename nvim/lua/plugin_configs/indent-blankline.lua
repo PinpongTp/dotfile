@@ -2,7 +2,7 @@ require("ibl").setup({
 	enabled = false,
 	indent = {
 		char = "▏",
-		highlight = { "IndentGuide", "VertSplit" },
+		--highlight = { "IndentGuide", "VertSplit" },
 		smart_indent_cap = true,
 	},
 	scope = {
@@ -10,7 +10,7 @@ require("ibl").setup({
 		show_start = true,
 		show_end = true,
 		show_exact_scope = true, -- tbc
-		highlight = { "IndentGuideOdd" },
+		--highlight = { "IndentGuideOdd" },
 		include = {
 			node_type = { ["*"] = { "*" } },
 		},
