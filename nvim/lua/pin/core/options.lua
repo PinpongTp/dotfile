@@ -12,8 +12,7 @@ opt.expandtab = true
 opt.autoindent = true
 
 
--- TODO change This
-opt.wrap = false
+opt.wrap = true
 
 -- search settings
 opt.ignorecase = true
