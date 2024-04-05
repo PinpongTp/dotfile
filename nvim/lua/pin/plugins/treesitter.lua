@@ -50,6 +50,15 @@ return {
           "vimdoc",
           "c",
         },
+        incremental_selection = {
+          enable = true,
+          keymaps = {
+            init_selection = false,
+            node_incremental = "<S-v>",
+            scope_incremental = "<leader>a",
+            node_decremental = "<bs>",
+          },
+        },
         playground = {
           enable = true,
           disable = {},
