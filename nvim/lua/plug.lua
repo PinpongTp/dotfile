@@ -136,6 +136,7 @@ return {
 	{
 		--"norcalli/nvim-colorizer.lua",
 		"NvChad/nvim-colorizer.lua",
+		lazy = false,
 		config = function()
 			require("colorizer").setup()
 		end,
@@ -144,6 +145,7 @@ return {
 	-- rest client
 	{
 		"NTBBloodbath/rest.nvim",
+		enabled = false,
 		config = function()
 			require("rest-nvim").setup()
 		end,
@@ -189,6 +191,7 @@ return {
 	-- lsp
 	{
 		"neovim/nvim-lspconfig",
+		enabled = true,
 		dependencies = {
 			-- Required
 			{ "williamboman/mason.nvim" }, -- Optional
@@ -574,9 +577,18 @@ return {
 	"eslint/eslint",
 
 	-- git
-	"lewis6991/gitsigns.nvim",
-	"tpope/vim-fugitive",
-	"tpope/vim-rhubarb",
+	{
+		"lewis6991/gitsigns.nvim",
+		lazy = false,
+	},
+	{
+		"tpope/vim-fugitive",
+		lazy = false,
+	},
+	{
+		"tpope/vim-rhubarb",
+		lazy = false,
+	},
 
 	-- copilot
 	--[[{
@@ -645,7 +657,7 @@ return {
 	{ "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
 
 	-- commenter
-	"preservim/nerdcommenter",
+	{ "preservim/nerdcommenter", lazy = false },
 	"folke/todo-comments.nvim",
 
 	-- language
