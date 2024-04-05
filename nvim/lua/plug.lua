@@ -50,6 +50,14 @@ return {
 		end,
 	},
 	{
+		"NLKNguyen/papercolor-theme",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			--vim.cmd.colorscheme("PaperColor")
+		end,
+	},
+	{
 		"PinpongTp/eva01.vim",
 		lazy = false,
 		priority = 1000,
@@ -75,6 +83,7 @@ return {
 	},
 	{
 		"catppuccin/nvim",
+		lazy = false,
 		name = "catppuccin",
 		config = function()
 			require("catppuccin").setup({
@@ -97,7 +106,7 @@ return {
 			--vim.cmd.colorscheme("catppuccin")
 		end,
 	},
-	{ "patstockwell/vim-monokai-tasty" },
+	{ "patstockwell/vim-monokai-tasty", lazy = false },
 	{ "dracula/vim", priority = 1000, name = "dracula" },
 	{ "axvr/photon.vim" },
 	{ "preservim/vim-colors-pencil" },
