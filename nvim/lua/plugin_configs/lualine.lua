@@ -42,10 +42,15 @@ for k, v in pairs(icons) do
 end
 
 navic.setup({
+	lsp = {
+		auto_attach = false,
+		preference = nil,
+	},
 	depth_limit = 4,
 	highlight = true,
 	separator = " > ",
 	icons = icons_space,
+	click = true,
 })
 
 lualine.setup({
@@ -68,6 +73,7 @@ lualine.setup({
 			{
 				"navic",
 				padding = 0,
+				click = true,
 			},
 		},
 		lualine_x = {
