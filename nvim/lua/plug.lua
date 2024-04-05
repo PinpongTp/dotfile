@@ -66,8 +66,9 @@ return {
 		end,
 	},
 	{
-		"PinpongTp/comic",
+		--"PinpongTp/comic",
 		--dir = "~/Developer/theme/vim/comic",
+		dir = "~/Developer/my/comic",
 		lazy = false,
 		priority = 1000,
 		config = function()
@@ -478,6 +479,14 @@ return {
 			"tpope/vim-surround",
 		},
 	},
+	--[[{
+		"altermo/ultimate-autopair.nvim",
+		event = { "InsertEnter", "CmdlineEnter" },
+		branch = "v0.6",
+		opts = {
+			--Config goes here
+		},
+	},]]
 	{
 
 		"simrat39/symbols-outline.nvim",
