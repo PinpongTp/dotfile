@@ -12,7 +12,11 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 
-require("lazy").setup("pin.plugins", {
+require("lazy").setup({{ import = "pin.plugins"},  { import = "pin.plugins.lsp" }}, {
+  checker = {
+    enable = true,
+    notify = false,
+  },
   change_detection = {
     notify = false,
   }
