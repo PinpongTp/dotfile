@@ -28,7 +28,6 @@ return {
 				"isort",
 				"black",
 				"eslint_d",
-				"eslint",
 			},
 		})
 	end,
