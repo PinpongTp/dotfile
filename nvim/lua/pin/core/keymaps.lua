@@ -2,15 +2,16 @@ vim.g.mapleader = " "
 
 local keymap = vim.keymap
 
+-- utility
 keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" })
-
 keymap.set("n", ";tn", ":set rnu!<CR>", { desc = "Toggle relative line number" })
-
 keymap.set("n", "vv", ":nohl<CR>", { desc = "Clear search highlights" })
-
 keymap.set("n", "<leader>q", ":q<CR>", { desc = "Exit vim" })
-
 keymap.set("n", "<leader>E", "<cmd>Explore<CR>", { desc = "Open Explore" })
+
+-- text movement
+keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move line down" })
+keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move line up" })
 
 -- window managemenv
 keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" })
