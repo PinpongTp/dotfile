@@ -86,6 +86,11 @@ return {
 			if client.server_capabilities.documentSymbolProvider then
 				require("nvim-navic").attach(client, bufnr)
 			end
+
+			client.server_capabilities.textDocument.foldingRange = {
+				dynamicRegistration = false,
+				lineFoldingOnly = true,
+			}
 		end
 
 		mason_lspconfig.setup_handlers({
