@@ -34,7 +34,5 @@ return {
 		-- Text object
 		keymap.set("o", "ih", ":<C-U>Gitsigns select_hunk<CR>")
 		keymap.set("x", "ih", ":<C-U>Gitsigns select_hunk<CR>")
-
-		-- map("n", ";gm", ":Git blame<CR>", opts)
 	end,
 }
