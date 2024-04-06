@@ -5,14 +5,6 @@ return {
 	dependencies = {
 		-- { "nvimdev/lspsaga.nvim" },
 		{ "RRethy/vim-illuminate", enable = false },
-		{
-			"SmiteshP/nvim-navbuddy",
-			dependencies = {
-				"SmiteshP/nvim-navic",
-				"MunifTanjim/nui.nvim",
-			},
-			opts = { lsp = { auto_attach = true } },
-		},
 		"hrsh7th/cmp-nvim-lsp",
 		{ "antosha417/nvim-lsp-file-operations", config = true },
 		{ "folke/neodev.nvim", opts = {} },
