@@ -51,6 +51,12 @@ return {
 
 				opts.desc = "Show buffer diagnostics"
 				keymap.set("n", "<leader>D", "<cmd>", opts)
+
+				opts.desc = "Prev diagnostic"
+				keymap.set("n", "[e", vim.diagnostic.goto_prev)
+
+				opts.desc = "Next diagnostic"
+				keymap.set("n", "]e", vim.diagnostic.goto_next)
 			end,
 		})
 
