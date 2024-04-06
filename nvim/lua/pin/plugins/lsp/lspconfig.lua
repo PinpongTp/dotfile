@@ -57,6 +57,22 @@ return {
 
 				opts.desc = "Next diagnostic"
 				keymap.set("n", "]e", vim.diagnostic.goto_next)
+
+				opts.desc = "Prev diagnostic Error only"
+				keymap.set(
+					"n",
+					"[E",
+					":lua vim.diagnostic.goto_prev({ severity = vim.diagnostic.severity.ERROR })<CR>",
+					opts
+				)
+
+				opts.desc = "Next diagnostic Error only"
+				keymap.set(
+					"n",
+					"]E",
+					":lua vim.diagnostic.goto_next({ severity = vim.diagnostic.severity.ERROR })<CR>",
+					opts
+				)
 			end,
 		})
 
