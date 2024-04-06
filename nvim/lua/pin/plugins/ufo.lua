@@ -57,5 +57,17 @@ return {
 		local keymap = vim.keymap
 		keymap.set("n", "zR", ":lua require('ufo').openAllFolds()<CR>", { desc = "Open all folds" })
 		keymap.set("n", "zM", ":lua require('ufo').closeAllFolds()<CR>", { desc = "Close all folds" })
+
+		-- tobble fold column
+		local is_fold_column_show = false
+		keymap.set("n", ";tf", function()
+			if is_fold_column_show then
+				vim.cmd(":set foldcolumn=0")
+			else
+				vim.cmd(":set foldcolumn=1")
+			end
+
+			is_fold_column_show = not is_fold_column_show
+		end, { desc = "toggle fold column" })
 	end,
 }
