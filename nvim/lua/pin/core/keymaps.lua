@@ -10,7 +10,6 @@ keymap.set("n", "vv", ":nohl<CR>", { desc = "Clear search highlights" })
 
 keymap.set("n", "<leader>q", ":q<CR>", { desc = "Exit vim" })
 
-
 keymap.set("n", "<leader>E", "<cmd>Explore<CR>", { desc = "Open Explore" })
 
 -- window managemenv
@@ -29,3 +28,16 @@ keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer
 keymap.set("n", "<Tab>", ":bnext<CR>", { desc = "Next Buffer" })
 keymap.set("n", "<S-Tab>", ":bprevious<CR>", { desc = "Previous Buffer" })
 
+keymap.set("n", ";tm", ":Mason<CR>", { desc = "Mason" })
+keymap.set("n", ";tl", ":Lazy<CR>", { desc = "Lazy" })
+
+local is_fold_column_show = false
+keymap.set("n", ";tf", function()
+	if is_fold_column_show then
+		vim.cmd(":set foldcolumn=0")
+	else
+		vim.cmd(":set foldcolumn=1")
+	end
+
+	is_fold_column_show = not is_fold_column_show
+end, { desc = "toggle fold column" })
