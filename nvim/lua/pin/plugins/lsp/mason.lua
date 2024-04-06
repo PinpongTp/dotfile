@@ -27,6 +27,8 @@ return {
 				"stylua",
 				"isort",
 				"black",
+				"eslint_d",
+				"eslint",
 			},
 		})
 	end,
