@@ -26,8 +26,23 @@ keymap.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "Go to previous tab" })
 keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" })
 
 -- Buf and Tab
-keymap.set("n", "<Tab>", ":bnext<CR>", { desc = "Next Buffer" })
-keymap.set("n", "<S-Tab>", ":bprevious<CR>", { desc = "Previous Buffer" })
+keymap.set("n", "<Tab>", ":bnext<CR>", { noremap = true, silent = true, desc = "Next Buffer" })
+keymap.set("n", "<S-Tab>", ":bprevious<CR>", { noremap = true, silent = true, desc = "Previous Buffer" })
+keymap.set("n", ";q", ":bw<CR>", { noremap = true, silent = true })
+
+keymap.set("n", "<Leader>b.", ":bnext<CR>", { noremap = true, silent = true, desc = "Next Buffer" })
+keymap.set("n", "<Leader>b,", ":bprevious<CR>", { noremap = true, silent = true, desc = "Previous Buffer" })
+keymap.set("n", "<Leader>bq", function()
+	local is_open = require("nvim-tree.view").is_visible()
+	local api = require("nvim-tree.api")
+	if is_open then
+		api.tree.close()
+		vim.cmd(":bw")
+		api.tree.toggle({ focus = false })
+	else
+		vim.cmd(":bw")
+	end
+end, { desc = "Close Buffer" })
 
 keymap.set("n", ";tm", ":Mason<CR>", { desc = "Mason" })
 keymap.set("n", ";tl", ":Lazy<CR>", { desc = "Lazy" })
