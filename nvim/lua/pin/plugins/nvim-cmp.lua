@@ -41,12 +41,13 @@ return {
         }),
       }),
       sources = cmp.config.sources({
-        --{ name = "nvim_lsp" },
+        { name = "nvim_lsp" },
         { name = "luasnip" },
         { name = "buffer" },
         { name = "path" },
       }),
       formatting = {
+        expandable_indicator = true,
         fields = { "abbr", "kind", "menu" },
         format = lspkind.cmp_format({
           maxwidth = 50,
