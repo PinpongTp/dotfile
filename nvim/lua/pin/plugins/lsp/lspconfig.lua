@@ -4,11 +4,7 @@ return {
 	event = { "BufReadPre", "BufNewFile" },
 	dependencies = {
 		-- { "nvimdev/lspsaga.nvim" },
-		-- { "WhoIsSethDaniel/toggle-lsp-diagnostics.nvim" },
 		{ "RRethy/vim-illuminate", enable = false },
-
-		-- LSP Support
-		-- { "j-hui/fidget.nvim", tag = "legacy", event = "LspAttach" }, -- show lsp status right buttom
 		{
 			"SmiteshP/nvim-navbuddy",
 			dependencies = {
