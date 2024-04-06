@@ -11,6 +11,14 @@ keymap.set("n", "<leader>E", "<cmd>Explore<CR>", { desc = "Open Explore" })
 keymap.set("n", ";tm", ":Mason<CR>", { desc = "Mason" })
 keymap.set("n", ";tl", ":Lazy<CR>", { desc = "Lazy" })
 
+keymap.set("v", "p", '"_dP', { desc = "Paste without yanking" })
+--keymap.set("n", "x", '"_x', { desc = "Delete without yanking" })
+--keymap.set("v", "x", '"_x', { desc = "Delete without yanking" })
+keymap.set("n", "d", '"_d', { desc = "Delete without yanking" })
+keymap.set("v", "d", '"_d', { desc = "Delete without yanking" })
+keymap.set("n", "tj", "10j", { desc = "Move 10 lines down" })
+keymap.set("n", "tk", "10k", { desc = "Move 10 lines up" })
+
 -- text movement
 keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move line down" })
 keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move line up" })
