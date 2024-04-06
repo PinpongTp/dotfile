@@ -11,4 +11,12 @@ return {
 			require("colorizer").setup({})
 		end,
 	},
+	{
+		"m4xshen/smartcolumn.nvim",
+		opts = {
+			colorcolumn = "140",
+			scope = "file",
+			disabled_filetypes = { "help", "text", "markdown", "NvimTree", "lazy", "mason", "help", "alpha" },
+		},
+	},
 }
