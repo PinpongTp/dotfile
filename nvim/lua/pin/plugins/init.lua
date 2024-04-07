@@ -19,4 +19,10 @@ return {
 			disabled_filetypes = { "help", "text", "markdown", "NvimTree", "lazy", "mason", "help", "alpha" },
 		},
 	},
+	{
+		"nmac427/guess-indent.nvim",
+		config = function()
+			require("guess-indent").setup({})
+		end,
+	},
 }
