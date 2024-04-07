@@ -30,7 +30,7 @@ return {
 		})
 
 		local keymap = vim.keymap
-		-- keymap.set("n", "gh", "<cmd>Lspsaga finder<CR>") --  get help
+		keymap.set("n", "gh", "<cmd>Lspsaga finder<CR>") --  get help
 		-- keymap.set({ "n", "v" }, "<leader>ca", "<cmd>Lspsaga code_action<CR>")
 		keymap.set({ "n", "v" }, "ga", "<cmd>Lspsaga code_action<CR>", { desc = "Code action" })
 		keymap.set("n", "gr", "<cmd>Lspsaga rename ++project<CR>", { desc = "Rename" })
