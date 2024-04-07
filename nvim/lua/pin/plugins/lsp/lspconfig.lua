@@ -38,33 +38,39 @@ return {
 				opts.desc = "See available code actions"
 				keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
 
-				opts.desc = "Smart rename"
-				keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
+				--opts.desc = "Smart rename"
+				--keymap.set("n", "gr", vim.lsp.buf.rename, opts)
 
 				opts.desc = "Show buffer diagnostics"
-				keymap.set("n", "<leader>D", "<cmd>", opts)
+				keymap.set("n", "<leader>D", vim.lsp.buf.type_definition, opts)
 
-				opts.desc = "Prev diagnostic"
-				keymap.set("n", "[e", vim.diagnostic.goto_prev)
+				-- opts.desc = "Prev diagnostic"
+				-- keymap.set("n", "[e", vim.diagnostic.goto_prev)
+				-- opts.desc = "Next diagnostic"
+				-- keymap.set("n", "]e", vim.diagnostic.goto_next)
 
-				opts.desc = "Next diagnostic"
-				keymap.set("n", "]e", vim.diagnostic.goto_next)
+				vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+				vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, opts)
 
-				opts.desc = "Prev diagnostic Error only"
-				keymap.set(
-					"n",
-					"[E",
-					":lua vim.diagnostic.goto_prev({ severity = vim.diagnostic.severity.ERROR })<CR>",
-					opts
-				)
+				-- opts.desc = "Prev diagnostic Error only"
+				-- keymap.set(
+				-- 	"n",
+				-- 	"[E",
+				-- 	":lua vim.diagnostic.goto_prev({ severity = vim.diagnostic.severity.ERROR })<CR>",
+				-- 	opts
+				-- )
 
-				opts.desc = "Next diagnostic Error only"
-				keymap.set(
-					"n",
-					"]E",
-					":lua vim.diagnostic.goto_next({ severity = vim.diagnostic.severity.ERROR })<CR>",
-					opts
-				)
+				-- opts.desc = "Next diagnostic Error only"
+				-- keymap.set(
+				-- 	"n",
+				-- 	"]E",
+				-- 	":lua vim.diagnostic.goto_next({ severity = vim.diagnostic.severity.ERROR })<CR>",
+				-- 	opts
+				-- )
+
+				-- vim.keymap.set("n", "<space>f", function()
+				-- 	vim.lsp.buf.format({ async = true })
+				-- end, opts)
 			end,
 		})
 
@@ -82,7 +88,9 @@ return {
 		end
 
 		local on_attach = function(client, bufnr)
-			client.server_capabilities.semanticTokensProvider = nil
+			if client.server_capabilities.semanticTokensProvider then
+				client.server_capabilities.semanticTokensProvider = nil
+			end
 			if client.server_capabilities.documentSymbolProvider then
 				require("nvim-navic").attach(client, bufnr)
 			end
