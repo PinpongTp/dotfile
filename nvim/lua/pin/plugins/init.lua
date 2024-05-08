@@ -25,4 +25,7 @@ return {
 			require("guess-indent").setup({})
 		end,
 	},
+	{
+		"kshenoy/vim-signature",
+	},
 }
