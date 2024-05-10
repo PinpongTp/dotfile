@@ -8,6 +8,12 @@ alias cl="clear"
 
 alias ff="ls | grep"
 alias yy="yarn"
+alias yyt="yarn test"
+alias yyd="yarn start:dev"
+
+alias nn="npm"
+alias nnt="npm run test"
+alias nns="npm run start"
 
 #file
 alias config="cd ~/.config"
@@ -24,6 +30,10 @@ alias gch="git checkout"
 alias gb="git branch"
 alias gs="git status"
 # abbr add gco="git checkout"
+
+alias gp="git push"
+alias gpp="git push -f"
+alias gnn="git push -f --no-verify"
 
 # tmux
 alias tm="tmux"
