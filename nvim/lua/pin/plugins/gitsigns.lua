@@ -16,6 +16,7 @@ return {
 
 		-- Actions
 		keymap.set("n", ";gs", ":Gitsigns stage_hunk<CR>", { desc = "Stage hunk" })
+
 		keymap.set("v", ";gs", ":Gitsigns stage_hunk<CR>", { desc = "Stage hunk" })
 		keymap.set("n", ";gr", ":Gitsigns reset_hunk<CR>", { desc = "Reset hunk" })
 		keymap.set("v", ";gr", ":Gitsigns reset_hunk<CR>", { desc = "Reset hunk" })

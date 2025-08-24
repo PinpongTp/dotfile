@@ -5,14 +5,52 @@ return {
 	dependencies = {
 		-- { "nvimdev/lspsaga.nvim" },
 		{ "RRethy/vim-illuminate", enable = false },
-		"hrsh7th/cmp-nvim-lsp",
+		-- "hrsh7th/cmp-nvim-lsp",
+		{ "saghen/blink.cmp" },
 		{ "antosha417/nvim-lsp-file-operations", config = true },
 		{ "folke/neodev.nvim", opts = {} },
 	},
 	config = function()
 		local lspconfig = require("lspconfig")
 		local mason_lspconfig = require("mason-lspconfig")
-		local cmp_nvim_lsp = require("cmp_nvim_lsp")
+		local blink_cmp = require("blink.cmp")
+
+		local on_attach = function(client, bufnr)
+			if client.server_capabilities.semanticTokensProvider then
+				client.server_capabilities.semanticTokensProvider = nil
+			end
+			if client.server_capabilities.documentSymbolProvider then
+				require("nvim-navic").attach(client, bufnr)
+			end
+		end
+
+		mason_lspconfig.setup({
+			handlers = {
+				function(server, config)
+					config.capabilities = blink_cmp.get_lsp_capabilities(config.capabilities)
+					lspconfig[server].setup(config)
+				end,
+			},
+		})
+
+		vim.lsp.config("lua_ls", {
+			settings = {
+				Lua = {
+					diagnostics = {
+						globals = { "vim" },
+					},
+					completion = {
+						callSnippet = "Replace",
+					},
+				},
+			},
+			on_attach = on_attach,
+		})
+
+		vim.lsp.config("ts_ls", {
+			on_attach = on_attach,
+		})
+
 		local keymap = vim.keymap
 
 		vim.api.nvim_create_autocmd("LspAttach", {
@@ -24,10 +62,10 @@ return {
 				keymap.set("n", "gR", "<cmd>Telescope lsp_references<CR>", opts)
 
 				opts.desc = "Go to declaration"
-				keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
+				keymap.set("n", "gD", vim.lsp.buf.definition, opts)
 
 				opts.desc = "Show LSP definition"
-				keymap.set("n", "gd", "<cmd>Telescope lsp_definitions<CR>", opts)
+				keymap.set("n", "gd", vim.lsp.buf.definition, opts)
 
 				opts.desc = "Show LSP implementations"
 				keymap.set("n", "gi", "<cmd>Telescope lsp_implementations<CR>", opts)
@@ -74,8 +112,6 @@ return {
 			end,
 		})
 
-		local capabilities = cmp_nvim_lsp.default_capabilities()
-
 		local signs = {
 			{ name = "DiagnosticSignError", text = "" },
 			{ name = "DiagnosticSignWarn", text = "" },
@@ -86,44 +122,5 @@ return {
 		for _, sign in ipairs(signs) do
 			vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
 		end
-
-		local on_attach = function(client, bufnr)
-			if client.server_capabilities.semanticTokensProvider then
-				client.server_capabilities.semanticTokensProvider = nil
-			end
-			if client.server_capabilities.documentSymbolProvider then
-				require("nvim-navic").attach(client, bufnr)
-			end
-
-			client.server_capabilities.textDocument.foldingRange = {
-				dynamicRegistration = false,
-				lineFoldingOnly = true,
-			}
-		end
-
-		mason_lspconfig.setup_handlers({
-			function(server_name)
-				lspconfig[server_name].setup({
-					capabilities = capabilities,
-					on_attach = on_attach,
-				})
-			end,
-			["lua_ls"] = function()
-				lspconfig["lua_ls"].setup({
-					capabilities = capabilities,
-					on_attach = on_attach,
-					settings = {
-						Lua = {
-							diagnostics = {
-								globals = { "vim" },
-							},
-							completion = {
-								callSnippet = "Replace",
-							},
-						},
-					},
-				})
-			end,
-		})
 	end,
 }
