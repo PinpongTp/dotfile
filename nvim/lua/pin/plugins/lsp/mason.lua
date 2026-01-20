@@ -5,7 +5,18 @@ return {
 		local mason = require("mason")
 		local mason_lspconfig = require("mason-lspconfig")
 		local mason_tool_installer = require("mason-tool-installer")
-		local servers = { "tsserver", "lua_ls", "gopls", "vuels", "html", "astro", "cssls", "tailwindcss", "emmet_ls" }
+		local servers = {
+			"ts_ls",
+			"lua_ls",
+			"gopls",
+			"vuels",
+			"html",
+			"astro",
+			"cssls",
+			"tailwindcss",
+			"emmet_ls",
+			"jdtls",
+		}
 
 		mason.setup({
 			ui = {
