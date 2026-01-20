@@ -6,6 +6,8 @@ alias so="source"
 alias vim="nvim"
 alias cl="clear"
 
+alias lz="lazygit"
+
 alias ff="ls | grep"
 alias yy="yarn"
 alias yyt="yarn test"
