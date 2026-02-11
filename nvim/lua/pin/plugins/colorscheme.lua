@@ -1,7 +1,7 @@
 return {
 	{
-		--"PinpongTp/comic",
-		dir = "~/Developer/theme/vim/comic",
+		"PinpongTp/comic",
+		-- dir = "~/Developer/theme/vim/comic",
 		--dir = "~/Developer/my/comic",
 		priority = 1000,
 		config = function()
