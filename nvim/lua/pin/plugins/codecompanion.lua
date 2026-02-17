@@ -41,4 +41,7 @@ return {
 			log_level = "DEBUG",
 		},
 	},
+	keys = {
+		{ "<leader>C", "<cmd>CodeCompanionChat<CR>", desc = "Open CodeCompanion Chat" },
+	},
 }
