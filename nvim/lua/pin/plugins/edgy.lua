@@ -34,16 +34,16 @@ return {
 		},
 		exit_when_last = true,
 		keys = {
-			["<C-Right>"] = function(win)
+			["<M-Right>"] = function(win)
 				win:resize("width", 2)
 			end,
-			["<C-Left>"] = function(win)
+			["<M-Left>"] = function(win)
 				win:resize("width", -2)
 			end,
-			["<C-Up>"] = function(win)
+			["<M-Up>"] = function(win)
 				win:resize("height", 2)
 			end,
-			["<C-Down>"] = function(win)
+			["<M-Down>"] = function(win)
 				win:resize("height", -2)
 			end,
 		},
