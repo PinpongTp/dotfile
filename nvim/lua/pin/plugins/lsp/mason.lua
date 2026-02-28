@@ -8,8 +8,6 @@ return {
 		local servers = {
 			"ts_ls",
 			"lua_ls",
-			-- "gopls",
-			"volar",
 			"html",
 			"astro",
 			"cssls",
