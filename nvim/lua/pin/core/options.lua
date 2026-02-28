@@ -5,6 +5,7 @@ local cmd = vim.api.nvim_command
 
 opt.relativenumber = true
 opt.number = true
+vim.opt.equalalways = false
 
 -- tabs and indentation
 opt.tabstop = 2
@@ -44,6 +45,8 @@ opt.backspace = "indent,eol,start"
 
 -- clipboard
 opt.clipboard:append("unnamedplus")
+
+vim.opt.mouse = "a"
 
 -- split windows
 opt.splitright = true
