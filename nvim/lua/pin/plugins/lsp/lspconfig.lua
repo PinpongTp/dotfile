@@ -3,9 +3,6 @@ return {
 	enable = false,
 	event = { "BufReadPre", "BufNewFile" },
 	dependencies = {
-		-- { "nvimdev/lspsaga.nvim" },
-		{ "RRethy/vim-illuminate", enable = false },
-		-- "hrsh7th/cmp-nvim-lsp",
 		{ "saghen/blink.cmp" },
 		{ "antosha417/nvim-lsp-file-operations", config = true },
 		{ "folke/neodev.nvim", opts = {} },
@@ -21,6 +18,24 @@ return {
 			end
 			if client.server_capabilities.documentSymbolProvider then
 				require("nvim-navic").attach(client, bufnr)
+			end
+
+			if client.server_capabilities.documentHighlightProvider then
+				local highlight_augroup = vim.api.nvim_create_augroup("lsp_document_highlight", { clear = false })
+
+				-- เมื่อเอาเคอร์เซอร์วางนิ่งๆ (CursorHold) ให้ทำ Highlight
+				vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
+					buffer = bufnr,
+					group = highlight_augroup,
+					callback = vim.lsp.buf.document_highlight,
+				})
+
+				-- เมื่อขยับเคอร์เซอร์ (CursorMoved) ให้ลบ Highlight ออก
+				vim.api.nvim_create_autocmd({ "CursorMoved", "CursorMovedI" }, {
+					buffer = bufnr,
+					group = highlight_augroup,
+					callback = vim.lsp.buf.clear_references,
+				})
 			end
 		end
 
@@ -76,39 +91,10 @@ return {
 				opts.desc = "See available code actions"
 				keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
 
-				--opts.desc = "Smart rename"
-				--keymap.set("n", "gr", vim.lsp.buf.rename, opts)
-
 				opts.desc = "Show buffer diagnostics"
 				keymap.set("n", "<leader>D", vim.lsp.buf.type_definition, opts)
-
-				-- opts.desc = "Prev diagnostic"
-				-- keymap.set("n", "[e", vim.diagnostic.goto_prev)
-				-- opts.desc = "Next diagnostic"
-				-- keymap.set("n", "]e", vim.diagnostic.goto_next)
-
 				vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
 				vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, opts)
-
-				-- opts.desc = "Prev diagnostic Error only"
-				-- keymap.set(
-				-- 	"n",
-				-- 	"[E",
-				-- 	":lua vim.diagnostic.goto_prev({ severity = vim.diagnostic.severity.ERROR })<CR>",
-				-- 	opts
-				-- )
-
-				-- opts.desc = "Next diagnostic Error only"
-				-- keymap.set(
-				-- 	"n",
-				-- 	"]E",
-				-- 	":lua vim.diagnostic.goto_next({ severity = vim.diagnostic.severity.ERROR })<CR>",
-				-- 	opts
-				-- )
-
-				-- vim.keymap.set("n", "<space>f", function()
-				-- 	vim.lsp.buf.format({ async = true })
-				-- end, opts)
 			end,
 		})
 
