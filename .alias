@@ -1,4 +1,3 @@
-### alias file ###
 # this file call by ~/.zshrc
 
 #normal alias/comand
@@ -6,6 +5,8 @@ alias so="source"
 alias vim="nvim"
 alias cl="clear"
 alias c="claude"
+alias cc="claude --continue"
+alias oll="ollama"
 
 alias lz="lazygit"
 
