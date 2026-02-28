@@ -1,24 +1,24 @@
 return {
-	"greggh/claude-code.nvim",
-	dependencies = {
-		"nvim-lua/plenary.nvim", -- Required for git operations
-	},
-	config = function()
-		require("claude-code").setup()
-	end,
+	"coder/claudecode.nvim",
+	dependencies = { "folke/snacks.nvim" },
+	config = true,
 	keys = {
-		-- Toggle Claude Code terminal
-		{ "<Leader>l", "<cmd>ClaudeCode<CR>", mode = "n", desc = "Toggle Claude Code" },
-		{ "<Leader>l", "<cmd>ClaudeCode<CR>", mode = "t", desc = "Toggle Claude Code" },
-		-- Variant modes
-		{ "<leader>L", "<cmd>ClaudeCode --continue<CR>", mode = "n", desc = "Toggle Claude Code (continue)" },
-		{ "<leader>cV", "<cmd>ClaudeCode --verbose<CR>", mode = "n", desc = "Toggle Claude Code (verbose)" },
-		-- Terminal navigation
-		{ "<Leader>Sh", "<cmd>wincmd h<CR>", mode = "t", desc = "Navigate left" },
-		{ "<Leader>Sj", "<cmd>wincmd j<CR>", mode = "t", desc = "Navigate down" },
-		{ "<Leader>Sk", "<cmd>wincmd k<CR>", mode = "t", desc = "Navigate up" },
-		{ "<Leader>Sl", "<cmd>wincmd l<CR>", mode = "t", desc = "Navigate right" },
-		{ "<Leader>Sf", "<C-\\><C-n><C-f>", mode = "t", desc = "Scroll full-page down" },
-		{ "<Leader>Sb", "<C-\\><C-n><C-b>", mode = "t", desc = "Scroll full-page up" },
+		{ "<leader>a", nil, desc = "AI/Claude Code" },
+		{ "<leader>ac", "<cmd>ClaudeCode<cr>", desc = "Toggle Claude" },
+		{ "<leader>af", "<cmd>ClaudeCodeFocus<cr>", desc = "Focus Claude" },
+		{ "<leader>ar", "<cmd>ClaudeCode --resume<cr>", desc = "Resume Claude" },
+		{ "<leader>aC", "<cmd>ClaudeCode --continue<cr>", desc = "Continue Claude" },
+		{ "<leader>am", "<cmd>ClaudeCodeSelectModel<cr>", desc = "Select Claude model" },
+		{ "<leader>ab", "<cmd>ClaudeCodeAdd %<cr>", desc = "Add current buffer" },
+		{ "<leader>as", "<cmd>ClaudeCodeSend<cr>", mode = "v", desc = "Send to Claude" },
+		{
+			"<leader>as",
+			"<cmd>ClaudeCodeTreeAdd<cr>",
+			desc = "Add file",
+			ft = { "NvimTree", "neo-tree", "oil", "minifiles", "netrw" },
+		},
+		-- Diff management
+		{ "<leader>aa", "<cmd>ClaudeCodeDiffAccept<cr>", desc = "Accept diff" },
+		{ "<leader>ad", "<cmd>ClaudeCodeDiffDeny<cr>", desc = "Deny diff" },
 	},
 }

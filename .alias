@@ -5,6 +5,7 @@
 alias so="source"
 alias vim="nvim"
 alias cl="clear"
+alias c="claude"
 
 alias lz="lazygit"
 
