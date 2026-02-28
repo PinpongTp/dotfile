@@ -5,7 +5,8 @@ local cmd = vim.api.nvim_command
 
 opt.relativenumber = true
 opt.number = true
-vim.opt.equalalways = false
+opt.updatetime = 200
+opt.equalalways = false
 
 -- tabs and indentation
 opt.tabstop = 2
