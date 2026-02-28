@@ -22,7 +22,7 @@ return {
 				},
 				cmdline = { sources = { "cmdline" } },
 				sources = {
-					default = { "lsp", "path", "buffer", "codecompanion" },
+					default = { "lsp", "path", "buffer" },
 				},
 			},
 		},
@@ -33,12 +33,23 @@ return {
 	opts = {
 		--Refer to: https://github.com/olimorris/codecompanion.nvim/blob/main/lua/codecompanion/config.lua
 		interactions = {
-			--NOTE: Change the adapter as required
 			chat = { adapter = "copilot" },
 			inline = { adapter = "copilot" },
+		},
+
+		display = {
+			chat = {
+				window = {
+					layout = "vertical", -- หรือ horizontal / float
+				},
+				smart_resize = true, -- 👈 เปิด SmartResizeMode
+			},
 		},
 		opts = {
 			log_level = "DEBUG",
 		},
+	},
+	keys = {
+		{ "<leader>C", "<cmd>CodeCompanionChat<CR>", desc = "Open CodeCompanion Chat" },
 	},
 }
