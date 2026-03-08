@@ -9,11 +9,11 @@ return {
 			"ts_ls",
 			"lua_ls",
 			"html",
-			"astro",
+			--"astro",
 			"cssls",
 			"tailwindcss",
 			"emmet_ls",
-			"jdtls",
+			--"jdtls",
 		}
 
 		mason.setup({
