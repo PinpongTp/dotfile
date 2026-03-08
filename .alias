@@ -14,30 +14,15 @@ alias ff="ls | grep"
 alias yy="yarn"
 alias yyt="yarn test"
 alias yyd="yarn start:dev"
+alias yys="yarn start"
 
 alias nn="npm"
 alias nnt="npm run test"
+alias nnd="npm run start:dev"
 alias nns="npm run start"
-
-#file
-alias config="cd ~/.config"
-alias cf="cd ~/.config"
-alias remote="cd ~/Developer/remote" 
-alias wo="cd ~/Developer/remote" 
-alias test="cd ~/Developer/test"
-alias my="cd ~/Developer/my"
 
 # git
 alias g="git"
-alias gch="git checkout"
-# alias gco="git checkout"
-alias gb="git branch"
-alias gs="git status"
-# abbr add gco="git checkout"
-
-alias gp="git push"
-alias gpp="git push -f"
-alias gnn="git push -f --no-verify"
 
 # tmux
 alias tm="tmux"
@@ -45,14 +30,15 @@ alias tma="tmux attach-session -t"
 alias tmd="tmux kill-session -t"
 alias tmc="tmux new -s"
 
-# for develop
-alias run="sudo yarn run start:dev"
-alias dev="yarn run start:dev"
-# alias y="yarn"
-
 # cat
 alias hvim="cat ~/.config/cat/vim.help"
 
 # qmk
 alias aqmk="cp -X ./.build/dztech_dz60rgb_wkl_v2_1_pinpongTp.bin /Volumes/KBDFANS\ \ /FLASH.BIN"
 
+# Modern CLI replacements
+alias ls="eza"
+alias ll="eza -la"
+alias l="eza -1"
+alias tree="eza -T"
+alias cat="bat"

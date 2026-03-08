@@ -3,7 +3,6 @@ node_modules
 /yarn
 /vim
 /tmux/plugins
-/zsh
 /coc
 /configstore
 /nvim/autoload
