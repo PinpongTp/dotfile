@@ -2,6 +2,7 @@ return {
 	"nvim-treesitter/nvim-treesitter",
 	--enable = false,
 	event = { "BufReadPost", "BufNewFile" },
+	tag = "v0.10.0",
 	build = ":TSUpdate",
 	dependencies = {
 		"nvim-treesitter/nvim-treesitter-context",
@@ -10,7 +11,7 @@ return {
 		"windwp/nvim-ts-autotag",
 		"tpope/vim-surround",
 	},
-	configs = function()
+	config = function()
 		local treesitter = require("nvim-treesitter.configs")
 
 		treesitter.setup({
@@ -20,7 +21,7 @@ return {
 			ignore_install = {},
 			highlight = {
 				enable = true,
-				--additional_vim_regex_highlighting = false,
+				-- additional_vim_regex_highlighting = false,
 			},
 			indent = {
 				enable = true,
