@@ -13,7 +13,7 @@ return {
 			"cssls",
 			"tailwindcss",
 			"emmet_ls",
-			--"jdtls",
+			"jdtls",
 		}
 
 		mason.setup({
@@ -34,8 +34,8 @@ return {
 			ensure_installed = {
 				"prettier",
 				"stylua",
-				"isort",
-				"black",
+				-- "isort",
+				-- "black",
 				"eslint_d",
 			},
 		})
