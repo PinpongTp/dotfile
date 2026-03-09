@@ -5,7 +5,7 @@ return {
 		--dir = "~/Developer/my/comic",
 		priority = 1000,
 		config = function()
-			vim.cmd.colorscheme("comic")
+			-- vim.cmd.colorscheme("comic")
 		end,
 	},
 	{
@@ -79,7 +79,7 @@ return {
 				},
 			})
 			--require("catppuccin").compile()
-			--vim.cmd.colorscheme("catppuccin")
+			vim.cmd.colorscheme("catppuccin")
 		end,
 	},
 	{ "patstockwell/vim-monokai-tasty" },
