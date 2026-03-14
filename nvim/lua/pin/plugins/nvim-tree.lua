@@ -2,6 +2,17 @@ return {
 	"nvim-tree/nvim-tree.lua",
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	opts = {
+		on_attach = function(bufnr)
+			local api = require("nvim-tree.api")
+			api.config.mappings.default_on_attach(bufnr)
+			vim.keymap.set("n", "<leader>y", function()
+				local node = api.tree.get_node_under_cursor()
+				if node then
+					vim.fn.setreg("+", node.absolute_path)
+					vim.notify("Copied: " .. node.absolute_path, vim.log.levels.INFO)
+				end
+			end, { buffer = bufnr, desc = "Copy absolute path for Claude" })
+		end,
 		sort_by = "case_sensitive",
 		view = {
 			adaptive_size = false,

@@ -56,3 +56,22 @@ keymap.set("n", "<Leader>bq", function()
 		vim.cmd(":bw")
 	end
 end, { desc = "Close Buffer" })
+
+-- Copy for Claude Code (paste in tmux)
+keymap.set("v", "<leader>y", function()
+	local mode = vim.fn.mode()
+	local sr, sc = vim.fn.line("v"), vim.fn.col("v")
+	local er, ec = vim.fn.line("."), vim.fn.col(".")
+	if sr > er or (sr == er and sc > ec) then
+		sr, sc, er, ec = er, ec, sr, sc
+	end
+	local file = vim.fn.expand("%:p")
+	local text
+	if mode == "V" then -- line visual
+		text = file .. ":" .. sr .. "-" .. er
+	else -- v (char visual) or ctrl-v (block visual)
+		text = file .. ":" .. sr .. ":" .. sc .. "-" .. er .. ":" .. ec
+	end
+	vim.fn.setreg("+", text)
+	vim.notify("Copied for Claude", vim.log.levels.INFO)
+end, { desc = "Copy selection with file info" })
