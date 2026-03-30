@@ -2,6 +2,44 @@ return {
 	{
 		"mfussenegger/nvim-dap",
 		lazy = true,
+		dependencies = { "williamboman/mason.nvim" },
+		config = function()
+			local dap = require("dap")
+			local js_debug_path = vim.fn.stdpath("data") .. "/mason/packages/js-debug-adapter"
+
+			dap.adapters["pwa-node"] = {
+				type = "server",
+				host = "localhost",
+				port = "${port}",
+				executable = {
+					command = "node",
+					args = { js_debug_path .. "/js-debug/src/dapDebugServer.js", "${port}" },
+				},
+			}
+
+			local js_config = {
+				{
+					name = "Launch Node",
+					type = "pwa-node",
+					request = "launch",
+					program = "${file}",
+					cwd = vim.fn.getcwd(),
+					sourceMaps = true,
+					skipFiles = { "<node_internals>/**", "node_modules/**" },
+				},
+				{
+					name = "Attach to Node Process",
+					type = "pwa-node",
+					request = "attach",
+					cwd = vim.fn.getcwd(),
+					sourceMaps = true,
+					skipFiles = { "<node_internals>/**", "node_modules/**" },
+				},
+			}
+
+			dap.configurations.javascript = js_config
+			dap.configurations.typescript = js_config
+		end,
 		keys = {
 			-- Basic debugging controls
 			{
@@ -63,7 +101,7 @@ return {
 			{
 				";dr",
 				function()
-					require("dap").repl.toggle()
+					require("dap").repl.toggle(nil, "belowright split")
 				end,
 				desc = "Toggle REPL",
 			},
@@ -79,34 +117,6 @@ return {
 					require("dap-view").toggle()
 				end,
 				desc = "Toggle DAP View",
-			},
-			{
-				";ds",
-				function()
-					require("dap-view").toggle_scopes()
-				end,
-				desc = "Toggle Scopes",
-			},
-			{
-				";dS",
-				function()
-					require("dap-view").toggle_stack()
-				end,
-				desc = "Toggle Stack Trace",
-			},
-			{
-				";dw",
-				function()
-					require("dap-view").toggle_watches()
-				end,
-				desc = "Toggle Watches",
-			},
-			{
-				";dx",
-				function()
-					require("dap-view").toggle_breakpoints()
-				end,
-				desc = "Toggle Breakpoints List",
 			},
 			{
 				"]b",
@@ -184,48 +194,5 @@ return {
 		---@module 'dap-view'
 		---@type dapview.Config
 		opts = {},
-	},
-	{
-		"jay-babu/mason-nvim-dap.nvim",
-		dependencies = {
-			"williamboman/mason.nvim",
-			"mfussenegger/nvim-dap",
-		},
-		cmd = { "DapInstall", "DapUninstall" },
-		opts = {
-			automatic_installation = true,
-			ensure_installed = { "node2" },
-			handlers = {
-				-- Default handler for all adapters
-				function(config)
-					require("mason-nvim-dap").default_setup(config)
-				end,
-
-				-- Custom Node.js debugger configuration
-				node2 = function(config)
-					config.adapter = {
-						type = "executable",
-						command = vim.fn.exepath("node-debug2-adapter"),
-					}
-
-					config.configurations = {
-						{
-							name = "Attach to Node Process",
-							type = "node2",
-							request = "attach",
-							cwd = vim.fn.getcwd(),
-							sourceMaps = true,
-							protocol = "inspector",
-							skipFiles = {
-								"<node_internals>/**",
-								"node_modules/**",
-							},
-						},
-					}
-
-					require("mason-nvim-dap").default_setup(config)
-				end,
-			},
-		},
 	},
 }
