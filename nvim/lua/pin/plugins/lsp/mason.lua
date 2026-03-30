@@ -37,6 +37,7 @@ return {
 				-- "isort",
 				-- "black",
 				"eslint_d",
+				"js-debug-adapter",
 			},
 		})
 	end,
