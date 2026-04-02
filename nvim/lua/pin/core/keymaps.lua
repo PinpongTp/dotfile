@@ -75,3 +75,23 @@ keymap.set("v", "<leader>y", function()
 	vim.fn.setreg("+", text)
 	vim.notify("Copied for Claude", vim.log.levels.INFO)
 end, { desc = "Copy selection with file info" })
+
+keymap.set("n", "<leader>Y", function()
+	local file = vim.fn.expand("%:p")
+	local line = vim.fn.line(".")
+	local diagnostics = vim.diagnostic.get(0, { lnum = line - 1 })
+	if #diagnostics == 0 then
+		vim.notify("No diagnostics on this line", vim.log.levels.WARN)
+		return
+	end
+	local parts = { file .. ":" .. line }
+	for _, d in ipairs(diagnostics) do
+		local severity = vim.diagnostic.severity[d.severity]
+		local source = d.source or ""
+		local code = d.code and (" " .. d.code) or ""
+		table.insert(parts, "[" .. severity .. "] " .. d.message .. code .. " (" .. source .. ")")
+	end
+	local text = table.concat(parts, "\n")
+	vim.fn.setreg("+", text)
+	vim.notify("Copied " .. #diagnostics .. " diagnostic(s)", vim.log.levels.INFO)
+end, { desc = "Copy LSP diagnostics on current line" })
