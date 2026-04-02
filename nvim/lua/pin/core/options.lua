@@ -70,3 +70,9 @@ cmd("filetype plugin on") -- for markdown plugin
 cmd('au TextYankPost * silent! lua vim.highlight.on_yank {higroup="IncSearch", timeout=150}')
 
 cmd("let g:vim_markdown_folding_disabled = 1") -- for open folding on active markdown file
+
+-- Auto-reload files changed externally (e.g. Claude Code in tmux)
+opt.autoread = true
+vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold" }, {
+	command = "silent! checktime",
+})
