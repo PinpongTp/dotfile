@@ -39,6 +39,11 @@ return {
 
 			dap.configurations.javascript = js_config
 			dap.configurations.typescript = js_config
+
+			vim.fn.sign_define("DapBreakpoint", { text = "●", texthl = "DiagnosticError", numhl = "" })
+			vim.fn.sign_define("DapBreakpointCondition", { text = "●", texthl = "DiagnosticWarn", numhl = "" })
+			vim.fn.sign_define("DapBreakpointRejected", { text = "●", texthl = "DiagnosticHint", numhl = "" })
+			vim.fn.sign_define("DapStopped", { text = "→", texthl = "DiagnosticError", linehl = "DapStoppedLine", numhl = "DiagnosticError" })
 		end,
 		keys = {
 			-- Basic debugging controls
