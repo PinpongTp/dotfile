@@ -18,7 +18,6 @@ node_modules
 .DS_Store
 
 lazygit/state.yml
-lazygit/config.yml
 .nuxtrc
 StardewValley
 gtk-2.0
