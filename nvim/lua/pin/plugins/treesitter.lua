@@ -2,7 +2,7 @@ return {
 	"nvim-treesitter/nvim-treesitter",
 	--enable = false,
 	event = { "BufReadPost", "BufNewFile" },
-	tag = "v0.10.0",
+	branch = "master",
 	build = ":TSUpdate",
 	dependencies = {
 		"nvim-treesitter/nvim-treesitter-context",
@@ -21,7 +21,10 @@ return {
 			ignore_install = {},
 			highlight = {
 				enable = true,
-				-- additional_vim_regex_highlighting = false,
+				disable = function(lang, _)
+					return lang == "markdown" or lang == "markdown_inline"
+				end,
+				additional_vim_regex_highlighting = { "markdown" },
 			},
 			indent = {
 				enable = true,
@@ -84,11 +87,30 @@ return {
 		local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
 		parser_config.tsx.filetype_to_parsername = { "javascript", "typescript.tsx" }
 
+		-- Neovim 0.12 ships ftplugin/markdown.lua that auto-starts treesitter,
+		-- which crashes due to nested-injection bug. Stop it for markdown buffers.
+		vim.api.nvim_create_autocmd("FileType", {
+			pattern = "markdown",
+			callback = function(ev)
+				pcall(vim.treesitter.stop, ev.buf)
+			end,
+		})
+
 		local treesitter_context = require("treesitter-context")
 		treesitter_context.setup({
 			enable = true, -- Enable this plugin (Can be enabled/disabled later via commands)
 			max_lines = 0, -- How many lines the window should span. Values <= 0 mean no limit.
 			trim_scope = "outer", -- Which context lines to discard if `max_lines` is exceeded. Choices: 'inner', 'outer'
+			on_attach = function(buf)
+				local ft = vim.bo[buf].filetype
+				local excluded = { "dap-view", "dap-repl", "dap-view-term", "markdown", "markdown_inline" }
+				for _, e in ipairs(excluded) do
+					if ft == e then
+						return false
+					end
+				end
+				return true
+			end,
 			patterns = { -- Match patterns for TS nodes. These get wrapped to match at word boundaries.
 				default = {
 					"class",

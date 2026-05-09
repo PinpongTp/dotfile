@@ -22,4 +22,14 @@ return {
 	{
 		"kshenoy/vim-signature",
 	},
+	{
+		"j-hui/fidget.nvim",
+		version = "*",
+		event = "VeryLazy",
+		opts = {
+			notification = {
+				override_vim_notify = true,
+			},
+		},
+	},
 }
