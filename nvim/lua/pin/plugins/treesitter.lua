@@ -22,7 +22,8 @@ return {
 			highlight = {
 				enable = true,
 				disable = function(lang, _)
-					return lang == "markdown" or lang == "markdown_inline"
+					local broken = { markdown = true, markdown_inline = true, bash = true }
+					return broken[lang] == true
 				end,
 				additional_vim_regex_highlighting = { "markdown" },
 			},
@@ -87,14 +88,6 @@ return {
 		local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
 		parser_config.tsx.filetype_to_parsername = { "javascript", "typescript.tsx" }
 
-		-- Neovim 0.12 ships ftplugin/markdown.lua that auto-starts treesitter,
-		-- which crashes due to nested-injection bug. Stop it for markdown buffers.
-		vim.api.nvim_create_autocmd("FileType", {
-			pattern = "markdown",
-			callback = function(ev)
-				pcall(vim.treesitter.stop, ev.buf)
-			end,
-		})
 
 		local treesitter_context = require("treesitter-context")
 		treesitter_context.setup({
