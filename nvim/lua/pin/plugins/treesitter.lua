@@ -103,7 +103,7 @@ return {
 			trim_scope = "outer", -- Which context lines to discard if `max_lines` is exceeded. Choices: 'inner', 'outer'
 			on_attach = function(buf)
 				local ft = vim.bo[buf].filetype
-				local excluded = { "dap-view", "dap-repl", "dap-view-term", "markdown", "markdown_inline" }
+				local excluded = { "dap-view", "dap-repl", "dap-view-term", "markdown", "markdown_inline", "html" }
 				for _, e in ipairs(excluded) do
 					if ft == e then
 						return false
