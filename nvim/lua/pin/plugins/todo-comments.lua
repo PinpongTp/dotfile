@@ -12,17 +12,17 @@ return {
 					alt = { "FIXME", "BUG", "FIXIT", "ISSUE" }, -- a set of other keywords that all map to this FIX keywords
 					-- signs = false, -- configure signs for some keywords individually
 				},
-				TODO = { icon = " ", color = "info", alt = { "TD", "todo" } },
+				TODO = { icon = " ", color = "info", alt = { "TD", "todo" } },
 				-- TODO:
 				TODONE = { icon = " ", color = "info", alt = { "TDONE", "DONE" } },
 				-- TODONE:
 				HACK = { icon = " ", color = "white", alt = { "WHITE", "MARK" } },
 				-- HACK:
 				WARN = { icon = " ", color = "warning", alt = { "WARNING", "XXX" } },
-				PERF = { icon = " ", alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE" } },
-				NOTE = { icon = " ", color = "hint", alt = { "INFO", "TBC" } },
-				LOVE = { icon = " ", color = "pink", alt = { "PINK" } },
-				QA = { icon = " " },
+				PERF = { icon = " ", alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE" } },
+				NOTE = { icon = " ", color = "hint", alt = { "INFO", "TBC" } },
+				LOVE = { icon = " ", color = "pink", alt = { "PINK" } },
+				QA = { icon = " " },
 			},
 			merge_keywords = true, -- when true, custom keywords will be merged with the defaults
 			-- highlighting of the line containing the todo comment

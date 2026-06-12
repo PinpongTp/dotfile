@@ -221,13 +221,13 @@ return {
       val = {
         { type = "text", val = "Quick links", opts = { hl = "SpecialComment", position = "center" } },
         { type = "padding", val = 1 },
-        dashboard.button("f", "  Find file", ":Telescope find_files <CR>"),
-        dashboard.button("F", "  Find text", ":Telescope live_grep <CR>"),
+        dashboard.button("f", "  Find file", ":Telescope find_files <CR>"),
+        dashboard.button("F", "  Find text", ":Telescope live_grep <CR>"),
         dashboard.button("g", "  Git status", ":Telescope git_status <CR>"),
         dashboard.button("n", "  New file", ":ene <BAR> startinsert <CR>"),
         dashboard.button("c", "  Configuration", ":e ~/.config/nvim/init.lua <CR>"),
         dashboard.button("u", "  Update plugins", ":PackerSync<CR>"),
-        dashboard.button("q", "  Quit", ":qa<CR>"),
+        dashboard.button("q", "  Quit", ":qa<CR>"),
       },
       position = "center",
     }
