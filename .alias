@@ -21,6 +21,25 @@ alias nnt="npm run test"
 alias nnd="npm run start:dev"
 alias nns="npm run start"
 
+# nvm from package.json engines.node
+nvmp() {
+  local pkg="${1:-package.json}"
+  if [ ! -f "$pkg" ]; then
+    echo "nvmp: $pkg not found" >&2
+    return 1
+  fi
+  local ver
+  ver=$(sed -n '/"engines"[[:space:]]*:/,/}/p' "$pkg" \
+    | grep '"node"' \
+    | sed -E 's/.*"node"[[:space:]]*:[[:space:]]*"([^"]+)".*/\1/')
+  if [ -z "$ver" ]; then
+    echo "nvmp: engines.node not found in $pkg" >&2
+    return 1
+  fi
+  echo "nvmp: engines.node = $ver"
+  nvm use "$ver" || nvm install "$ver"
+}
+
 # git
 alias g="git"
 
