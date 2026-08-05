@@ -55,6 +55,7 @@ done)"
     if      (state[tty] == "perm") { icon = "\033[31m●\033[0m perm   "; rank = 0 }  # red    - blocked on approval
     else if (state[tty] == "idle") { icon = "\033[33m●\033[0m idle   "; rank = 1 }  # yellow - asked you something
     else if (state[tty] == "done") { icon = "\033[32m●\033[0m done   "; rank = 2 }  # green  - finished a turn
+    else if (state[tty] == "busy") { icon = "\033[90m●\033[0m working"; rank = 4 }  # grey   - mid-turn, leave it
     else if ($3 == "waiting")      { icon = "\033[33m●\033[0m waiting"; rank = 1 }  # yellow - needs input
     else if ($3 == "idle")         { icon = "\033[32m●\033[0m idle   "; rank = 2 }  # green  - done, your turn
     else if ($3 == "busy")         { icon = "\033[90m●\033[0m working"; rank = 4 }  # grey   - busy, leave it

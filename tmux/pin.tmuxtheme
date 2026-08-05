@@ -30,7 +30,7 @@ C_BG_LIST_A="default"
 
 # Claude agent state, published per window by ~/.claude/hooks/tmux-claude-state.sh.
 # Renders one coloured dot, or nothing at all when no state is set.
-C_MARK="#{?#{==:#{@claude_state},perm},#[fg=red]● ,}#{?#{==:#{@claude_state},idle},#[fg=yellow]● ,}#{?#{==:#{@claude_state},done},#[fg=green]● ,}"
+C_MARK="#{?#{==:#{@claude_state},perm},#[fg=red]● ,}#{?#{==:#{@claude_state},idle},#[fg=yellow]● ,}#{?#{==:#{@claude_state},done},#[fg=green]● ,}#{?#{==:#{@claude_state},busy},#[fg=colour244]● ,}"
 
 setw -g window-status-format "#[fg=default,bg=${C_BG_LIST}] ${C_MARK}#[fg=default]#I:#W#F "
 setw -g window-status-current-format "#[fg=blue,bg=${C_BG_LIST_A},bold] ${C_MARK}#[fg=blue,bold]#I:#W#F "
