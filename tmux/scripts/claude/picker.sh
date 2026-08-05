@@ -63,8 +63,11 @@ fzf_options="$(get_tmux_option @claude_fzf_options '')"
 # ctrl-x kills the Claude process itself; the pane keeps the shell that hosted it.
 # The reload waits a beat so the supervisor has dropped the agent from
 # `claude agents --json`.
+legend=$(printf '\033[31m●\033[0m perm: approve · \033[33m●\033[0m idle: answer · \033[32m●\033[0m done: finished · \033[90m●\033[0m working: mid-turn')
+
 sel=$(printf '%s\n' "$rows" | fzf --ansi --delimiter='\t' --with-nth=5,6,7,8 \
   --reverse --cycle --header='Claude agents · enter: jump · ctrl-x: kill' \
+  --footer="$legend" \
   --preview='tmux capture-pane -ept {2}' --preview-window='up,70%,follow' \
   --bind="ctrl-x:execute-silent(kill {3})+reload(sleep 0.3; $self --list)" \
   ${extra_opts[@]+"${extra_opts[@]}"})
