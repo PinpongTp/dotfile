@@ -28,11 +28,18 @@ set -g status-left "#[fg=${S_C},bg=${P_C},bold,nounderscore,italics] #S #[fg=${P
 C_BG_LIST="default"
 C_BG_LIST_A="default"
 
-setw -g window-status-format "#[fg=default,bg=${C_BG_LIST}] #I:#W#F "
-setw -g window-status-current-format "#[fg=blue,bg=${C_BG_LIST_A},bold] #I:#W#F "
+# Claude agent state, published per window by ~/.claude/hooks/tmux-claude-state.sh.
+# Renders one coloured dot, or nothing at all when no state is set.
+C_MARK="#{?#{==:#{@claude_state},perm},#[fg=red]● ,}#{?#{==:#{@claude_state},idle},#[fg=yellow]● ,}#{?#{==:#{@claude_state},done},#[fg=green]● ,}"
+
+setw -g window-status-format "#[fg=default,bg=${C_BG_LIST}] ${C_MARK}#[fg=default]#I:#W#F "
+setw -g window-status-current-format "#[fg=blue,bg=${C_BG_LIST_A},bold] ${C_MARK}#[fg=blue,bold]#I:#W#F "
 
 T_GIT="#{simple_git_status}"
 T_CPU="#{cpu_percentage}"
+# One dot per flagged window across every session on this server — pure format,
+# so it costs no subprocess and needs no status-interval tuning.
+T_AGENTS="#{S:#{W:${C_MARK}}}"
 T_TIME="#[fg=default,bg=default]%H:%M #[fg=#default,bg=#303030,nobold,nounderscore,noitalics]#[fg=default,bg=default] %d-%b-%y "
 
-set -g status-right "${T_GIT} #[fg=blue,bg=default]${TMUX_SEPARATOR_L_THIN} ${T_CPU} #[fg=blue,bg=default]${TMUX_SEPARATOR_L_THIN} ${T_TIME}"
+set -g status-right "${T_AGENTS}#[fg=default,bg=default]${T_GIT} #[fg=blue,bg=default]${TMUX_SEPARATOR_L_THIN} ${T_CPU} #[fg=blue,bg=default]${TMUX_SEPARATOR_L_THIN} ${T_TIME}"
