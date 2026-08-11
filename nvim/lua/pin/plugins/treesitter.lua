@@ -121,6 +121,36 @@ return {
 			mode = "topline", -- Line used to calculate context. Choices: 'cursor', 'topline'
 		})
 
+		-- Fix `set-lang-from-info-string!` for nvim 0.12.
+		--
+		-- nvim-treesitter (master) reads `match[capture_id]` as a single TSNode,
+		-- but since nvim 0.12 a match maps a capture id to a LIST of nodes. Its
+		-- handler then calls get_node_text() on a table and throws
+		--   attempt to call method 'range' (a nil value)
+		-- on every markdown buffer, killing injection parsing (and with it any
+		-- plugin that queries fenced code blocks, e.g. diagram.nvim).
+		--
+		-- Re-register the directive with the list unwrapped. Keep this after
+		-- treesitter.setup() so it overrides nvim-treesitter's registration.
+		local aliases = { ex = "elixir", pl = "perl", sh = "bash", uxn = "uxntal", ts = "typescript" }
+		require("vim.treesitter.query").add_directive("set-lang-from-info-string!", function(
+			match,
+			_,
+			bufnr,
+			pred,
+			metadata
+		)
+			local nodes = match[pred[2]]
+			local node = type(nodes) == "table" and nodes[#nodes] or nodes
+			if not node then
+				return
+			end
+			local alias = vim.treesitter.get_node_text(node, bufnr):lower()
+			metadata["injection.language"] = vim.filetype.match({ filename = "a." .. alias })
+				or aliases[alias]
+				or alias
+		end, { force = true, all = false })
+
 		local keymap = vim.keymap
 
 		keymap.set("n", ";tC", "<Cmd>TSContextToggle<CR>", { desc = "Toggle treesitter context" })
