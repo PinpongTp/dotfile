@@ -31,3 +31,10 @@ karabiner/assets/complex_modifications/1686681782.json
 jgit/config
 nvim/lua/.luarc.json
 nodemon.json
+
+# runtime state
+cagent/user-uuid
+herdr/*.log
+herdr/*.sock
+herdr/session.json
+herdr/.plugins.lock
